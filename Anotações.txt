@@ -1,8 +1,0 @@
-package primeiroprograma;			// define primeiro o método
-public class PrimeiroPrograma{			// define depois uma classe	
-    public static void main(string[]args){	// uma classe principal 
-        
-    }
-}
-
-Portanto, você tem um método, uma classe q pertence a ele, e varias classes que pertentem ao pacote.
