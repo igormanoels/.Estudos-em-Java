@@ -14,3 +14,5 @@ Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, Disci
 7.  Receba os valores do comprimento, largura e altura de um paralelepípedo. Calcule e mostre seu volume.
 8.  Receba o valor de um depósito em poupança. Calcule e mostre o valor após 1 mês de aplicação sabendo que rende 1,3% a. m.
 9.  Receba os 2 números inteiros. Calcule e mostre a soma dos quadrados.
+10. Receba 2 números reais. Calcule e mostre a diferença desses valores.
+11. Receba o raio de uma circunferência. Calcule e mostre o comprimento da circunferência.
