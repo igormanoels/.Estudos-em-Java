@@ -11,7 +11,7 @@ public class Calculocircunferencia{
 
         raio = Double.valueOf(JOptionPane.showInputDialog("Informe o valor do raio"));
 
-        resultado = ((2 * 2.14) * raio);
+        resultado = ((2 * 3.14) * raio);
             System.out.println("O valor da circunferencai é de " + resultado);
     }
 }
