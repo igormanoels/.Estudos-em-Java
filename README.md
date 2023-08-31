@@ -22,3 +22,5 @@ Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, na di
 15.	Receba os valores de 2 catetos de um triângulo retângulo. Calcule e mostre a hipotenusa.
 16.	Receba a quantidade de horas trabalhadas, o valor por hora, o percentual de desconto e o número de descendentes. Calcule o salário que serão as horas trabalhadas x o valor por hora. Calcule o salário líquido (= Salário Bruto – desconto). A cada dependente será acrescido R$ 100 no Salário Líquido. Exiba o salário a receber.
 17.	Calcule a quantidade de litros gastos em uma viagem, sabendo que o automóvel faz 12 km/l. Receber o tempo de percurso e a velocidade média.
+18.	Receba 2 valores inteiros. Calcule e mostre o resultado da diferença do maior pelo menos valor.
+19.	Receba 2 valores reais. Calcule e mostre o maior deles.
