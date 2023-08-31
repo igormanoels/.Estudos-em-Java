@@ -3,9 +3,9 @@ package terceiroangulo;
  * @author s.igormanoel
  */
 
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
- public class Terceiroangulo{
+public class Terceiroangulo{
     public static void main(String[]args){
         Double ang1, ang2, ang3;
 

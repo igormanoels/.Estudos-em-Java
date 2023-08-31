@@ -3,9 +3,9 @@ package calculehipotenusa;
  * @author s.igormanoel
  */
 
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
- public class Calculehipotenusa {
+public class Calculehipotenusa {
     public static void main(String[]args){
         Double cat1, cat2, hipo;
 
@@ -15,4 +15,4 @@ package calculehipotenusa;
         hipo = ((cat1 * cat1) + (cat2 * cat2));
             System.out.println("O valor da hipotenusa é " + hipo);
     }
- }
+}

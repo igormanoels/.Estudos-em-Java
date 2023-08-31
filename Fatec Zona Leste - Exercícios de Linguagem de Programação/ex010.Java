@@ -3,9 +3,9 @@ package diferencasreais;
  * @author s.igormanoel
  */
 
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
- public class Diferencasreais{
+public class Diferencasreais{
     public static void main(String[] args){
         int valor1, valor2, resultado;
         
@@ -15,4 +15,4 @@ package diferencasreais;
         resultado = (valor1 - valor2);
             System.out.println("A diferença entre os valores é de: " + resultado);
     }
- }
+}

@@ -3,9 +3,9 @@ package consumonaviagem;
  * @author s.igormanoel
  */
 
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
- public class Consumonaviagem {
+public class Consumonaviagem {
     public static void main(String[]args){
         Double tempo, veloM, consumo;
 
@@ -15,4 +15,4 @@ package consumonaviagem;
         consumo = ((tempo * veloM) * 12);
             System.out.println("foram gastos " + consumo + " litros");
     }
- }
+}

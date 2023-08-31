@@ -3,9 +3,9 @@ package calculaidade;
  * @author s.igormanoel
  */
 
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
- public class Calculaidade{
+public class Calculaidade{
     public static void main (String[]args){
         Integer AnoAtual, AnoNasc, idade, idadeFutura;
 
@@ -16,4 +16,4 @@ package calculaidade;
         idadeFutura = (idade + 17);
             System.out.println("Sua idade é " + idade + ", em 17 anos você terá: " + idadeFutura);
     }
- }
+}

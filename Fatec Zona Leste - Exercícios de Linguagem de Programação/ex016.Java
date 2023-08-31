@@ -3,9 +3,9 @@ package salarioliquido;
  * @author s.igormanoel
  */
 
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
- public class Salarioliquido{
+public class Salarioliquido{
     public static void main(String[]args){
         Double horasT, Vhora, desconto, filhos, salarioLiq, salRec;
 
@@ -18,4 +18,4 @@ package salarioliquido;
         salRec = (salarioLiq + (filhos * 100));
             System.out.println("O salário líquido a receber é de R$ " + salRec);
        }
- }
+}
