@@ -26,3 +26,22 @@ Javax.sound  ---> para bibliotecas extentidas de som
 Javax.media  ---> para midia
 Javax.swing  ---> permite a criação de interfaces gráficas 
 JavaFx.fxml  --->
+
+
+### Operadores
+
++   Operador de adição
+-   Operador subtração
+*   Operador de multiplicação
+/   Operador de divisão
+%   Operador de módulo (ou resto da divisão)
+++  Incremento
+--  Decremento
+==  Utilizado quando desejamos verificar se uma variável é igual a outra.
+!=  Utilizado quando desejamos verificar se uma variável é diferente de outra.
+>   Utilizado quando desejamos verificar se uma variável é maior que outra.
+>=  Utilizado quando desejamos verificar se uma variável é maior ou igual a outra
+<   Utilizado quando desejamos verificar se uma variável é menor que outra.
+<=  Utilizado quando desejamos verificar se uma variável é menor ou igual a outra.
+&&  Utilizado quando desejamos que as duas expressões sejam verdadeiras (comparador "E").
+||  Utilizado quando precisamos que pelo menos uma das expressões seja verdadeira (Comparador "OU").
