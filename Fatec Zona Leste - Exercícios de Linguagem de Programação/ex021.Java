@@ -1,6 +1,6 @@
 package calculamedia;
-/**
- * @author s.igormanoel
+ /**
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
@@ -16,12 +16,17 @@ public class Calculamedia{
         
         media = ((nota1 + nota2 + nota3 + nota4) / 4);
 
-        if (media >= 6) {
-            System.out.println("Você está Aprovado, sua média final é " + media);
-        } else if (media >= 3 && media < 6) {
-            System.out.println("Você está de Exame, sua média final é " + media);            
-        } else {
-            System.out.println("Você foi Reprovado, sua média final é " + media);
-        }
+        if (media >= 6) 
+            {
+                System.out.println("Você está Aprovado, sua média final é " + media);
+            } 
+                else if (media >= 3 && media < 6) 
+                    {
+                        System.out.println("Você está de Exame, sua média final é " + media);            
+                    } 
+                        else 
+                            {
+                                System.out.println("Você foi Reprovado, sua média final é " + media);
+                            }
     }
 }

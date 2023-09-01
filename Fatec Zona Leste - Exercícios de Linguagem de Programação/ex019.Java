@@ -1,6 +1,6 @@
 package mostrarmaiorvalor;
-/**
- * @author s.igormanoel
+ /**
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
@@ -12,10 +12,13 @@ public class Mostrarmaiorvalor{
         valor1 = Integer.parseInt(JOptionPane.showInputDialog("Qual o primeiro valor?"));
         valor2 = Integer.parseInt(JOptionPane.showInputDialog("Qual o segundo valor?"));
 
-        if (valor1 > valor2){
-            System.out.println("O maior valor é " + valor1 + " e o menor é " + valor2);
-        } else {
-            System.out.println("O maior valor é " + valor2 + " e o menor é " + valor1);
-        }
+        if (valor1 > valor2)
+            {
+                System.out.println("O maior valor é " + valor1 + " e o menor é " + valor2);
+            } 
+                else
+                    {
+                        System.out.println("O maior valor é " + valor2 + " e o menor é " + valor1);
+                    }
     }
 }

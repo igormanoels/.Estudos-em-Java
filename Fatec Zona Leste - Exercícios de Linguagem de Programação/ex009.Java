@@ -1,13 +1,13 @@
 package somadosquadrados;
-/**
- * @author s.igormanoel
+ /**
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
 
 public class Somadosquadrados {
     public static void main(String[] args) {
-        int valor1, valor2, resultado;
+        Integer valor1, valor2, resultado;
         
         valor1 = Integer.parseInt(JOptionPane.showInputDialog("Qual o primeiro valor?"));
         valor2 = Integer.parseInt(JOptionPane.showInputDialog("QUal o segundo valor?"));

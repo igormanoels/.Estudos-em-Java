@@ -1,6 +1,6 @@
 package jurossimples;
-/**
- * @author s.igormanoel
+ /**
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
@@ -15,6 +15,6 @@ public class Jurossimples {
         
         reajuste = ((numMes * (percentual / 100) ) * valor);
         montante = reajuste + valor;
-                System.out.println("O valor do montante reaajustado é de: R$" + montante);
+            System.out.println("O valor do montante reaajustado é de: R$" + montante);
     }
 }

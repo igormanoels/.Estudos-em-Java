@@ -1,7 +1,6 @@
 package tempoalimentos;
-
-/**
- * @author s.igormanoel
+ /**
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
@@ -13,6 +12,6 @@ public class Tempoalimentos {
         quilos = Integer.parseInt(JOptionPane.showInputDialog("Quantos quilos de alimento tem na dispensa?"));
 
         tempo = ((quilos * 1000) / 50);
-        System.out.println("A quantidade de dias é de " + tempo);
+            System.out.println("A quantidade de dias é de " + tempo);
     }
 }

@@ -1,6 +1,6 @@
 package consumonaviagem;
-/**
- * @author s.igormanoel
+ /**
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
