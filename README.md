@@ -24,3 +24,9 @@ Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, na di
 17.	Calcule a quantidade de litros gastos em uma viagem, sabendo que o automóvel faz 12 km/l. Receber o tempo de percurso e a velocidade média.
 18.	Receba 2 valores inteiros. Calcule e mostre o resultado da diferença do maior pelo menos valor.
 19.	Receba 2 valores reais. Calcule e mostre o maior deles.
+20.	Receba 3 coeficientes A, B, e C de uma equação do 2º grau da fórmula AX²+BX+C=0. Verifique e mostre a existência de raízes reais e se caso exista, calcule e mostre.
+21.	Receba 4 notas bimestrais de um aluno. Calcule e mostre a média aritmética. Mostre a mensagem de acordo com a média:
+    - Se a média for >= 6,0 exibir “APROVADO”;
+    - Se a média for >= 3,0 ou < 6,0 exibir “EXAME”;
+    - Se a média for < 3,0 exibir “RETIDO”.
+
