@@ -32,4 +32,8 @@ Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, na di
 22. Receba  2  valores  inteiros  e  diferentes.  Mostre  seus  valores  em  ordem crescente.
 23. Receba 3 valores obrigatoriamente em ordem crescente e um 4º valor não necessariamente em ordem. Mostre os 4 números em ordem crescente.
 24. Receba um valor inteiro. Verifique e mostre se é divisível por 2 e 3.
+25. Receba a hora de início e de final de um jogo (HH,MM), calcular o tempo do jogo em horas e minutos, sabendo que o tempo máximo é menor que 24 horas e pode começar num dia e terminar noutro.
+26.	Receba 2 números inteiros. Verifique e mostre se o maior número é múltiplo do menor.
+27.	Receba o número de voltas, a extensão do circuito (em metros) e o tempo de duração (minutos). Calcule e mostre a velocidade média em km/h.
+
 
