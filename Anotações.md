@@ -30,11 +30,11 @@ JavaFx.fxml  --->
 
 ### Operadores
 
-+   Operador de adição
--   Operador subtração
-*   Operador de multiplicação
-/   Operador de divisão
-%   Operador de módulo (ou resto da divisão)
+- Operador de adição    -->        +
+- Operador subtração    -->        -
+- Operador de multiplicação    -->        *
+- Operador de divisão    -->        /
+- Operador de módulo (ou resto da divisão) --> %
 ++  Incremento
 --  Decremento
 ==  Utilizado quando desejamos verificar se uma variável é igual a outra.

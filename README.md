@@ -29,4 +29,7 @@ Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, na di
     - Se a média for >= 6,0 exibir “APROVADO”;
     - Se a média for >= 3,0 ou < 6,0 exibir “EXAME”;
     - Se a média for < 3,0 exibir “RETIDO”.
+22. Receba  2  valores  inteiros  e  diferentes.  Mostre  seus  valores  em  ordem crescente.
+23. Receba 3 valores obrigatoriamente em ordem crescente e um 4º valor não necessariamente em ordem. Mostre os 4 números em ordem crescente.
+24. Receba um valor inteiro. Verifique e mostre se é divisível por 2 e 3.
 
