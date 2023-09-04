@@ -14,8 +14,8 @@ public class Velocidademedia{
         Nvoltas = Double.parseDouble(JOptionPane.showInputDialog("Informe o número de voltas da prova"));
         Distpista = Double.parseDouble(JOptionPane.showInputDialog("Informe a distância da pista em metros"));
         tempoMin = Double.parseDouble(JOptionPane.showInputDialog("Informe o tempo da prova em minutos"));
-
-        velocidade = ((Nvoltas * Distpista)/tempoMin);
-            System.out.println("O tempo é de " + velocidade + "km/h");     
+        // Exemplo: 5 voltas x 400 metro x 20 minutos    
+        velocidade = ((Nvoltas * (Distpista / 1000))/(tempoMin / 60 ));
+            System.out.println("A velocidade média é de " + velocidade + "km/h");        
     }
 }

@@ -17,6 +17,7 @@ public class Ex26Omaioremultiplo {
         if (valor1 == valor2)
             {
                 System.out.println("Os valores são iguais");
+            }    
                 else
                     {
         //primeiro passo, entra o menor valor
@@ -40,12 +41,11 @@ public class Ex26Omaioremultiplo {
                                             {
                                                 System.out.println("O maior valor é o dobro");
                                             }
-                                            else
-                                                {
-                                                    System.out.println("O maior valor não é o dobro");
-                                                }
+                                                else
+                                                    {
+                                                        System.out.println("O maior valor não é o dobro");
+                                                    }
                                     }
                     }
-            }
     }
 }

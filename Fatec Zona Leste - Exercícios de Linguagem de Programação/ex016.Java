@@ -17,5 +17,5 @@ public class Salarioliquido{
         salarioLiq = ((horasT * Vhora) * (100 - desconto) / 100);
         salRec = (salarioLiq + (filhos * 100));
             System.out.println("O salário líquido a receber é de R$ " + salRec);
-       }
+    }
 }

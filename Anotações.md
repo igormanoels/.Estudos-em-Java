@@ -45,3 +45,5 @@ JavaFx.fxml  --->
 <=  Utilizado quando desejamos verificar se uma variável é menor ou igual a outra.
 &&  Utilizado quando desejamos que as duas expressões sejam verdadeiras (comparador "E").
 ||  Utilizado quando precisamos que pelo menos uma das expressões seja verdadeira (Comparador "OU").
+
+
