@@ -25,14 +25,14 @@ public class Ex26Omaioremultiplo {
                             {
                                 teste = (valor1 * valor1);
         //Segundo passo, compara se o valor do teste é igual ao maior valor
-                                    if (teste == valor2)
-                                        {
-                                            System.out.println("O maior valor é o dobro");
-                                        }
-                                            else 
-                                                {
-                                                    System.out.println("O maior valor não é dobro");
-                                                }
+                                if (teste == valor2)
+                                    {
+                                        System.out.println("O maior valor é o dobro");
+                                    }
+                                        else 
+                                            {
+                                                System.out.println("O maior valor não é dobro");
+                                            }
                             }
                                 else
                                     {
