@@ -9,7 +9,7 @@ public class Velocidademedia{
     public static void main (String[]args){
         Double Nvoltas, Distpista, tempoMin, velocidade;
 
-            System.out.println("Algoritimo: cálcula a velocidade média de um atleta.");
+            System.out.println("Algoritmo: Cálcula a velocidade média de um atleta.");
         
         Nvoltas = Double.parseDouble(JOptionPane.showInputDialog("Informe o número de voltas da prova"));
         Distpista = Double.parseDouble(JOptionPane.showInputDialog("Informe a distância da pista em metros"));

@@ -9,7 +9,7 @@ public class Novopreco{
     public static void main (String[]args){
         Double precoAtual, mediaMensal, precoNovo;
 
-            System.out.println("Algoritimo cálcula novo preço ");
+            System.out.println("Algoritmo: Cálcula novo preço ");
 
         mediaMensal = Double.parseDouble(JOptionPane.showInputDialog("Informe a quantidade de produtos vendinos nesse mês"));    
         precoAtual = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor do preço atual")); 

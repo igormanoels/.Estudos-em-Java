@@ -9,7 +9,7 @@ public class Ex26Omaioremultiplo {
     public static void main(String[] args) {
         Integer valor1, valor2, teste;
         
-        System.out.println("Programa que descobre se o maior valor é multiplo do menor");
+        System.out.println("Algoritmo: Descobre se o maior valor é multiplo do menor");
         
         valor1 = Integer.parseInt(JOptionPane.showInputDialog("Informe o primeiro valor"));
         valor2 = Integer.parseInt(JOptionPane.showInputDialog("Informe o segundo valor"));

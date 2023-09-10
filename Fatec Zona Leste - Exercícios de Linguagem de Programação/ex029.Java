@@ -2,13 +2,14 @@ package investimentos;
  /**
  * @author GitHub @igormanoels
  */
+
 import javax.swing.JOptionPane;
 
 public class Investimentos{
     public static void main (String[]args){
         Double tipoInv, poupanca, rendaFx;
 
-            System.out.println("Algotimo: Cálcula o valor de renda a partir de um investimento na poupança e renda fixa.");
+            System.out.println("Algoritmo: Cálcula o valor de renda a partir de um investimento na poupança e renda fixa.");
             System.out.println("Digite a seguir --> ");
             System.out.println(" 1 para Opção de Poupança");
             System.out.println(" 2 para Opção de Renda Fixa");
