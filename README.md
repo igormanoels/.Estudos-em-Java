@@ -46,6 +46,7 @@ Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, na di
 Obs.: para outras condições, preço novo será igual ao preço atual.
 
 29.	Receba o tipo de investimento (1 = poupança e 2 = renda fixa) e o valor do investimento. Calcule e mostre o valor corrigido em 30 dias sabendo que a poupança = 3% e a renda fixa = 5%. Demais tipos não serão considerados.
-
+31. Calcule e mostre o quadrado dos números entre 10 e 150.
+32. Receba um número inteiro. Calcule e mostre o seu fatorial.
 
 
