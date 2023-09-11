@@ -1,6 +1,6 @@
 package calculafatorial;
  /**
-  * @author GitHub @igormanoels
+ * @author GitHub @igormanoels
  */
 
 import javax.swing.JOptionPane;
@@ -13,20 +13,31 @@ public class Calculafatorial{
 
         valor = Integer.parseInt(JOptionPane.showInputDialog("Informe um valor!"));
             System.out.print("Para " + valor + ", ");
-            System.out.print("O Fatorial ?: ");
+            System.out.print("O Fatorial é: ");
         
         fatorial = valor;    
         contador = 1;    
         resultado = 1;
         
-        do
+        if (valor < 0)
             {
-                resultado = (resultado * fatorial);
-                fatorial--;
-                contador++; 
+                System.out.println("Não existem Fatorial para valores negativos!");
             }
-                while (contador <= valor);
-                
-            System.out.println(resultado);
+                else if (valor == 0)
+                    {
+                        System.out.println(resultado);
+                    }
+                        else
+                            {
+                                do
+                                    {
+                                        resultado = (resultado * fatorial);
+                                        fatorial--;
+                                        contador++; 
+                                    }
+                                        while (contador <= valor);
+
+                                    System.out.println(resultado);
+                            }
     }
 }
