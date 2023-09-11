@@ -49,5 +49,11 @@ Obs.: para outras condições, preço novo será igual ao preço atual.
 30.	FALTA FAZER (Sem orientação do professor).
 31. Calcule e mostre o quadrado dos números entre 10 e 150.
 32. Receba um número inteiro. Calcule e mostre o seu fatorial.
+33. Receba um número. Calcule e mostre a série 1 + 1/2 + 1/3 + ... + 1/N.
+34. Receba um número. Calcule e mostre os resultados da tabuada desse número.
+35. Receba 2 números inteiros, verifique qual o maior entre eles. Calcule e 
+mostre o resultado da somatória dos números ímpares entre esses valores.
+36. Receba um número N. Calcule e mostre a série 1 + 1/1! + 1/2! + ... + 1/N!
+37. Receba um número inteiro. Calcule e mostre a série de Fibonacci até o seu N’nésimo termo.
 
 
