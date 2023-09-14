@@ -14,7 +14,7 @@ public class Calculaserie{
             System.out.println("Algoritmo: Cálcula o valor da série.");
         
         contador = 1;    
-                valor = Integer.parseInt(JOptionPane.showInputDialog("Insira um valor"));
+        valor = Integer.parseInt(JOptionPane.showInputDialog("Insira um valor"));
 
         while (contador <= valor)
             {

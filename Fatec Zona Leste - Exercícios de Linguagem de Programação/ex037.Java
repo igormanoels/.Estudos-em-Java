@@ -30,7 +30,6 @@ public class SeriedeFibonacci{
                 valor2= termo; 
                 System.out.print(termo + " | ");
                 contador++; 
-            }
-                while(contador < limite);
+            } while(contador < limite);
     }
 }

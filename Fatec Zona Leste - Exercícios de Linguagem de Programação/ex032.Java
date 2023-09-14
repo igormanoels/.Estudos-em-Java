@@ -23,21 +23,20 @@ public class Calculafatorial{
             {
                 System.out.println("Não existem Fatorial para valores negativos!");
             }
-                else if (valor == 0)
+        else if (valor == 0)
+            {
+                System.out.println(resultado);
+            }
+        else
+            {
+                do
                     {
-                        System.out.println(resultado);
+                        resultado = (resultado * fatorial);
+                        fatorial--;
+                        contador++; 
                     }
-                        else
-                            {
-                                do
-                                    {
-                                        resultado = (resultado * fatorial);
-                                        fatorial--;
-                                        contador++; 
-                                    }
-                                        while (contador <= valor);
-
-                                    System.out.println(resultado);
-                            }
+                while (contador <= valor);
+                System.out.println(resultado);
+            }
     }
 }

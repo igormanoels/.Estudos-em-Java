@@ -18,34 +18,34 @@ public class Ex26Omaioremultiplo {
             {
                 System.out.println("Os valores são iguais");
             }    
+        else
+            {
+        //primeiro passo, entra o menor valor
+                if (valor1 < valor2)
+                    {
+                        teste = (valor1 * valor1);
+        //Segundo passo, compara se o valor do teste é igual ao maior valor
+                        if (teste == valor2)
+                            {
+                                System.out.println("O maior valor é o dobro");
+                            }
+                        else 
+                            {
+                                System.out.println("O maior valor não é dobro");
+                            }
+                    }
                 else
                     {
-        //primeiro passo, entra o menor valor
-                        if (valor1 < valor2)
+                        teste = (valor2 * valor2);
+                        if (teste == valor1)
                             {
-                                teste = (valor1 * valor1);
-        //Segundo passo, compara se o valor do teste é igual ao maior valor
-                                if (teste == valor2)
-                                    {
-                                        System.out.println("O maior valor é o dobro");
-                                    }
-                                        else 
-                                            {
-                                                System.out.println("O maior valor não é dobro");
-                                            }
+                                System.out.println("O maior valor é o dobro");
                             }
-                                else
-                                    {
-                                        teste = (valor2 * valor2);
-                                        if (teste == valor1)
-                                            {
-                                                System.out.println("O maior valor é o dobro");
-                                            }
-                                                else
-                                                    {
-                                                        System.out.println("O maior valor não é o dobro");
-                                                    }
-                                    }
+                        else
+                            {
+                                System.out.println("O maior valor não é o dobro");
+                            }
                     }
+            }
     }
 }

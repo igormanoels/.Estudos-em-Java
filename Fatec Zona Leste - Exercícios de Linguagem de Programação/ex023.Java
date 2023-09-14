@@ -20,17 +20,17 @@ public class Ex23Colocaroquartoemordem {
             {
                 System.out.println("A sequencia dos valores é: " + valor4 + ", " + valor1 + ", " + valor2 + ", " + valor3);
             } 
-                else if (valor4 < valor2)
-                        {
-                            System.out.println("A sequencia dos valores é: " + valor1 + ", " + valor4 + ", " + valor2 + ", " + valor3);
-                        } 
-                            else if (valor4 < valor3)
-                                    {
-                                        System.out.println("A sequencia dos valores é: " + valor1 + ", " + valor2 + ", " + valor4 + ", " + valor3);
-                                    } 
-                                        else 
-                                            {
-                                                System.out.println("A sequencia dos valores é: " + valor1 + ", " + valor2 + ", " + valor3 + ", " + valor4);    
-                                            }    
+        else if (valor4 < valor2)
+            {
+                System.out.println("A sequencia dos valores é: " + valor1 + ", " + valor4 + ", " + valor2 + ", " + valor3);
+            } 
+        else if (valor4 < valor3)
+            {
+                System.out.println("A sequencia dos valores é: " + valor1 + ", " + valor2 + ", " + valor4 + ", " + valor3);
+            } 
+        else 
+            {
+                System.out.println("A sequencia dos valores é: " + valor1 + ", " + valor2 + ", " + valor3 + ", " + valor4);    
+            }    
     }
 }

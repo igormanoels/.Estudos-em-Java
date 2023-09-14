@@ -16,9 +16,9 @@ public class Mostrarmaiorvalor{
             {
                 System.out.println("O maior valor é " + valor1 + " e o menor é " + valor2);
             } 
-                else
-                    {
-                        System.out.println("O maior valor é " + valor2 + " e o menor é " + valor1);
-                    }
+        else
+            {
+                System.out.println("O maior valor é " + valor2 + " e o menor é " + valor1);
+            }
     }
 }

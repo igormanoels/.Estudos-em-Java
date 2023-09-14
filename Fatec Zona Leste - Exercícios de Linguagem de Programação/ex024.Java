@@ -17,9 +17,9 @@ public class Ex24Verificadivisaopordoisetres {
             {
                 System.out.println("O " + valor + " é divisível por dois e três!");
             } 
-                else
-                    {
-                        System.out.println("O " + valor + ", não é divisível por dois e três.");
-                    }
+        else
+            {
+                System.out.println("O " + valor + ", não é divisível por dois e três.");
+            }
     }   
 }

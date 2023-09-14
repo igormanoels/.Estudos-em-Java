@@ -20,21 +20,21 @@ public class Investimentos{
                 {
                     System.out.println("Opção inválida");
                 }
-                    else if (tipoInv == 1)
-                        {
-                            poupanca = Double.parseDouble(JOptionPane.showInputDialog("Você escolheu Poupança, informe o valor do Investimento!"));
-                            poupanca = (poupanca * 1.03);
-                                System.out.println("O valor do montante é de R$ " + poupanca);
-                        }
-                            else if (tipoInv == 2)
-                                {
-                                    rendaFx = Double.parseDouble(JOptionPane.showInputDialog("Você escolheu Renda Fixa, informe o valor do Investimento"));
-                                    rendaFx = (rendaFx * 1.05);
-                                        System.out.println("O valor do montante é de R$ " + rendaFx);
-                                }
-                                    else
-                                        {
-                                            System.out.println("Opção inválida");
-                                        }
+            else if (tipoInv == 1)
+                {
+                    poupanca = Double.parseDouble(JOptionPane.showInputDialog("Você escolheu Poupança, informe o valor do Investimento!"));
+                    poupanca = (poupanca * 1.03);
+                        System.out.println("O valor do montante é de R$ " + poupanca);
+                }
+            else if (tipoInv == 2)
+                {
+                    rendaFx = Double.parseDouble(JOptionPane.showInputDialog("Você escolheu Renda Fixa, informe o valor do Investimento"));
+                    rendaFx = (rendaFx * 1.05);
+                        System.out.println("O valor do montante é de R$ " + rendaFx);
+                }
+            else
+                {
+                    System.out.println("Opção inválida");
+                }
     }
 }

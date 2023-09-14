@@ -17,10 +17,10 @@ public class Calculadiferenca{
                 resultado = (valor1 - valor2);
                     System.out.println("A diferença entre os valores é de: " + resultado);
             } 
-                else 
-                    {
-                        resultado = (valor2 - valor1);
-                            System.out.println("A diferença entre os valores é de: " + resultado);
-                    }
+        else 
+            {
+                resultado = (valor2 - valor1);
+                    System.out.println("A diferença entre os valores é de: " + resultado);
+            }
     }
 }

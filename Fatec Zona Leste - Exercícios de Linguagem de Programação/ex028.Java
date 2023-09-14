@@ -18,24 +18,24 @@ public class Novopreco{
             {
                 System.out.println("Favor verificar se o preço está correto no sistema!");
             }
-                else if (mediaMensal == 00 && precoAtual > 0)
-                    {
-                        System.out.println("Como não houveram vendas o preço deve ser mantido");
-                    }
-                        else if (mediaMensal < 500 && precoAtual < 30)
-                            {
-                                precoNovo = (precoAtual * 1.10);
-                                    System.out.println("O novo preço deverá ser R$ " + precoNovo);
-                            }
-                                else if (mediaMensal < 1000 && precoAtual < 80)
-                                    {
-                                        precoNovo = (precoAtual * 1.15);
-                                            System.out.println("O novo preço deverá ser R$ " + precoNovo);
-                                    }
-                                        else 
-                                            {
-                                                precoNovo = (precoAtual * 0.95);
-                                                    System.out.println("O novo preço deverá ser R& " + precoNovo);
-                                            }
+        else if (mediaMensal == 00 && precoAtual > 0)
+            {
+                System.out.println("Como não houveram vendas o preço deve ser mantido");
+            }
+        else if (mediaMensal < 500 && precoAtual < 30)
+            {
+                precoNovo = (precoAtual * 1.10);
+                    System.out.println("O novo preço deverá ser R$ " + precoNovo);
+            }
+        else if (mediaMensal < 1000 && precoAtual < 80)
+            {
+                precoNovo = (precoAtual * 1.15);
+                    System.out.println("O novo preço deverá ser R$ " + precoNovo);
+            }
+        else 
+            {
+                precoNovo = (precoAtual * 0.95);
+                    System.out.println("O novo preço deverá ser R& " + precoNovo);
+            }
     }
 }

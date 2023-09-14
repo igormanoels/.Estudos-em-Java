@@ -16,9 +16,9 @@ public class Ex22Valoresemordem {
             {
                 System.out.println("A sequencia é " + valor1 + ", " + valor2);
             }
-                else
-                    {
-                        System.out.println("A sequencia é " + valor2 + ", " + valor1);
-                    }
+        else
+            {
+                System.out.println("A sequencia é " + valor2 + ", " + valor1);
+            }
     }    
 }

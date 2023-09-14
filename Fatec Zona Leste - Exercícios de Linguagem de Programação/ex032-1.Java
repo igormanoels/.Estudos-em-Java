@@ -19,14 +19,14 @@ public class Calculafatorial {
             {
                 System.out.println("Não existem fatorial para numeros negativos");
             }
-                else 
+        else 
+            {
+                while (contador <= valor)
                     {
-                        while (contador <= valor)
-                            {
-                                fatorial = (fatorial * contador);
-                                contador++;
-                            }
-                                System.out.println("O fatorial de " + valor + " é " + fatorial);
+                        fatorial = (fatorial * contador);
+                        contador++;
                     }
+                System.out.println("O fatorial de " + valor + " é " + fatorial);
+            }
     }    
 }

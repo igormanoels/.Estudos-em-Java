@@ -20,13 +20,13 @@ public class Calculamedia{
             {
                 System.out.println("Você está Aprovado, sua média final é " + media);
             } 
-                else if (media >= 3 && media < 6) 
-                    {
-                        System.out.println("Você está de Exame, sua média final é " + media);            
-                    } 
-                        else 
-                            {
-                                System.out.println("Você foi Reprovado, sua média final é " + media);
-                            }
+        else if (media >= 3 && media < 6) 
+            {
+                System.out.println("Você está de Exame, sua média final é " + media);            
+            } 
+        else 
+            {
+                System.out.println("Você foi Reprovado, sua média final é " + media);
+            }
     }
 }

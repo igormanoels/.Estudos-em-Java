@@ -20,14 +20,14 @@ public class Tabuada{
             {
                 System.out.println("Todo número vezes zero é zero!");
             }
-                else
+        else
+            {
+                while (contador <= 10)
                     {
-                        while (contador <= 10)
-                            {
-                                resultado = (valor * contador);
-                                System.out.println(valor + " x " + contador + " = " + resultado);
-                                contador++;
-                            }
-                    }        
+                        resultado = (valor * contador);
+                        System.out.println(valor + " x " + contador + " = " + resultado);
+                        contador++;
+                    }
+            }        
     }
 }
