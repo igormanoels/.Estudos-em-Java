@@ -55,5 +55,11 @@ Obs.: para outras condições, preço novo será igual ao preço atual.
 mostre o resultado da somatória dos números ímpares entre esses valores.
 36. Receba um número N. Calcule e mostre a série 1 + 1/1! + 1/2! + ... + 1/N!
 37. Receba um número inteiro. Calcule e mostre a série de Fibonacci até o seu N’nésimo termo.
+38. Receba 100 números inteiros reais. Verifique e mostre o maior e o menos 
+valor. Obs.: somente valores positivos.
+39. Calcule a quantidade de grãos contidos em um tabuleiro de xadrez onde:
+    - Casa: 1  2  3  4  ... 64
+    - Qte:   1  2  4  8  ... N
+41. Receba 2 números inteiros. Verifique e mostre todos os números primos existentes entre eles.
 
 
