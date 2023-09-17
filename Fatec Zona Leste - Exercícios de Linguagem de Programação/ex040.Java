@@ -14,7 +14,7 @@ public class {
         valor1 = Integer.parseInt(JOptionPane.showInputDialog("Informe o primeiro valor"));
         valor2 = Integer.parseInt(JOptionPane.showInputDialog("Informe o segundo valor"));
 
-            System.out.println("A sequência dos números pares é: ")
+            System.out.println("A sequência dos números pares é: ");
 
         if (valor1 < valor2)
             {

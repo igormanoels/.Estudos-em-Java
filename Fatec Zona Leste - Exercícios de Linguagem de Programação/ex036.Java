@@ -9,7 +9,7 @@ public class CalculaSeriecomFatorial{
     public static void main (String[]args){
         Double fatorial, contador, resultado, valor;
 
-            System.out.println("Algoritmo: Cálcula uma série relacionada a fatorial.");
+            System.out.println("Algoritmo: C?lcula uma s?rie relacionada a fatorial.");
         
         valor = Double.parseDouble(JOptionPane.showInputDialog("Informe um valor"));
 
@@ -23,5 +23,6 @@ public class CalculaSeriecomFatorial{
                 resultado = (resultado + (1 / fatorial));
                 contador++; 
             }
-    }
+        System.out.println("O resultado para a s?rie ? " + resultado);
+    }   
 }
