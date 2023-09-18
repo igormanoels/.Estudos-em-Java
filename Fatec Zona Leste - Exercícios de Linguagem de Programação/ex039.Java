@@ -9,7 +9,7 @@ public class QuantGraos{
     public static void main (String[]args){
         Integer contador, casa, graos;
         Double res;
-            System.out.println("Algoritmo: Calcula a quantidade de graõs por casa de xadrez.");
+            System.out.println("Algoritmo: Cálcula a quantidade de grãos por casa de xadrez.");
         
         contador = 0;
         casa = 0;
@@ -17,9 +17,9 @@ public class QuantGraos{
 
         while (casa < 64)
             {
-                casa++;
                 res = (Double) Math.pow(graos, casa);
-                    System.out.println("Casa " + casa + " - Quantidade de Graõs = " + res);
+                casa++;
+                    System.out.println("Casa " + casa + " - Quantidade de Grãos = " + res);   
             }
-    }
+    }   
 }
