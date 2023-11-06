@@ -9,9 +9,12 @@ public class Exercicio_01 {
 	
 
 	public static void main(String[] args) {
-		System.out.println("Informe seu nome completo");
+		
 		Scanner ler = new Scanner(System.in); // para entrada via scanner, a declaração deve ser feita uma unica vez
+		
+		System.out.println("Informe seu nome completo");
 		nome_Completo = ler.nextLine(); // entrada para textos longos 
+				
 		System.out.println("Agora informe sua idade");
 		idade = ler.nextInt(); // entrada para numeros inteiros
 		// o método Scanner cria uma entrada de dados sequencial para as variaveis e independe da quant. delas
