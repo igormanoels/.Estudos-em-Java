@@ -9,11 +9,12 @@ public class DadosRetangulo {
 		
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("Informe o valor da base");
-		base = ler.nextDouble();
+		System.out.println("Algoritmo: Lê a base e altura de um retângulo e imprime o perimetro, area e diagonal.");
 		
-		System.out.println("Informe o valor da altura");
-		altura = ler.nextDouble();
+		System.out.print("Informe o valor da base ");
+			base = ler.nextDouble();
+		System.out.print("Informe o valor da altura ");
+			altura = ler.nextDouble();
 		
 		perimetro = ((base * altura) * 2);
 		area = (base * altura);
@@ -23,7 +24,7 @@ public class DadosRetangulo {
 		System.out.print(", Área: " + area);
 		System.out.print(", Diagonal: " + diagonal);
 		
-		
+		ler.close();
 	}
 
 }

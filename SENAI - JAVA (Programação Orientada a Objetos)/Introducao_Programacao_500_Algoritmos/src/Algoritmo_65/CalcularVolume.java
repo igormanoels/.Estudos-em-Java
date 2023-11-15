@@ -9,7 +9,8 @@ public class CalcularVolume {
 		Scanner ler = new Scanner(System.in);
 		
 		System.out.println("Informe o valor do raio");
-		raio = ler.nextDouble()
+			raio = ler.nextDouble();
+		
 	}
 
 }
