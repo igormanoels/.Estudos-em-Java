@@ -1,26 +1,31 @@
 package Algoritmo_63;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class CalculoSalarioLiquido {
 	static double hrtrabalhadas, quantaulas, desc, salfinal;
 
 	public static void main(String[] args) {
-		System.out.println("Algoritmo: Cálculadora de Salário Líquaido");
+		DecimalFormat formatar = new DecimalFormat("###,###,###.00");
+		
+		
+		System.out.println("Algoritmo: Lê as horas trabalhadas, quantidade de aulas e desconto. E imprime o Salário Líquido.");
 		
 		salfinal = calcularSalario();
-			System.out.println("O salário final será de R$" + salfinal);
+		String salfinalFormatado = formatar.format(salfinal);
+			System.out.println("\nO salário final será de R$ " + salfinalFormatado);
 	}
 	
 	static double calcularSalario() {
 		double res;
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("Informe o valor da hora aula");
+		System.out.print("Informe o valor da hora aula: ");
 			hrtrabalhadas = ler.nextDouble();
-		System.out.println("Informe agora a quantidade de aulas dadas no mês");
+		System.out.print("Informe agora a quantidade de aulas dadas no mês: ");
 		 	quantaulas = ler.nextDouble();
-		System.out.println("Informe o valor do desconto");
+		System.out.print("Informe o valor do desconto: ");
 		 	desc = ler.nextDouble();
 		
 		res = (hrtrabalhadas * quantaulas);

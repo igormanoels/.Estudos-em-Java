@@ -10,16 +10,16 @@ public class ImprimirNomeIdade {
 		
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("Informe seu nome");
+		System.out.println("Algoritmo: Lê o nome e idade e imprime os dados do usuário.");
+		
+		System.out.print("Informe seu nome ");
 			nome = ler.nextLine();
-			
-		System.out.println("Informe sua idade");
+		System.out.print("Informe sua idade ");
 		 	idade = ler.nextInt();
 		 
-		System.out.println("\n\nNome: " + nome + "\nIdade: " + idade);
+		System.out.println("\nNome: " + nome + "\nIdade: " + idade);
 		
-		
-		
+		ler.close();
 	}
 
 }

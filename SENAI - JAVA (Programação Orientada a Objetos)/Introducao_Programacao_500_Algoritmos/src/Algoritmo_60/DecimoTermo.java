@@ -3,19 +3,22 @@ package Algoritmo_60;
 import java.util.Scanner;
 
 public class DecimoTermo {
-
-	public static void main(String[] args) {
-		double dec, razao, termo;
+	static double dec, razao, termo;
 		
+	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("Informe qual o termo");
+		System.out.println("Algoritmo: Lê o termo e a razão e imprime a Décimo termo da série.");
+		
+		System.out.print("Informe qual o termo: ");
 			termo = ler.nextDouble();
-		System.out.println("Informe qual a razão");
+		System.out.print("Informe qual a razão: ");
 			razao = ler.nextDouble();
 		
 		dec = (termo + (9*razao));
-			System.out.println("O décimo termo desta P.A. é: " + dec);
+			System.out.println("\nO Décimo termo desta P.A.: " + dec);
+	
+		ler.close();
 	}
 
 }
