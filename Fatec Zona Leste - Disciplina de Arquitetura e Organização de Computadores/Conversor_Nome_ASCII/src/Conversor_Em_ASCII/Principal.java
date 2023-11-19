@@ -21,7 +21,7 @@ public class Principal {
             while (valorBinario.length() < 8) {
                 valorBinario = "0" + valorBinario;
             }
-// adciona 0 caso o número não tenha os 8 digitos da tabela apresentada no material
+// adciona 0 caso o número não tenha os 8 digitos assim como na tabela apresentada no material
 // fiz assim porque o espaço sai com 6 digitos e as letras com 7 digitos
             
             valoresBinarios[i] = valorBinario;
