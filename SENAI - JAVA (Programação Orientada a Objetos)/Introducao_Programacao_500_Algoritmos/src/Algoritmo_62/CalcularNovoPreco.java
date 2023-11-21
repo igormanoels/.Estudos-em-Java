@@ -10,7 +10,7 @@ public class CalcularNovoPreco {
 		Scanner ler = new Scanner(System.in);
 		DecimalFormat formatar = new DecimalFormat("###,###,###.00");
 		
-		System.out.println("Algoritmo: Lê e imprime .");
+		System.out.println("Algoritmo: Lê o preço e o desconto e imprime o novo valor.");
 		
 		System.out.print("Informe o valor do preço do produto: R$ ");
 			preco = ler.nextDouble();

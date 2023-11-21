@@ -8,13 +8,17 @@ public class RecebeNumeradorEDenominador {
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("Informe o numerador para o cálculo");
+		System.out.println("Algoritmo: Lê o numerador e denominador e imprime um número decimal.");
+
+		System.out.print("Informe o numerador para o cálculo: ");
 		 	numerador = ler.nextDouble();
-		System.out.println("Informe o denominador para o cálculo");
+		System.out.print("Informe o denominador para o cálculo: ");
 		 	denominador = ler.nextDouble();
 		
 		double res = calcoperacao(numerador, denominador);
-			System.out.println("O resultado é " + res);
+			System.out.println("\nO resultado é " + res);
+		
+		ler.close();
 	}
 	
 	static double calcoperacao(double a, double b) {

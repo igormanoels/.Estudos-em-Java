@@ -8,27 +8,30 @@ public class TrocarPosicaoDasVariaveis {
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.println("Informe o primeiro valor");
+		System.out.println("Algoritmo: Lê dois valores e imprime em posição trocada.");
+		
+		System.out.print("Informe o primeiro valor: ");
 		 	num1 = ler.nextDouble();
-		System.out.println("Informe o segundo valor");
+		System.out.print("Informe o segundo valor: ");
 			num2 = ler.nextDouble();
 		
-		System.out.println("A posição 1 tem o valor de " + num1 + " e a posição 2 o valor de " + num2);
+		System.out.println("\nA posição 1: " + num1 + " e a posição 2: " + num2);
 
 		double res1 = trocarposicao1(num2);
 		double res2 = trocarposicao2(num1);
-		System.out.println("A posição 1 tem o valor de " + res1 + " e a posição 2 o valor de " + res2);
-
+		System.out.println("A posição 1: " + res1 + " e a posição 2: " + res2);
+		
+		ler.close();
 	}
 	
-	static double trocarposicao1(double valor) {
-		double resp = valor;
-		return resp;
+	static double trocarposicao1(double va) {
+		double resp1 = va;
+		return resp1;
 	}
 	
-	static double trocarposicao2(double valor) {
-		double resp = valor;
-		return valor;
+	static double trocarposicao2(double vb) {
+		double resp2 = vb;
+		return resp2;
 	}
 	
 }

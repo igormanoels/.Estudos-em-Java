@@ -14,7 +14,7 @@ public class ConvertCentigEmFahr {
 			c = ler.nextDouble();
 		
 		f = calcfahr(c);
-			System.out.println("\nA temperatura em Fahrenheit: " + f);
+			System.out.println("\nTemperatura em Fahrenheit: " + f);
 	
 		ler.close();
 	}

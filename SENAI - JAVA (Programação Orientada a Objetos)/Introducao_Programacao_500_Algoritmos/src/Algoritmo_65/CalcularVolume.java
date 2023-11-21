@@ -1,5 +1,6 @@
 package Algoritmo_65;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class CalcularVolume {
@@ -7,6 +8,7 @@ public class CalcularVolume {
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
+		DecimalFormat formatar = new DecimalFormat("###,###,###,###.00");
 		
 		System.out.println("Algoritmo: Lê altura e o raio. E imprime o Volume.");
 		
@@ -16,7 +18,8 @@ public class CalcularVolume {
 			altura = ler.nextDouble();
 		
 		res = CalcVolume(raio, altura);
-			System.out.println("\nVolume: " + res);
+		String resFormatado = formatar.format(res);
+			System.out.println("\nVolume: " + resFormatado);
 		
 		ler.close();
 	}

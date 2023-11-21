@@ -8,8 +8,7 @@ public class CalculoSalarioLiquido {
 
 	public static void main(String[] args) {
 		DecimalFormat formatar = new DecimalFormat("###,###,###.00");
-		
-		
+				
 		System.out.println("Algoritmo: Lê as horas trabalhadas, quantidade de aulas e desconto. E imprime o Salário Líquido.");
 		
 		salfinal = calcularSalario();
