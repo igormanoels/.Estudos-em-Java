@@ -65,5 +65,6 @@ public class Trocar_Lampadas {
 							}
 				}
 		System.out.println("Agora que retirou a lâmpada coloque a nova no lugar");
+		ler.close();
 	}
 }

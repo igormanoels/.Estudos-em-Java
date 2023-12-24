@@ -1,5 +1,6 @@
 package Algoritmo_75;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class CalculadoraDePeso {
@@ -7,16 +8,21 @@ public class CalculadoraDePeso {
 	
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
+		DecimalFormat formatar = new DecimalFormat("0.00");
+		System.out.println("Algoritmo: Lê o peso e imprimi em gramas e o novo peso 12% maior.");
 		
-		System.out.println("Informe o peso");
+		System.out.print("Informe o peso: ");
 		 	peso = ler.nextDouble();
 		
 		double respesog = calcpesog(peso);
-			System.out.println("Peso em gramas: " + respesog);
+		String respesogFormatado = formatar.format(respesog);
+			System.out.println("\nPeso em gramas: " + respesogFormatado + " gramas");
 		
 		double novopesog = calcnvpesog(respesog);
-			System.out.println("Novo peso: " + novopesog);
-	
+		String novopesogFormatado = formatar.format(novopesog);
+			System.out.println("Novo peso: " + novopesogFormatado + "kg");
+		
+		ler.close();
 	}
 	
 	static double calcpesog(double a) {

@@ -3,25 +3,24 @@ package Algoritmo_73;
 import java.util.Scanner;
 
 public class InteiroFracaoArredondado {
-	static double num, inteiro, arredondado, fracao;
+	static double num,fracao, arredondado;
+	static int inteiro; 
 	
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
+		System.out.println("Algoritmo: Lê um número e imprimi o número inteiro, arredondado e a fração.");
 		
-		System.out.println("Informe um valor fracionado");
+		System.out.print("Informe um valor fracionado: ");
 			num = ler.nextDouble();
 			
-		System.out.println("O numero informado: " + num);
-		
+		inteiro = (int) num;
+			System.out.println("\nInteiro = " + inteiro);
 		arredondado = (Math.round(num));
 			System.out.println("Arredondamento = " + arredondado);
-		
-		fracao = (num % 1);
+		fracao = (num - inteiro);
 			System.out.println("Fracionado = " + fracao);
-		
-		inteiro = (num - fracao);
-			System.out.println("Inteiro = " + inteiro);
-	
+			
+		ler.close();
 	}
 
 }
