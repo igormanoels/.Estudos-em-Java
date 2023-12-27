@@ -13,7 +13,7 @@ public class DigitoVerificador {
 		System.out.print("Informe o número da sua conta correte: ");
 			conta = ler.nextInt();
 		
-		System.out.println("O dígito dá conta informada é: " + calcDigito(conta));
+		System.out.println("\nO dígito dá conta informada é: " + calcDigito(conta));
 		
 		ler.close();
 	}
