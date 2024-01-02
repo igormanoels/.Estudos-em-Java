@@ -5,7 +5,7 @@ Claro, aqui está uma tabela com algumas das funções de manipulação de strin
 | Método                  | Código                                       | Descrição                                                            |
 |-------------------------|-----------------------------------------------|----------------------------------------------------------------------|
 | `length()`              | `int length = str.length();`                  | Retorna o comprimento da string.                                      |
-| `charAt(int index)`     | `char ch = str.charAt(3);`                   | Retorna o caractere no índice especificado.                           |
+| `charAt(int index)`     | `char ch = str.charAt(3);` "str é a variavel" | Retorna o caractere no índice especificado.   Para comparar use 'N'   |
 | `substring(int beginIndex)` | `String substr = str.substring(5);`       | Retorna uma substring começando pelo índice especificado.             |
 | `substring(int beginIndex, int endIndex)` | `String substr = str.substring(2, 5);` | Retorna uma substring do índice inicial até o índice final.         |
 | `toLowerCase()`         | `String lower = str.toLowerCase();`           | Retorna uma nova string com todos os caracteres em minúsculas.        |
