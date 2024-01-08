@@ -7,7 +7,7 @@ public class VerificaPoluicao {
 	
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
-		System.out.println("Algoritmo: Lê o índice de poluição e imprimi .");
+		System.out.println("Algoritmo: Lê o índice de poluição e imprimi se as atividades serão suspensas.");
 
 		System.out.print("Informe o índice de poluição: ");
 			indice = ler.nextDouble();
