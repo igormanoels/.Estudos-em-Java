@@ -1,9 +1,9 @@
-package Conversor_Em_ASCII;
+package Conversor_Nome_ASCII;
 
 import java.util.Scanner;
 
 public class Principal {
-	static String nome;
+static String nome;
 	
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
