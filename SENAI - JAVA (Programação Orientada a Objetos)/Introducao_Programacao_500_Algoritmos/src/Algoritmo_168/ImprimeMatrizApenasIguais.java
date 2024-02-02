@@ -1,4 +1,4 @@
-package Algoritmo_167;
+package Algoritmo_168;
 
 public class ImprimeMatrizApenasIguais {
 

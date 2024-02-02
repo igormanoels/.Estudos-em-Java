@@ -1,4 +1,4 @@
-package Algoritmo_171;
+package Algoritmo_172;
 
 public class ImprimeMatrizEmDiagonalInvertidaBaixa {
 

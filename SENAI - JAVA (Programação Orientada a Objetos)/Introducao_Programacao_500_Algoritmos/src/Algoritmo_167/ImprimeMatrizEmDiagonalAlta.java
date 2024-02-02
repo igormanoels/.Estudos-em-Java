@@ -1,4 +1,4 @@
-package Algoritmo_166;
+package Algoritmo_167;
 
 public class ImprimeMatrizEmDiagonalAlta {
 	

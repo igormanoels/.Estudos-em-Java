@@ -1,4 +1,4 @@
-package Algoritmo_170;
+package Algoritmo_171;
 
 public class ImprimeDiagonalInvertida {
 

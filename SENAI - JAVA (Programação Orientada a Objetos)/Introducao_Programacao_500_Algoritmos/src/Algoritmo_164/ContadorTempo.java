@@ -19,8 +19,12 @@ public class ContadorTempo {
 			try {
 				Thread.sleep(1000); // tempo contado em milisegundos
 			} catch (Exception e) {
-				e.printStackTrace();
-			} // temporizado para contar os segundos
+				// Tratar a exceção (por exemplo, imprimir a mensagem de erro)
+			    System.err.println("Ocorreu uma exceção: " + e.getMessage());
+			    
+			    // Imprimir a pilha de chamadas (stack trace)
+			    e.printStackTrace();
+			} 
 		}
 		
 		ler.close();

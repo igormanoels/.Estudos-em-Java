@@ -1,4 +1,4 @@
-package Algoritmo_165;
+package Algoritmo_166;
 
 public class MatrizDezPorDez {
 
