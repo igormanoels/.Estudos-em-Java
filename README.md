@@ -1,6 +1,8 @@
 # .Fatec_Exercicios_Java
 Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, na disciplina de Linguagem de Programação.
 
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 ## Listas de Exercícios
 
 ### Lista 1
