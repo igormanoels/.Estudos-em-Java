@@ -1,4 +1,4 @@
-package Algoritmo_03;
+package Algoritmo_003;
 
 import java.util.Scanner;
 

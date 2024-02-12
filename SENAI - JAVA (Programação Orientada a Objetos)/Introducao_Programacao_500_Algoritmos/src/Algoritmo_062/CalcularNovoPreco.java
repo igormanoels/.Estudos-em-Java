@@ -1,4 +1,4 @@
-package Algoritmo_62;
+package Algoritmo_062;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

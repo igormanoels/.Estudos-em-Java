@@ -1,4 +1,4 @@
-package Algoritmo_28;
+package Algoritmo_028;
 
 public class Mensagem {
 

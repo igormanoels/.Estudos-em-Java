@@ -1,4 +1,4 @@
-package Algoritmo_02;
+package Algoritmo_002;
 
 import javax.swing.JOptionPane;
 
