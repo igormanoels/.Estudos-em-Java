@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NumParesDoIntervalo {
 
 	public static void main(String[] args) {
-		var cont = 0;
+		//var cont = 0;
 		Scanner ler = new Scanner(System.in);
 		System.out.println("Algoritmo: Lê o limite inferior, o superior e a quantidade, e imprime a quantidade de números pares.");
 		
