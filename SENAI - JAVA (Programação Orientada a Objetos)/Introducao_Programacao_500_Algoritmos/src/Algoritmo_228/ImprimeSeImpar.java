@@ -22,6 +22,7 @@ public class ImprimeSeImpar {
 			System.out.println("Não faço");
 		}
 		
+		
 		ler.close();
 	}
 
