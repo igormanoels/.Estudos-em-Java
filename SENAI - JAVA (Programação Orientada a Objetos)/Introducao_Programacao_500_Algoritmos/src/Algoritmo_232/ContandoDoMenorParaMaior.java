@@ -37,6 +37,7 @@ public class ContandoDoMenorParaMaior {
 			}
 		}
 		
+		
 		ler.close();
 	}
 

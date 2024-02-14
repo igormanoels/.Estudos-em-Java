@@ -12,9 +12,9 @@ public class AnalisaImpostoRenda {
 		Scanner ler = new Scanner(System.in);
 		System.out.println("Algoritmo: Lê 10 nomes e o salário, e imprime uma tabela com o valor de contruibuição.");
 	
-		for (int i = 0; i < 3; i++) 
+		for (int i = 0; i < 10; i++) 
 		{
-			System.out.print("\nFavor informar o nome do funcionário: ");
+			System.out.print("\nFavor informar o nome do " + (i+1) + "º funcionário: ");
 			nomes[i] = ler.nextLine().toUpperCase();
 			System.out.print("Agora informe o salário: R$ ");
 			sal[i] = ler.nextFloat();
@@ -22,11 +22,11 @@ public class AnalisaImpostoRenda {
 			
 			if (sal[i] >= 1500 ) 
 			{
-				imposto[i] = sal[i] * 0.85f;
+				imposto[i] = sal[i] * 0.15f;
 			}
 			else if (sal[i] >= 600 && sal[i] < 1500)
 			{
-				imposto[i] = sal[i] * 0.90f;
+				imposto[i] = sal[i] * 0.10f;
 			}
 			else 
 			{
@@ -37,10 +37,11 @@ public class AnalisaImpostoRenda {
 		System.out.println("\n\t\tTABELA DE CONTRIBUIÇÃO DO IMPOSTO DE RENDA"
 				+ "\n============================================================================="
 				+ "\nContribuinte\t\t\tSalário\t\t\tImposto");
-		for (int i = 0; i < 3; i++) {
-			System.out.printf("\n" + nomes[i] + "\t\t\t\tR$ " + sal[i] + "\t\tR$ " + imposto[i]);
+		for (int i = 0; i < 10; i++) {
+			System.out.printf("\n" + nomes[i] + "\t\t\t\tR$ %.2f\t\tR$ %.2f ", sal[i], imposto[i]);
 		}
 	
+		
 		ler.close();
 	}
 	
