@@ -13,5 +13,5 @@
 <br>
 
 **Exercícios do e estudos realizados no curso de Programação Oracle - Java Foundations, pelo Senai.**
-- 500 algoritmos (Livro: INTRODUÇÃO À PROGRAMAÇÃO - 500 ALGORITMOS RESOLVIDOS)
+- 500 algoritmos (Livro: Introdução à Programação - 500 Algoritmos Resolvidos)
 - Anotações e atividades realizadas no decorrer do curso
