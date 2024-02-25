@@ -6,6 +6,9 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ *  16. Receba a quantidade de horas trabalhadas, o valor por hora, o percentual de desconto e o número de descendentes. Calcule o salário que serão as 
+    horas trabalhadas x o valor por hora. Calcule o salário líquido (= Salário Bruto – desconto). A cada dependente será acrescido R$ 100 no Salário 
+    Líquido. Exiba o salário a receber.
  */
 
 public class Exercicio_16 {

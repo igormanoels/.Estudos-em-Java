@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 22. Receba 2 valores inteiros e diferentes. Mostre seus valores em ordem crescente.
  */
 
 public class Exercicio_22 {

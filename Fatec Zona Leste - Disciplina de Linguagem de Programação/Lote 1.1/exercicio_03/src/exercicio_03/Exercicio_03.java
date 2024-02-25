@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 3. Receba a base e a altura de um triângulo. Calcule e mostre a sua área.
  */
 
 public class Exercicio_03 {

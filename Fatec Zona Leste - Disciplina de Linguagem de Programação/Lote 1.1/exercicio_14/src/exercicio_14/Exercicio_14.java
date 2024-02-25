@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 14. Receba 2ângulos de um triângulo. Calcule e mostre o valor do 3º ângulo.
  */
 
 public class Exercicio_14 {

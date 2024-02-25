@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 17. Calcule a quantidade de litros gastos em uma viagem, sabendo que o automóvel faz 12 km/l. Receber o tempo de percurso e a velocidade média.
  */
 
 public class Exercicio_17 {

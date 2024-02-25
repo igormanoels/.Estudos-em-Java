@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 19. Receba 2 valores reais. Calcule e mostre o maior deles.
  */
 
 public class Exercicio_19 {

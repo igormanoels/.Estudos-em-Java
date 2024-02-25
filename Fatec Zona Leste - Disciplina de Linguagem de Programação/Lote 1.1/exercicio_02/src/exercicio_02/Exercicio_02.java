@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 2. Receba o salário de um funcionário e mostre o novo salário com reajuste de 15%.
  */
 
 public class Exercicio_02 {

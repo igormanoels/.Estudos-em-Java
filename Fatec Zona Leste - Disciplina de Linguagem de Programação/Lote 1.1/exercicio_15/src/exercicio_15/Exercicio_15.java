@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 15. Receba os valores de 2 catetos de um triângulo retângulo. Calcule e mostre a hipotenusa.
  */
 
 public class Exercicio_15 {

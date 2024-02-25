@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 9. Receba os 2 números inteiros. Calcule e mostre a soma dos quadrados.
  */
 
 public class Exercicio_09 {

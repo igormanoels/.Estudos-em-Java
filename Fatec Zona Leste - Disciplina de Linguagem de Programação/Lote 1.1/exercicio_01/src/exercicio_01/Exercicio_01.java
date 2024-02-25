@@ -4,6 +4,7 @@ package exercicio_01;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 1. Coletar o valor do lado de um quadrado, calcular sua área e apresentar o resultado.
  */
 
 import javax.swing.JOptionPane;

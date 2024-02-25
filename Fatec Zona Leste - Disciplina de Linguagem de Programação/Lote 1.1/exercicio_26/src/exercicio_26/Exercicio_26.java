@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 26. Receba 2 números inteiros. Verifique e mostre se o maior número é múltiplo do menor.
  */
 
 public class Exercicio_26 {

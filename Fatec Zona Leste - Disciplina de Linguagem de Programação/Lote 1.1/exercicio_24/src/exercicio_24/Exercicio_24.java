@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 24. Receba um valor inteiro. Verifique e mostre se é divisível por 2 e 3.
  */
 
 public class Exercicio_24 {

@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 18. Receba 2 valores inteiros. Calcule e mostre o resultado da diferença do maior pelo menos valor.
  */
 
 public class Exercicio_18 {

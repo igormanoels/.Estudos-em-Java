@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 11. Receba o raio de uma circunferência. Calcule e mostre o comprimento da circunferência.
  */
 
 public class Exercicio_11 {

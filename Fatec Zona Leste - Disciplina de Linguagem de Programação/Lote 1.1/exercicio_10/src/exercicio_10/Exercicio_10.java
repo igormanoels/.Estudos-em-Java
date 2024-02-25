@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 10. Receba 2 números reais. Calcule e mostre a diferença desses valores.
  */
 
 public class Exercicio_10 {

@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 6. Receba os valores em x e y. Efetua a troca de seus valores e mostre seus conteúdos.
  */
 
 public class Exercicio_06 {

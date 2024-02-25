@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
+ * 7. Receba os valores do comprimento, largura e altura de um paralelepípedo. Calcule e mostre seu volume.
  */
 
 public class Exercicio_07 {
