@@ -19,7 +19,8 @@ public class Exercicio_34 {
         for (int i = 0; i <= 10; i++) 
         {
             res = tab * i;
-            JOptionPane.showMessageDialog(null,"Tabuada: " + tab + " x " + i + " = " + res);
+            System.out.println(tab + " x " + i + " = " + res);
+            //JOptionPane.showMessageDialog(null,"Tabuada: " + tab + " x " + i + " = " + res);
         }
         
     }
