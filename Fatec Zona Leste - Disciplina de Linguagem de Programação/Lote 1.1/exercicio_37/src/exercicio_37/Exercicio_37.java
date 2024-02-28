@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  * Fatec Zona Leste - Análise e Desenvolvimento de Sistemas
  * @author Igor Manoel
  * Github: igormanoels
- *  37. Receba um número inteiro. Calcule e mostre a série de Fibonacci até o seu N’nésimo termo.
+ * 37. Receba um número inteiro. Calcule e mostre a série de Fibonacci até o seu N’nésimo termo.
  */
 
 public class Exercicio_37 {
