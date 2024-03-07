@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 
 public class RedesController {
 	
+	public RedesController()
+	{
+		super();
+	}
+	
 	/******************************
 	 * Função para verifiacar o SO.
 	 */ 
@@ -18,7 +23,7 @@ public class RedesController {
 	
 	public String getCadeOS()
 	{
-		return os();
+		return this.os();
 	}
 	
 	
@@ -27,34 +32,45 @@ public class RedesController {
 	 */ 
 	public void Cadeip(int op)
 	{
-
         String os = os();
+        
         try {
-            if (os.toLowerCase().contains("windows")) {
+            if (os.toLowerCase().contains("windows")) 
+            {
                 Process process = Runtime.getRuntime().exec("ipconfig");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
-                while ((line = reader.readLine()) != null) {
-                    if (line.contains("IPv4 Address")) {
+                while ((line = reader.readLine()) != null) 
+                {
+                    if (line.contains("IPv4")) 
+                    {
                         System.out.println(line.trim());
                     }
                 }
                 reader.close();
-            } else if (os.toLowerCase().contains("linux")) {
+            } 
+            else if (os.toLowerCase().contains("linux")) 
+            {
                 Process process = Runtime.getRuntime().exec("ifconfig");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
-                while ((line = reader.readLine()) != null) {
-                    if (line.contains("inet ") && !line.contains("127.0.0.1")) {
+                while ((line = reader.readLine()) != null) 
+                {
+                    if (line.contains("inet ") && !line.contains("127.0.0.1")) 
+                    {
                         String[] parts = line.trim().split("\\s+");
                         System.out.println(parts[1] + " " + parts[2]);
                     }
                 }
                 reader.close();
-            } else {
+            } 
+            else 
+            {
                 System.out.println("Sistema Operacional não suportado.");
             }
-        } catch (IOException e) {
+        } 
+        catch (IOException e) 
+        {
             e.printStackTrace();
         }
 			
@@ -64,33 +80,46 @@ public class RedesController {
 	/*********************************
 	 * Função para verifiacar o ping.    
 	 */
-	public void qualPing() {
+	public void qualPing() 
+	{
         String os = os();
-        try {
-            if (os.toLowerCase().contains("windows")) {
+        try 
+        {
+            if (os.toLowerCase().contains("windows")) 
+            {
                 Process process = Runtime.getRuntime().exec("ping -4 -n 10 www.google.com.br");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
-                while ((line = reader.readLine()) != null) {
-                    if (line.contains("Average")) {
+                while ((line = reader.readLine()) != null) 
+                {
+                    if (line.contains("dia")) 
+                    {
                         System.out.println(line);
                     }
                 }
                 reader.close();
-            } else if (os.toLowerCase().contains("linux")) {
+            } 
+            else if (os.toLowerCase().contains("linux")) 
+            {
                 Process process = Runtime.getRuntime().exec("ping -4 -c 10 www.google.com.br");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
-                while ((line = reader.readLine()) != null) {
-                    if (line.contains("rtt ")) {
+                while ((line = reader.readLine()) != null) 
+                {
+                    if (line.contains("rtt ")) 
+                    {
                         System.out.println(line);
                     }
                 }
                 reader.close();
-            } else {
+            } 
+            else 
+            {
                 System.out.println("Sistema Operacional não suportado.");
             }
-        } catch (IOException e) {
+        } 
+        catch (IOException e) 
+        {
             e.printStackTrace();
         }
     }

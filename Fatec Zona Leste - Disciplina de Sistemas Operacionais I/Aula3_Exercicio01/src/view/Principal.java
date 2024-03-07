@@ -24,7 +24,7 @@ public class Principal {
 	{
 		RedesController so = new RedesController();
 		osUsado = so.getCadeOS();
-		System.out.println(osUsado);
+		System.out.println("Sistema Operacional: " + osUsado);
 		
 		if (osUsado.contains("Windows")) 
 		{
