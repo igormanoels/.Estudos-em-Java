@@ -22,7 +22,6 @@ public class Exercicio_41_modulado {
      */
     public static int PossibilidadeDeDado() 
     {
-    // FALTA VALIDAR ESSE TRECHO DO CÓDIGO
     int quant = 0;
 	for (int i = 1; i <= 6; i++) 
 	{
