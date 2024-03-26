@@ -8,7 +8,7 @@ public class ThreadsBD extends Thread {
 	private int opera;
 	private Semaphore semaforo;
 	private int cont;
-	private static int finish;
+	private static int fim;
 
 	
 	public ThreadsBD(int id, int op, Semaphore semaforo, int c) 
@@ -156,9 +156,9 @@ public class ThreadsBD extends Thread {
 	
 	private void fim() 
 	{
-		finish++;
+		fim++;
 		
-		System.out.println("Transação ID #" + idOperacao + " finalizada. posição: " + finish);
+		System.out.println("Transação ID #" + idOperacao + " finalizada. posição: " + fim);
 	}
 
 }
