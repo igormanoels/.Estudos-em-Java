@@ -3,68 +3,69 @@ package controller;
 import java.util.concurrent.Semaphore;
 
 public class ControladorDeTransito extends Thread {
-	
-	private int vez;
-	private Semaphore tempo;
-	private String lado;
-	
-	
-	/*********************************
+    
+    private int num;
+    private Semaphore semaforo;
+    private Semaphore vez;
+    private String lado;
+    
+    /*********************************
 	 * Método construtor da classe
 	 */
-	public ControladorDeTransito(int n, Semaphore t, String l) 
-	{
-		this.vez = n;
-		this.tempo = t;
-		this.lado = l;
-	}
-	
-	
-	/*****************************************
+    public ControladorDeTransito(int n, Semaphore semaforo, Semaphore vez, String lado) 
+    {
+        this.num = n;
+        this.semaforo = semaforo;
+        this.vez = vez;
+        this.lado = lado;
+    }
+    
+    /*****************************************
 	 * Método que executa as ações da Thread
 	 */	
-	public void run() 
-	{
-		FarolVerde();
-		
-		try 
-		{
-			FarolAmarelo();
-			tempo.acquire();
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		finally 
-		{
-			tempo.release();
-			FarolVermelho();
-		}
-	}
-	
-	/*******************************************
-	 * Método que realiza a liberação do farol
+    public void run() 
+    {
+        try 
+        {
+            vez.acquire();
+            
+            semaforo.acquire();
+            ControleDoFarol();
+        } 
+        catch (InterruptedException e) 
+        {
+            e.printStackTrace();
+        }
+        finally 
+        {
+            semaforo.release();
+            vez.release(); 
+        }
+    }
+    
+    
+    /******************************************
+	 * Método que controla o tempo do semaforo
 	 */
-	private void FarolVerde()
-	{	
-		try 
-		{
-			System.out.println("#" + vez + " ----> O farol " + lado + " abriu.");
-			sleep(25000);
-
-		} 
-		catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-	
-	private void FarolAmarelo()
-	{
-		System.out.println("#" + vez + " ----> Atenção o farol " + lado + " está amarelo.");
-	}
-	private void FarolVermelho() 
-	{
-		System.out.println("#" + vez + " ----> O farol " + lado + " fechou." );
-	}
+    private void ControleDoFarol()
+    {   
+        try 
+        {
+        	System.out.print("\n#" + num + " ----> O farol " + lado + " abriu.");
+        	System.out.print("\nTempo do Semáforo: ");
+        	for (int i = 0; i < 30; i++) 
+        	{
+        		Thread.sleep(1000); 
+        		System.out.print( (i+1) + " " );
+        		if (i == 24) 
+        		{
+                    System.out.println("\n#" + num + " ----> Atenção o farol " + lado + " está amarelo.");
+				}                
+			}
+            System.out.println("\n#" + num + " ----> O farol " + lado + " fechou." );
+        } 
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
