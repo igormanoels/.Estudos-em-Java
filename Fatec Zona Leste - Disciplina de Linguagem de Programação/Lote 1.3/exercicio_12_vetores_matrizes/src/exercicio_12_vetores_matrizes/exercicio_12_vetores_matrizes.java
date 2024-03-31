@@ -22,6 +22,7 @@ public class exercicio_12_vetores_matrizes {
 		xadrez = geraXadrez(xadrez);
 		
 		exibeXadrez(xadrez);
+		calcTotal(xadrez);
 		
 	}
 	
@@ -31,21 +32,46 @@ public class exercicio_12_vetores_matrizes {
      */
 	static String[][] geraXadrez(String x[][])
 	{
-		int n = 0;
 		for (int i = 0; i < x.length; i++) 
 		{
 			for (int j = 0; j < x[i].length; j++) 
 			{
 				x[i][j] = (i == 1 || i == 6) ? "" + (int) (Math.pow(2, 0)) : " " ;
 				
+				if (i == 0 || i == 7)
+				{
+					switch (j) 
+					{
+						case 0:
+							x[i][j] = "" + (int) (Math.pow(2, 1));
+							break;
+						case 1:
+							x[i][j] = "" + (Integer.parseInt(x[i][j-1]) * 2);
+							break;
+						case 2:
+							x[i][j] = "" + (Integer.parseInt(x[i][j-1]) - 1);
+							break;
+						case 3:
+							x[i][j] = "" + (Integer.parseInt(x[i][j-1]) * 2);
+							break;
+						case 4:
+							x[i][j] = "" + (Integer.parseInt(x[i][j-1]) - 1);
+							break;
+						case 5:
+							x[i][j] = "" + x[i][2];
+							break;
+						case 6:
+							x[i][j] = "" + x[i][1];
+							break;
+						case 7:
+							x[i][j] = "" + x[i][0];
+							break;
+					}
+				}
 			}
 		}
 		
-		for (int i = 1; i <= 8; i++) 
-		{
-			n += (int) (Math.pow(i, i));
-		}
-		System.out.println("teste: "  + n);
+		
 		
 		
 		return x;
@@ -56,7 +82,7 @@ public class exercicio_12_vetores_matrizes {
      */
 	static void exibeXadrez(String x[][]) 
 	{
-		System.out.println("Matriz: ");
+		System.out.println("Tabuleiro de Xadrez: ");
 		for (int i = 0; i < x.length; i++) 
 		{
 			for (int j = 0; j < x[i].length; j++) 
@@ -65,5 +91,24 @@ public class exercicio_12_vetores_matrizes {
 			}
 			System.out.println(" ");
 		}
+	}
+	
+	/********************************************
+     * Procedure que soma os valores da matriz
+     */
+	static void calcTotal(String x[][]) 
+	{
+		int somar = 0;
+		for(int i = 0; i < x.length; i++)
+		{
+			for( int j = 0; j < x[i].length; j++)
+			{
+				if (i <= 1 || i >= 6)
+				{
+					somar += Integer.parseInt(x[i][j]);
+				}
+			}
+		}
+		System.out.println("\nTotal do tabuleiro: " + somar);
 	}
 }
