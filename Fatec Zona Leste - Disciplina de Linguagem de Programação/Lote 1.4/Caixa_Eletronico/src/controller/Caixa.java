@@ -1,17 +1,18 @@
 package controller;
 
 import view.Principal;
+import controller.Sacar;
 
 public class Caixa {
 	
-	private int caixa[] = new int[6];
+	static int caixa[] = new int[6]; // contém os valores disponíveis para saque
 	
 	/***************************************************
 	 * Método contrutor para atribuir o valor ao caixa 
 	 */
-	public Caixa(int[] notas) 
+	public Caixa(int[] quantNoCaixa) 
 	{
-		int quant = 0;
+		int notas = 0;
 		
 		System.out.println("\n\n");
 		
@@ -20,27 +21,30 @@ public class Caixa {
 			switch (i) 
 			{
 				case 0:
-					quant = 5;
+					notas = 5;
 					break;
 				case 1:
-					quant = 10;
+					notas = 10;
 					break;
 				case 2:
-					quant = 20;
+					notas = 20;
 					break;
 				case 3:
-					quant = 50;
+					notas = 50;
 					break;
 				case 4:
-					quant = 100;
+					notas = 100;
 					break;
 				case 5:
-					quant = 200;
+					notas = 200;
 					break;
 			}
-			this.caixa[i] = notas[i] * quant;
-			System.out.println("Notas de " + quant + " - Valor R$ " + caixa[i]);
+			caixa[i] = quantNoCaixa[i] * notas;
+			System.out.println("Notas de " + notas + " - Valor R$ " + caixa[i]);
 		}
+		
+		Sacar caixa = new Sacar();
+		caixa.caixa(caixa);
 		
 		Principal.limparConsole();
 		System.out.print("As notas foram carregas com sucesso!\n"
@@ -48,11 +52,19 @@ public class Caixa {
 		Principal.menu();	
 	}
 	
-	/********************************
-	 * Método que gerencia o caixa.
-	 */
-	public static void saque()
+	/****************************************
+	 * Método que gerencia saque do caixa.
+	 *
+	public saque(int valor)
 	{
 		
 	}
+	
+	public saqueAutomatico()
+	{
+		// incluir o tratamento de 100 transações automáticas
+		Sacar sacar = new Sacar(caixa);
+		sacar.start();
+	}
+	*/
 }

@@ -4,6 +4,7 @@ public class CarregaNotas {
 
 	static int vetNotas[] = new int[6];
 	
+	
 	public static void CarregaNotas() 
 	{	
 		System.out.print("Aguarde enquanto as notas são carregadas");
