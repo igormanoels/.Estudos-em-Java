@@ -1,0 +1,13 @@
+package exercicio001;
+
+public class Funcoes {
+
+	public int[] gerarMatriz(int[] v)
+	{
+		for (int i = 0; i < v.length; i++) 
+		{
+			v[i] = (int) (Math.round(Math.random() * 101));
+		}
+		return v;
+	}
+}
