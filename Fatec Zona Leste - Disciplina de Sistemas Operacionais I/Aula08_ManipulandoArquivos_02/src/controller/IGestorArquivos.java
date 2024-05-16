@@ -1,5 +1,6 @@
 package controller;
 
-public interface IGestorArquivos {
+public interface IGestorArquivos 
+{
     void listFilesBySize(String diretorio);
 }
