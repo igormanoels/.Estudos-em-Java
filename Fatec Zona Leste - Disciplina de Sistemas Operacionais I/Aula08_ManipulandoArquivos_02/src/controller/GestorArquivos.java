@@ -1,5 +1,3 @@
-// No pacote controller
-
 package controller;
 
 import java.io.File;

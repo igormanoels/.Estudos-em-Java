@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PrimeiraAplicacao</string>
+    <string name="Sinicial">S inicial (m)</string>
+    <string name="velocidade">Velocidade (m/s)</string>
+    <string name="tempo">Tempo (s)</string>
+    <string name="sFinal">S =</string>
+    <string name="calcular">Calcular</string>
+    <string name="Title">Equação Horária do Movimento Uniforme</string>
+</resources>
