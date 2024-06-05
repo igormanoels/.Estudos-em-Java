@@ -1,12 +1,7 @@
 package edu.dio.exercicio01;
 
-/*	
- * 	Ex. Vamos criar um exemplo de uma classe para representar uma SmartTV onde:
- * 	1. Ela tenha as características: ligada (boolean), canal (int) e volume (int)
- * 	2. Nossa TV poderá ligar e desligar e assim mudar o estado ligada
- * 	3. Nossa TV aumentará e diminuirá o volume sempre em +1 ou -1
- * 	4. Nossa TV poderá mudar de canal de 1 em 1 ou definindo o número correspondente 
- */
+import javax.swing.JOptionPane;
+
 public class SmartTV 
 {
 	// estado inicial da tv
@@ -14,23 +9,41 @@ public class SmartTV
 	int canal = 1;
 	int volume = 15;
 	
+	
 	public void ligar()
 	{
 		ligada = true;
+		JOptionPane.showMessageDialog(null, "A TV está Ligada"
+					+ "\n Canal: " + canal 
+					+ "\n Volume: " + volume);
 	}
+	
 	
 	public void desligar()
 	{
 		ligada = false;
+		JOptionPane.showMessageDialog(null, "Tv Desligada, até logo!");
 	}
+	
 	
 	public void aumentarVolume()
 	{
 		volume++;
+		JOptionPane.showMessageDialog(null, "Volume: " + volume);
 	}
+	
 	
 	public void diminuirVolume()
 	{
 		volume--;
+		JOptionPane.showMessageDialog(null, "Volume: " + volume);
 	}
+	
+	
+	public void trocarCanal()
+	{
+		canal = Integer.parseInt(JOptionPane.showInputDialog("Digite o canal desejado: "));
+		JOptionPane.showMessageDialog(null, "Canal escolhido: " + canal);
+	}
+	
 }
