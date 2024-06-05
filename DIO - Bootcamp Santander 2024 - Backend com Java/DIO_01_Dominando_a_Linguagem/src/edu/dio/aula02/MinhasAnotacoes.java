@@ -1,6 +1,7 @@
-package edu.dio.aula002;
+package edu.dio.aula02;
 
-public class MinhasAnotacoes {
+public class MinhasAnotacoes 
+{
 	public static void main(String[] args) 
 	{
 		
@@ -43,23 +44,58 @@ public class MinhasAnotacoes {
 		
 		
 		// Operadores Unários 
-		int numero = 5; 						// Número positivo
+		int numero = 5; 						// Declaração de variável
 		numero++;								// Incremente 1 a variável
+		int x = numero ++;						// Incrementa o valor após atribuição
 		numero--;								// Decrementa 1 a variável
-		numero = - numero;						// transforma o número em negativo
+		numero = -numero;						// transforma o número em negativo
+		int y = numero --;						// Decrementa o valor após atribuição
 		
-		// Operadores Ternários
+		boolean a = true;
+		boolean b = !a;							// Inverte o operador lógico negando o valor atribuido
 		
+		int c = 0;       						// Inverte o valor considerando as posições binárias
+		int d = ~c; 							// -6 -5 -4 -3 -2 -1 | 0 1 2 3 4 5
 		
-		String nomeCompleto = meuNome.concat(" " + sobreNome); // Concatena um texto
-		System.out.println(nomeCompleto);
-		
-		int ano = 2020;
-		ano = 2023;
-		final String br = "Brasil"; // a palavra reservada final faz com que a variável se torne imutável
-		
-		
+		double e = 5.5;							// Casting de um valor
+		int f = (int) e; 
 
 		
+		// Operadores Ternários
+        String categoria = (idade >= 18) ? "Maior de Idade" : "Menor de Idade";		
+        	// Verifica se uma condição é verdadeira ou falsa
+        	// Tipo Varialvel = Condicao ? Verdadeiro : Falso;
+        
+        
+        // Operadores Relacionais
+        categoria = (idade > 18) ? "Maior" : "Menor ou Igual";		// Operador maior  
+        categoria = (idade < 18) ? "Menor" : "Maior ou Igual";		// Operador menor
+        categoria = (idade >= 18) ? "Maior ou igual" : "Menor";		// Operador maior ou igual 
+        categoria = (idade <= 18) ? "Menor ou Igual" : "Maior";		// Operador menor ou igual
+        categoria = (idade == 18) ? "É Igual" : "É Diferente";		// Operador igual
+        categoria = (idade != 18) ? "É diferente" : "É Igual";		// Operador Diferente
+        
+        String texto1 = "casa";
+        String texto2 = "roupa";
+        boolean compara = texto1.equals(texto2); 					// retorna true ou false        
+        
+        
+        // Operadores Lógicos
+        int nota = 7;
+        String avaliar1 = (nota >= 6 && nota <= 10) ? "Aprovado" : "Reprovado";				// Condição 'E'/'AND'
+        String avaliar2 = (nota >= 4 || idade < 6) ? "Exame" : "Não ficou de Exame";		// Condição 'OU'/'OR'
+        String avaliar3 = (nota != 10)? "Aprovado":"Aprovado com louvor!" ;					// Negação	'Not'
+        
+        boolean avaliar4 = true;		// estabelece condição como verdadeira
+        avaliar4 = !avaliar4;			// nega a condição e inverte para falsa
+        
+        
+		// Testes
+		String nomeCompleto = meuNome.concat(" " + sobreNome); // Concatena um texto
+		System.out.println(avaliar4);
+		
+		final String br = "Brasil"; // a palavra reservada final faz com que a variável se torne imutável
+		
+				
 	}
 }

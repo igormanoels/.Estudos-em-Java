@@ -1,6 +1,7 @@
-package edu.dio.aula001;
+package edu.dio.aula01;
 
-public class PrimeiroPrograma {
+public class PrimeiroPrograma 
+{
 
 	public static void main(String[] args) 
 	{
