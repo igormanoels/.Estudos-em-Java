@@ -11,7 +11,7 @@
         android:id="@+id/etSInicial"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="172dp"
         android:ems="12"
         android:hint="@string/Sinicial"
         android:importantForAutofill="no"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSInicial"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/etTempo"

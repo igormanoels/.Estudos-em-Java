@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CalculadoraEqSegGrau</string>
+    <string name="title">Cálculadora - Equação de Segundo Grau</string>
+    <string name="valorA">Informe o valor de A</string>
+    <string name="valorB">Informe o valor de B</string>
+    <string name="valorC">Informe o valor de C</string>
+    <string name="x1Linha">Valor de x1: </string>
+    <string name="x2Linha">Valor de x2: </string>
+    <string name="calcular">Calcular</string>
+
+</resources>
