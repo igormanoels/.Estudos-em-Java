@@ -1,6 +1,6 @@
 package edu.dio.aula03;
 
-public class TrabalhandoComMetodos 
+public class Metodos 
 {
 	// Variáveis Globais 
 	// Acessíveis em todos os métodos de classe, independentemente de uma instância da classe.
