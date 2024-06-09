@@ -15,3 +15,11 @@
 **Exercícios do e estudos realizados no curso de Programação Oracle - Java Foundations, pelo Senai.**
 - 500 algoritmos (Livro: Introdução à Programação - 500 Algoritmos Resolvidos)
 - Anotações e atividades realizadas no decorrer do curso
+
+<br>
+
+**Exercícios da DIO - Bootcamp Santander 2024 - Backend com Java**
+- Fundamentos (Java e sua história, Plataformas, Configurando o ambiente, Escolha sua IDE)
+- Sintaxe (Anatomia das classes, Tipos e Variáveis, Operadores, Métodos, Escopo, Palavras reservadas, Documentação, Terminal e Argumentos)
+- Controle de fluxo (Conceito, Estruturas condicionais, Estruturas de repetição, Estruturas excepcionais)
+- Programação Orientada a Objetos (Conceito de POO, Classes, Getters e Setters, Construtores, Enums, UML, Pilares do POO, Encapsulamento, Herança, Abstração, Polimorfimo)
