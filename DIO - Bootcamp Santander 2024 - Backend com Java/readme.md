@@ -17,7 +17,7 @@ Neste repositório se encontram as anotações, exercícios e desafios realizado
 <br>
 <br>
 
-## 📖 MATERIAL REFERÊNCIA 
+## 📖 MATERIAL DE REFERÊNCIA 
 link: https://web.dio.me/
 
 link: https://github.com/digitalinnovationone/trilha-java-basico/tree/main
