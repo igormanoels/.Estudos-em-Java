@@ -8,10 +8,11 @@
 Trás um servidor que fica responsavél pelas áres de trabalho, porém se o servidor cair você não consegue trabalhar no projeto.
 
                 Servidor Central
-                Banco de Versões    
+               Banco de Versões    
                     Versão 3
 arquivo <---        Versão 2        ---> arquivo
                     Versão 1
+
 
 ### DVCS - Distribuído
 Trás os bancos de versão duplicados localmente, logo é possível realizar trabalhos mesmo com o servidor fora do ar.
@@ -21,14 +22,14 @@ Trás os bancos de versão duplicados localmente, logo é possível realizar tra
 - Possibilita um fluxo de trabalho flexível;
 - Possibilidade de trabalho sem conexão à rede.
 
-                Servidor Central
-                Banco de Versões    
+               Servidor Central
+               Banco de Versões    
                     Versão 3
-arquivo <--->       Versão 2       <---> arquivo
-Banco de Versões    Versão 1      Banco de Versões
-Versão 3                           Versão 3
-Versão 2       <------------>      Versão 2    
-Versão 1                           Versão 1
+arquivo <--->       Versão 2         <---> arquivo
+Banco de Versões    Versão 1        Banco de Versões
+Versão 3                             Versão 3
+Versão 2         <------------>      Versão 2    
+Versão 1                             Versão 1
 
 
 ## O que é Git?
@@ -37,8 +38,10 @@ Sistema de Controle de Versão Distribuído.
 - Ramificações (branching) e fusões (merging) eficientes;
 - Leve e rápido.
 
-[link sobre o Git] (https://www.git-scm.com/about)
-[link da Documentação] (https://www.git-scm.com/doc)
+[link sobre o Git](https://www.git-scm.com/about)
+
+[link da Documentação](https://www.git-scm.com/doc)
+
 
 ### Configurando e Comandos
 - ctrl + L: limpa o terminal
@@ -84,16 +87,19 @@ Plataforma de hospedagem de código para controle de versão com Git, e colabora
 - linguagem utilizada em repositórios para arquivos ReadMe.md é o Markdown;
 - Apertando apenas o **.** no teclado dentro do repositório do GitHub estando logado, você tem acesso ao VSCode online.
 
-[link GitHub] (https://github.com/)
-[link Guia do Markdown] (https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
-[link Plataforma de desenvolvimento em Markdown] (https://readme.so/pt)
+[link GitHub](https://github.com/)
+
+[link Guia do Markdown](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
+
+[link Plataforma de desenvolvimento em Markdown](https://readme.so/pt)
 
 
 ## O que é um Branch (ramo)
 É uma ramificação do projeto, que aposta para o último commit realizado.
 - Branch **main** é a principal do projeto
 - Pode haver mais de uma Branch, com nomes independentes para o teste de funcionalidades
-- Para a **main** aponte para outras branches é necessário realizar a mesclagem 
+- Para a **main** aponte para outras branches é necessário realizar a mesclagem
+- Comandos para gestão das Branches: 
     - git checkout -b **NomeDaBranch**: Cria uma Branch para a reaização de commit
     - git commit -v: Lista os últimos commit realizados para as branches
     - git marge **NomeDaBranch**: Quando dentro da main ele executa a mesclagem com a branch apontada
