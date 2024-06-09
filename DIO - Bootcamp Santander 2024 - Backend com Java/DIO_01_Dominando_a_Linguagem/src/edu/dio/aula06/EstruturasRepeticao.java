@@ -1,7 +1,5 @@
 package edu.dio.aula06;
 
-import java.util.Iterator;
-
 public class EstruturasRepeticao 
 {
 	public static void main(String[] args) 
