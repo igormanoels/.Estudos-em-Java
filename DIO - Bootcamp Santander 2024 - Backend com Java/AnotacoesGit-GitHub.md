@@ -73,6 +73,7 @@ Sistema de Controle de Versão Distribuído.
 - git add **NomeDoArquivo**: Coloca o arquivo dentro da área de preparação para commit.
 - git add . : Coloca todo o conteúdo do diretório na área de preparação.
 - git log: Mostra as informações de identidade sobre o commit.
+    - Para sair do **git log** basta apertar a letra **q**
 - git commit -"Espaço para colocar a mensagem desejada sobre o commit": Grava alterações no repositório.
 - git pull: Puxa as alterações do repositório para o local (busca e mescla).
 - git push: Empurra as alterações do repositório local para o remoto.
@@ -109,3 +110,9 @@ Plataforma de hospedagem de código para controle de versão com Git, e colabora
     - git stash list: Lista as modificações que foram arquivadas
 
 
+## Trabalhando com Issues
+São sugestões que podemos realizar dentro dos repositórios do GitHub
+- Em configurações do repositório é possível criar tampletes de **Issues** para melhor comunicação entre a comunidade;
+- Abrir uma **Issues** contribui com o desenvolvimento da comunidade;
+- Há a possibilidade de atribuir o desenvolvimento de uma **Issues** a um usuário;
+- Ao realizar o **commit** que resolve a **Issues**, utilize o texto **fix #NumDaIssues** para que ela seja encerrada.
