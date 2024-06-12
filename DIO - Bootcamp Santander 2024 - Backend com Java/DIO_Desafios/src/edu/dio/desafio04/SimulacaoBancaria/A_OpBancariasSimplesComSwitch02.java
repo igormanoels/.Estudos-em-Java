@@ -26,7 +26,7 @@ import java.util.Scanner;
  *  	0: O programa encerrará, imprimindo "Programa encerrado.".
  * 
  */
-public class Simulador 
+public class A_OpBancariasSimplesComSwitch02 
 {
 	public static void main(String[] args) 
 	{
