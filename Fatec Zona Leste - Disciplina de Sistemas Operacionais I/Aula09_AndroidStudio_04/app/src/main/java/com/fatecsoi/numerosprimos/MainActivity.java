@@ -1,7 +1,6 @@
-package com.fatecsoi.omaior;
+package com.fatecsoi.numerosprimos;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,51 +35,34 @@ public class MainActivity extends AppCompatActivity {
         valorB.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
 
         Button btnCalc = findViewById(R.id.btnVerificar);
-        btnCalc.setOnClickListener(op -> calc()); // Botão chama a função de calculo
+        btnCalc.setOnClickListener(op -> verificarPrimos()); // Botão chama a função de calculo
 
         res = findViewById(R.id.tvRes);
         res.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
     }
 
-    private void calc() {
+    private void verificarPrimos()
+    {
         String result;
         int A = Integer.parseInt(valorA.getText().toString());
         int B = Integer.parseInt(valorB.getText().toString());
 
-        StringBuilder primeNumbers = new StringBuilder();
-
-        if (A <= B) {
-            if (A >= 0 && B <= 50) {
-                for (int i = A; i <= B; i++) {
-                    if (ePrime(i)) {
-                        primeNumbers.append(i).append(" ");
-                    }
-                }
-                result = primeNumbers.toString();
-            } else {
-                result = "A entrada precisa ser de valores entre 0 e 50.";
-            }
-        } else {
-            result = "O valor de A precisa ser menor ou igual ao valor de B.";
+        if (A == B)
+        {
+            result = "Os valores são iguais.";
+        } else if (A > B)
+        {
+            result = "O Maior valor é o " + A;
         }
-
+        else
+        {
+            result = "O Maior valor é o " + B;
+        }
         res.setText(result);
 
 
         valorA.setText("");
         valorB.setText("");
-5
-    }
 
-    public static boolean ePrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }
