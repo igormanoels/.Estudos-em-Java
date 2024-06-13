@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OMaior</string>
+    <string name="title">Qual o maior número?</string>
+    <string name="valorA">Informe o valor de A</string>
+    <string name="valorB">Informe o valor de B</string>
+    <string name="verificar">Verificar</string>
+    <string name="result">Veja o resultado!</string>
+
+</resources>
