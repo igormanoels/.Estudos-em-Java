@@ -1,4 +1,4 @@
-package edu.dio.desafio04.SimulacaoBancaria;
+package edu.dio.desafio04.Lista5Desafios;
 
 import java.util.Scanner;
 
