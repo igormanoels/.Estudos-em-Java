@@ -7,10 +7,11 @@ public class MinhasAnotacoes
 		
 		/* 	Nomeando pacotes
 		 * 
-		 * 	com.empresa.NomeDaAplicação			--> Nomeando para empresa/ organizacional
+		 * 	gov.projeto							--> Nomeando pacotes para orgãos governamentais 
+		 * 	com.empresa.NomeDaAplicação			--> Nomeando pacotes para empresa/ organizacional
 		 * 	edu.seuNome.tema.NomeDaAplicação	--> Nomeando pacotes para projetos educacionais
 		 * 	opensource.projeto					--> Nomeando pacotes abertos ao público
-		 *	 
+		 *	ou org.projeto 						--> Nomeando pacotes abertos ao público
 		 */
 		
 		
