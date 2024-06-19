@@ -1,4 +1,4 @@
-package edu.dio.aula02.lanchonete;
+package edu.dio.aula02.lanchoneteVisibilidade;
 
 public class Almoxarife 
 {

@@ -1,4 +1,4 @@
-package edu.dio.aula01;
+package edu.dio.aula01ClassesEPacotes;
 
 public class Estudante 
 {

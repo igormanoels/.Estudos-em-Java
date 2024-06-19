@@ -1,4 +1,4 @@
-package edu.dio.aula01;
+package edu.dio.aula01ClassesEPacotes;
 
 	/* 	Classes (class) - Estrutura direcionada da criação de um objeto
 	 * 	Identificador (identity) - Próposito dos objetos
