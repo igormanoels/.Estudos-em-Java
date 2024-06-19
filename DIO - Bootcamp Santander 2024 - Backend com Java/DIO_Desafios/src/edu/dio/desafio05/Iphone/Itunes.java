@@ -11,8 +11,15 @@ public class Itunes implements ControleMidia
 	
 	public void Silenciar() 
 	{
-		this.setSilenciado(true);
-		System.out.println("Volume desativado");
+		this.silenciado = !silenciado; // usado para inverter a operação
+		if (silenciado == true) 
+		{
+			System.out.println("Volume ativado");
+		}
+		else 
+		{
+			System.out.println("Volume desativado");
+		}
 	}
 
 	public void Aumentar() 

@@ -43,7 +43,8 @@ public class Principal
 							+ "6 - Trocar Música\n"
 							+ "Digite a opção desejada: ");
 					op = ler.nextInt();
-					switch (op) {
+					switch (op) 
+					{
 						case 1:
 							itunes.Tocar();
 							break;
@@ -65,21 +66,81 @@ public class Principal
 					}
 					break;
 				case 2:
+					FaceTime faceTime = new FaceTime();
+					System.out.print("\nMenu FaceTime\n"
+							+ "1 - Ligar\n"
+							+ "2 - Correio de Voz\n"
+							+ "3 - Aumentar Volume\n"
+							+ "4 - Diminuir Volume\n"
+							+ "5 - Silenciar\n"
+							+ "6 - Atender Chamada\n"
+							+ "7 - Encerrar Chamada\n"
+							+ "Digite a opção desejada: ");
+					op = ler.nextInt();
 					
+					switch (op) 
+					{
+						case 1:
+							faceTime.Ligar(ler);
+							break;
+						case 2:
+							faceTime.CorreioDeVoz();
+							break;
+						case 3:
+							faceTime.Aumentar();
+							break;
+						case 4:
+							faceTime.Diminuir();
+							break;
+						case 5:
+							faceTime.Silenciar();
+							break;
+						case 6:
+							faceTime.AtenderChamada();
+							break;
+						case 7:
+							faceTime.EncerrarChamada();
+							break;
+					}
 					break;
 				case 3:
+					Safari safari = new Safari();
+					System.out.print("\nMenu Safari\n"
+							+ "1 - Digitar Site\n"
+							+ "2 - Abrir uma nova aba\n"
+							+ "3 - Atualizar Página\n"
+							+ "4 - Fechar uma aba\n"
+							+ "Digite a opção desejada: ");
+					op = ler.nextInt();
 					
+					switch (op) 
+					{
+						case 1:
+							safari.CarregarPagina();
+							break;
+						case 2:
+							safari.NovaAba();
+							break;
+						case 3:
+							safari.AtualizarPagina();
+							break;
+						case 4:
+							safari.FecharAba();
+							break;
+					}
 					break;
 				case 4:
 					System.out.print("Desligando Iphone");
 					try {
-						for (int i = 0; i < 3; i++) {
+						for (int i = 0; i < 5; i++) {
 							Thread.sleep(1000);
 							System.out.print(".");
 						}
+						Thread.sleep(1000);
 					} catch (Exception e) {
 						// TODO: handle exception
 					}
+					System.out.println(" Até logo!");
 					ligado = false;
 					break;
 	
