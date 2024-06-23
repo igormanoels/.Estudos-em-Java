@@ -1,6 +1,7 @@
 package edu.dio.exercicio01;
 
-public class Itens {
+public class Itens 
+{
     private String nome;
     private double preco;
     private int quantidade;
