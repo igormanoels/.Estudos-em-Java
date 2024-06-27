@@ -1,4 +1,4 @@
-package edu.dio.aula12.CollectionList;
+package edu.dio.aula12.List;
 
 /*
  * Crie uma classe chamada "ListaTarefas" que possui uma lista de tarefas como atributo. 

@@ -1,4 +1,4 @@
-package edu.dio.aula12.CollectionList;
+package edu.dio.aula12.List;
 
 import java.util.ArrayList;
 import java.util.List;
