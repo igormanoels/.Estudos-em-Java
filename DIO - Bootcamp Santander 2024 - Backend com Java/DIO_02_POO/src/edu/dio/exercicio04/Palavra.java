@@ -2,7 +2,7 @@ package edu.dio.exercicio04;
 
 import java.util.Objects;
 
-public class Palavra //implements Comparable<Palavra>
+public class Palavra 
 {
 	private String palavra;
 	
@@ -12,13 +12,6 @@ public class Palavra //implements Comparable<Palavra>
 		this.palavra = p;
 	}	
 	
-//	
-//	// Método de Comparação
-//	public int compareTo(Palavra o) 
-//	{
-//		return palavra.compareToIgnoreCase(o.getPalavra());
-//	}
-//	
 	
 	// Método para impedir que as palavras se repitam
 	public int hashCode()
