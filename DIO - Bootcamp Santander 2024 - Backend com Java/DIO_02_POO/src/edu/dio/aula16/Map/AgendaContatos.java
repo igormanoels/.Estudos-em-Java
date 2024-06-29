@@ -22,7 +22,8 @@ public class AgendaContatos
 	{
 		if (!(agendaMap.isEmpty())) 
 		{
-			agendaMap.remove(nome);		}
+			agendaMap.remove(nome);		
+		}
 	}
 	
 	public void exibirContatos()
