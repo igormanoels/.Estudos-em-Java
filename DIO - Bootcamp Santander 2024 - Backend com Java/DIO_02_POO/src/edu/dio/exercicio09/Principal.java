@@ -35,10 +35,12 @@ public class Principal
 		{
 			op = Integer.parseInt(JOptionPane.showInputDialog(null, 
 					  "0- Finalizar.\n"
-					+ "1- Adicionar Palavra.\n"
-					+ "2- Remover Palavras.\n"
-					+ "3- Mostrar Dicionário.\n"
-					+ "4- Verificar qual a palavra mais frequente.\n"
+					+ "1- Adicionar um Livro.\n"
+					+ "2- Remover um Livro.\n"
+					+ "3- Mostrar livros ordenados por Preço.\n"
+					+ "4- Pesquisar livro por autor.\n"
+					+ "5- Verificar qual é o livro mais caro.\n"
+					+ "6- Verificar qual é o livro mais barato.\n"
 					+ "Digite a opção desejada: ",
 					"MENU", JOptionPane.QUESTION_MESSAGE));
 			
@@ -60,14 +62,24 @@ public class Principal
 					livro.adicionarPalavra(link, titulo, autor, preco);
 					break;
 				case 2:
-					
+					titulo = JOptionPane.showInputDialog(null,"Informe agora o título: ", 
+							"ADICIONAR LIVRO: ", JOptionPane.INFORMATION_MESSAGE );
+					livro.removerLivro(titulo);
 					break;
 				case 3:
 					
 					break;
 				case 4:
-					
+					autor = JOptionPane.showInputDialog(null,"Informe e agora o autor: ", 
+							"ADICIONAR LIVRO: ", JOptionPane.INFORMATION_MESSAGE );
+					livro.pesquisarLivrosPorAutor(autor);
 					break;
+				case 5:
+					livro.obterLivroMaisCaro();
+					break;
+				case 6:
+					livro.exibirLivroMaisBarato();
+						break;		
 				default:
 					JOptionPane.showMessageDialog(null, "Digite uma opção conforme o menu apresentado",
 							"OPÇÃO INVÁLIDA!", JOptionPane.ERROR_MESSAGE);

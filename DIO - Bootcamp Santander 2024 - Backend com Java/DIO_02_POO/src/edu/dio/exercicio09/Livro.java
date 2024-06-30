@@ -1,6 +1,6 @@
 package edu.dio.exercicio09;
 
-public class Livro implements Comparable
+public class Livro implements Comparable<Livro>
 {
 
 	private String titulo;
@@ -16,10 +16,10 @@ public class Livro implements Comparable
 	}
 	
 
-	// Método de Comparação, 
-	public int compareTo(Object o) 
+	// Método de comparação
+	public int compareTo(Livro o) 
 	{
-		return 0;
+		return Double.compare(preco, o.getPreco());
 	}
 
 	
@@ -54,8 +54,6 @@ public class Livro implements Comparable
 	{
 		return "\nLivro: " + titulo + ", Autor: " + autor 
 				+ ", preço: R$ " + preco;
-	}
-	
-	
+	}	
 	
 }
