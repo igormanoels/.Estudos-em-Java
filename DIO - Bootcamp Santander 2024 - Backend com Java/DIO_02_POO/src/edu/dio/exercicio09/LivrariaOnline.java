@@ -2,6 +2,7 @@ package edu.dio.exercicio09;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -49,9 +50,10 @@ public class LivrariaOnline
 	
 	public void exibirLivrosOrdenadosPorPreco()
 	{
-		Map<String, Livro> livrosOrdenados = new HashMap<>();
-		Collections.sort((List<T>) livrariaMap);
-		
+		for (Map.Entry<String, Livro> entry : livrariaMap.entrySet()) 
+		{
+			System.out.println(entry.getValue().getTitulo() + ", Preço: " + entry.getValue().getPreco());
+		}
 	}
 	
 	public void pesquisarLivrosPorAutor(String autor)
