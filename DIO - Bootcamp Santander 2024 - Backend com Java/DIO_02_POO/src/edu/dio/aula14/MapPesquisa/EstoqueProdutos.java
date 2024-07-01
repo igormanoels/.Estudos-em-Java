@@ -1,4 +1,4 @@
-package edu.dio.aula16.MapPesquisa;
+package edu.dio.aula14.MapPesquisa;
 
 import java.util.HashMap;
 import java.util.Map;

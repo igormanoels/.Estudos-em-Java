@@ -1,4 +1,4 @@
-package edu.dio.aula15.SetPesquisa;
+package edu.dio.aula13.SetPesquisa;
 
 /*
  * Crie uma classe chamada "AgendaContatos" que possui um conjunto de objetos do tipo "Contato" 

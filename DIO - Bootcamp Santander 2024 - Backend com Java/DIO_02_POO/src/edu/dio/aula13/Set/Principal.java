@@ -1,4 +1,4 @@
-package edu.dio.aula15.Set;
+package edu.dio.aula13.Set;
 
 /*
  * Não pode ser utilizada em elementos duplicados

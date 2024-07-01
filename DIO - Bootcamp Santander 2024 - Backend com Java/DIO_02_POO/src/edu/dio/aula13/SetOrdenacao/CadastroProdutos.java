@@ -1,4 +1,4 @@
-package edu.dio.aula15.SetOrdenacao;
+package edu.dio.aula13.SetOrdenacao;
 
 import java.util.HashSet;
 import java.util.Set;

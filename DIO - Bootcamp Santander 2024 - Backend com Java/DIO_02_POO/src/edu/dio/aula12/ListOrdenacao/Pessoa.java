@@ -1,4 +1,4 @@
-package edu.dio.aula14.CollectionsOrdenacao;
+package edu.dio.aula12.ListOrdenacao;
 
 import java.util.Comparator;
 

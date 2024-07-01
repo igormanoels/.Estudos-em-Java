@@ -1,4 +1,4 @@
-package edu.dio.aula15.SetOrdenacao;
+package edu.dio.aula13.SetOrdenacao;
 
 /*
  * Crie uma classe chamada "CadastroProdutos" que possui um conjunto de objetos 
