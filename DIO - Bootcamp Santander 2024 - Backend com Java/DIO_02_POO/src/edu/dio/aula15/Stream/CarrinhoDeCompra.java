@@ -1,6 +1,5 @@
 package edu.dio.aula15.Stream;
 
-import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,7 +28,8 @@ public class CarrinhoDeCompra
 		}
 		// Retorna da lista, a multiplicação de todos os preços pelas quantidades. E depois soma os valores.
 		return carrinhoSet.stream()
-				.mapToDouble(Lista -> Lista.getPreco() * Lista.getQuant())
+				// Esse tipo de expressão é conhecido como lambda
+				.mapToDouble(Lista -> Lista.getPreco() * Lista.getQuant()) // método de escrita: Interface funcional "Argumento -> Corpo"
 				.sum();
 	}
 	
