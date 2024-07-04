@@ -19,7 +19,7 @@ public class PredicateExemplo
 		// Verifica as palavras que tem um comprimento maior q 5
 		Predicate<String> maisDeCincoLetras = palavra -> palavra.length() > 5;
 		
-		// Filtra as palavras cujjo a  regraa siga o predicate implemeentado, depois imprime
+		// Filtra as palavras cujo a  regraa siga o predicate implemeentado, depois imprime
 		palavras.stream()
 			.filter(maisDeCincoLetras)
 			.forEach(System.out::println);
