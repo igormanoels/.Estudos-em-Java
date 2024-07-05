@@ -1,8 +1,13 @@
 package edu.dio.exercicio10;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import javax.swing.JOptionPane;
 
@@ -68,6 +73,7 @@ public class Desafios
 				"DESAFIO 4:", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	
 	/* Desafio 5 - Calcule a média dos números maiores que 5: 
 	 * Com a Stream API, calcule a média dos números maiores que 5 e exiba o resultado no console.
 	 */
@@ -105,6 +111,7 @@ public class Desafios
 				"Desafio 6: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	
 	/* Desafio 7 - Encontrar o segundo número maior da lista:
 	 * Com a ajuda da Stream API, encontre o segundo número maior da lista e exiba o resultado no console.
 	 */
@@ -125,6 +132,7 @@ public class Desafios
 				"Desafio 7: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	
 	/* Desafio 8 - Somar todos os números da lista:
 	 * Utilizando a Stream API, realize a soma dos dígitos de todos os números da lista e exiba o resultado no console.
 	 */
@@ -137,12 +145,26 @@ public class Desafios
 				"Desafio 8: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	
 	/* Desafio 9 - Verificar se todos os números da lista são distintos (não se repetem):
 	 * Com a Stream API, verifique se todos os números da lista são distintos (não se repetem) e exiba o resultado no console.
 	 */
 	static void Desafio09(List<Integer> numeros)
 	{
+		Set<Integer> listaComparacao = numeros.stream()
+				.collect(Collectors.toSet()); // Cria um Set<>, sem repetir os valores da lista
 		
+		if (numeros.size() != listaComparacao.size()) // compara o comprimento das listas
+		{
+			System.out.println(numeros.size() +  "" + listaComparacao.size());
+			JOptionPane.showMessageDialog(null, "A lista contém valores repetidos.", 
+					"Desafio 9: ", JOptionPane.INFORMATION_MESSAGE);
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "A lista não contém valores repetidos.", 
+					"Desafio 9: ", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	
 	/* Desafio 10 - Agrupe os valores ímpares múltiplos de 3 ou de 5:
@@ -150,7 +172,21 @@ public class Desafios
 	 */
 	static void Desafio10(List<Integer> numeros)
 	{
+		List<Integer> multiplosImpares = numeros.stream()
+				.filter(n -> n % 2 != 0)
+				.filter(n -> n % 3 == 0 || n % 5 == 0)
+				.collect(Collectors.toList());
 		
+		if (!(multiplosImpares.isEmpty())) 
+		{
+			JOptionPane.showMessageDialog(null, "Lista: " + multiplosImpares, 
+					"Desafio 10: ", JOptionPane.INFORMATION_MESSAGE);
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "Lista está vazia, não contendo elementos segundo a regra desejada", 
+					"Desafio 10: ", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	
 	/* Desafio 11 - Encontre a soma dos quadrados de todos os números da lista:
@@ -158,7 +194,11 @@ public class Desafios
 	 */
 	static void Desafio11(List<Integer> numeros)
 	{
+		int somaDosQuadrados = numeros.stream()
+				.reduce(0, (n1, n2) -> n1 + (int) (Math.pow(n2, 2)));
 		
+		JOptionPane.showMessageDialog(null, "A soma dos quadrados é " + somaDosQuadrados, 
+				"Desafio 11: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/* Desafio 12 - Encontre o produto de todos os números da lista:
@@ -166,7 +206,12 @@ public class Desafios
 	 */
 	static void Desafio12(List<Integer> numeros)
 	{
+		List<Integer> produtosList = numeros.stream()
+				.map(n -> n * 2)
+				.collect(Collectors.toList());
 		
+		JOptionPane.showMessageDialog(null, "Lista com os produtos: " + produtosList, 
+				"Desafio 12: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/* Desafio 13 - Filtrar os números que estão dentro de um intervalo:
@@ -175,7 +220,24 @@ public class Desafios
 	 */
 	static void Desafio13(List<Integer> numeros)
 	{
+		int limInferior, limSuperior;
+		limInferior = Integer.parseInt(JOptionPane.showInputDialog("Informe o limite inferior: "));
+		limSuperior = Integer.parseInt(JOptionPane.showInputDialog("Informe o limite superior: "));
 		
+		List<Integer> intervaloList = numeros.stream()
+				.filter(n -> n >= limInferior && n <= limSuperior)
+				.collect(Collectors.toList());
+		
+		if (!(intervaloList.isEmpty())) 
+		{
+			JOptionPane.showMessageDialog(null, "Lista no intervalo de " + limInferior + " e " + limSuperior + ": " + intervaloList,
+					"Desafio 13: ", JOptionPane.INFORMATION_MESSAGE);
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "Não há valores para o intervalo informado",
+					"Desafio 13: ", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	
 	/* Desafio 14 - Encontre o maior número primo da lista:
@@ -183,7 +245,31 @@ public class Desafios
 	 */
 	static void Desafio14(List<Integer> numeros)
 	{
-		
+		 Predicate<Integer> verificaSePrimo = n -> 
+		 {
+			 if (n <= 1) 
+			 {
+				 return false;
+			 }
+			 return IntStream.rangeClosed(2, (int) Math.sqrt(n))
+					 .noneMatch(i -> n % i == 0);
+	     };
+
+	     List<Integer> maiorNumPrimo = numeros.stream()
+	    		 .filter(verificaSePrimo)
+	    		 .sorted(Comparator.reverseOrder()) // Ordena os valores do maior para o menor
+	    		 .collect(Collectors.toList());
+
+	     if (!maiorNumPrimo.isEmpty()) 
+	     {
+	    	 JOptionPane.showMessageDialog(null, "O maior número primo é " + maiorNumPrimo.get(0),
+	                    "Desafio 14: ", JOptionPane.INFORMATION_MESSAGE);
+	     } 
+	     else 
+	     {
+	    	 JOptionPane.showMessageDialog(null, "Não há números primos na lista.",
+	                    "Desafio 14: ", JOptionPane.ERROR_MESSAGE);
+	     }	
 	}
 	
 	/* Desafio 15 - Verifique se a lista contém pelo menos um número negativo:
@@ -191,7 +277,20 @@ public class Desafios
 	 */
 	static void Desafio15(List<Integer> numeros)
 	{
+		List<Integer> numerosNegativos = numeros.stream()
+				.filter(n -> n < 0)
+				.collect(Collectors.toList());
 		
+		if (!(numerosNegativos.isEmpty())) 
+		{
+			JOptionPane.showMessageDialog(null, "A lista possui números negativos.",
+					"Desafio 15: ", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "A lista não possui números negativos.",
+					"Desafio 15: ", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	
 	/* Desafio 16 - Agrupe os números em pares e ímpares:
@@ -200,7 +299,18 @@ public class Desafios
 	 */
 	static void Desafio16(List<Integer> numeros)
 	{
+		List<Integer> numerosPares = numeros.stream()
+				.filter(n -> n % 2 == 0)
+				.sorted()
+				.collect(Collectors.toList());
 		
+		List<Integer> numerosImpares = numeros.stream()
+				.filter(n -> n % 2 != 0)
+				.sorted()
+				.collect(Collectors.toList());
+		
+		JOptionPane.showMessageDialog(null,"Números pares: " + numerosPares + "\nNúmeros impares: " + numerosImpares,
+				"Desafio 16: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/* Desafio 17 - Calcule o fatorial de um número: 
@@ -209,7 +319,17 @@ public class Desafios
 	 */
 	static void Desafio17(List<Integer> numeros)
 	{
+		// Função para calcular o fatorial de um número
+		Function<Integer, Integer> calculaFatorial = n -> 
+        	IntStream.rangeClosed(1, n)
+        	.reduce(1, (a, b) -> a * b); 
 		
+		List<Integer>fatorialList = numeros.stream()
+				.map(calculaFatorial)
+				.collect(Collectors.toList());
+		
+		JOptionPane.showMessageDialog(null, "Fatorial da Lista: " + fatorialList, 
+				"Desafio 17: ", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/* Desafio 18 - Filtrar os números primos da lista:
@@ -217,7 +337,31 @@ public class Desafios
 	 */
 	static void Desafio18(List<Integer> numeros)
 	{
-		
+		Predicate<Integer> verificaSePrimo = n -> 
+		 {
+			 if (n <= 1) 
+			 {
+				 return false;
+			 }
+			 return IntStream.rangeClosed(2, (int) Math.sqrt(n))
+					 .noneMatch(i -> n % i == 0);
+	     };
+
+	     List<Integer> NumerosPrimos = numeros.stream()
+	    		 .filter(verificaSePrimo)
+	    		 .sorted()
+	    		 .collect(Collectors.toList());
+
+	     if (!NumerosPrimos.isEmpty()) 
+	     {
+	    	 JOptionPane.showMessageDialog(null, "O maior número primo é " + NumerosPrimos,
+	                    "Desafio 18: ", JOptionPane.INFORMATION_MESSAGE);
+	     } 
+	     else 
+	     {
+	    	 JOptionPane.showMessageDialog(null, "Não há números primos na lista.",
+	                    "Desafio 18: ", JOptionPane.ERROR_MESSAGE);
+	     }	
 	}
 	
 	/* Desafio 19 - Verifique se todos os números da lista são iguais:
@@ -225,7 +369,20 @@ public class Desafios
 	 */
 	static void Desafio19(List<Integer> numeros)
 	{
+		Set<Integer> listaApurada = numeros.stream()
+				.collect(Collectors.toSet());
 		
+		if (listaApurada.size() == 1) 
+		{
+			JOptionPane.showMessageDialog(null, "Todos os números da lista são iguais.",
+					"Desafio 19: ", JOptionPane.INFORMATION_MESSAGE);
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "Nem todos os números da lista são iguais.",
+					"Desafio 19: ", JOptionPane.INFORMATION_MESSAGE);
+
+		}
 	}
 	
 	/* Desafio 20 - Encontre a soma dos números divisíveis por 3 e 5:
@@ -233,7 +390,12 @@ public class Desafios
 	 */
 	static void Desafio20(List<Integer> numeros)
 	{
+		int numerosDivisiveis = numeros.stream()
+				.filter(n -> n % 3 == 0 && n % 5 == 0)
+				.reduce(0, Integer::sum);
 		
+		JOptionPane.showMessageDialog(null,"Soma dos números divisíveis por 3 e 5: " + numerosDivisiveis,
+				"Desafio 20: ", JOptionPane.INFORMATION_MESSAGE);
 	}	
 	
 }

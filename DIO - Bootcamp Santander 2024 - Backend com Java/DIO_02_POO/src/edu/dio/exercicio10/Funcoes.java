@@ -5,7 +5,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Funcoes {
-	
+	/* Criei uma classe para facilitar e reutilizar os códigos, 
+	 * mas preferi fazer um exercício por vez para treinar o uso do Stream API
+	 */
 	public static List<Integer> verificaNumerosPares(List<Integer> numeros)
 	{
 		Function<Integer, Integer> numeroPar = num -> {
