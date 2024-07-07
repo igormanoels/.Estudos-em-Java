@@ -1,16 +1,32 @@
 package edu.dio.desafio06.Banco;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Banco 
 {
-	public String nome;
+	protected final short agencia = 001;
+	protected final String endereco = "Rua das flores";
+	protected final short numero = 91;
+	protected final String bairro = "Sé";
+	protected final String estado = "São Paulo";
 	
-	public String getNome() {
-		return nome;
+	private List<Cliente> clientes;
+	
+	public Banco() 
+	{
+		this.clientes = new ArrayList<>();
+	}
+	protected void abrirConta() 
+	{
+		
 	}
 	
-	public void setNome(String nome) {
-		this.nome = nome;
+	protected void encerrarConta() 
+	{
+		
 	}
+	
 	
 	
 	

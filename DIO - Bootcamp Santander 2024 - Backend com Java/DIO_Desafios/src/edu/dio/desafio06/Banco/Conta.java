@@ -5,7 +5,7 @@ package edu.dio.desafio06.Banco;
  * isso deve ser feito, porque ao manusear o valores em uma transação, a conta a ser instanciada 
  * deva ser as classes ContaCorrente e ContaPoupanca
  */
-public abstract class Conta 
+public abstract class Conta extends Banco
 {
 	// PARA ESSE EXERCÍCIO A AGENCIA É ÚNICA, MAS PODERIA SER UM ENUM COM UMA LISTA COM TODAS AS FILIAIS DA EMPRESA
 	private final static int AGENCIA_PADRAO = 1234; 
@@ -19,7 +19,8 @@ public abstract class Conta
 	{
 		// Super é a forma de chamar pelos filhos os atributos da classe mãe
 		this.numero = SEQUENCIAL++;
-		this.agencia = Conta.AGENCIA_PADRAO;
+		this.agencia = super.agencia;
+		
 	}
 	
 		
