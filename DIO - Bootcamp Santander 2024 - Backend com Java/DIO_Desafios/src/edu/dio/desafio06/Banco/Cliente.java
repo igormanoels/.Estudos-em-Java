@@ -1,16 +1,8 @@
 package edu.dio.desafio06.Banco;
 
-public class Cliente 
+public interface Cliente 
 {
-	private String nome;
+	String getDocumento();
 	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	
+	void setConta(Conta conta);
 }

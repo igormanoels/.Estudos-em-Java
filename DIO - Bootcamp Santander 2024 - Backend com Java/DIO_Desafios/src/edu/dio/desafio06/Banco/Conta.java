@@ -1,45 +1,48 @@
 package edu.dio.desafio06.Banco;
 
-/*
- * Tornar a conta abstrata, faz com que outras classes não possam instanciar a classe Conta
- * isso deve ser feito, porque ao manusear o valores em uma transação, a conta a ser instanciada 
- * deva ser as classes ContaCorrente e ContaPoupanca
- */
 public abstract class Conta extends Banco
 {
-	// PARA ESSE EXERCÍCIO A AGENCIA É ÚNICA, MAS PODERIA SER UM ENUM COM UMA LISTA COM TODAS AS FILIAIS DA EMPRESA
-	private final static int AGENCIA_PADRAO = 1234; 
 	private static int SEQUENCIAL = 1;
 	
 	protected int agencia;
 	protected int numero;
 	protected double saldo;
+	protected Cliente cliente;
 	
-	public Conta() 
+	public Conta(Cliente cliente, double valor) 
 	{
-		// Super é a forma de chamar pelos filhos os atributos da classe mãe
-		this.numero = SEQUENCIAL++;
 		this.agencia = super.agencia;
-		
+		this.numero = SEQUENCIAL++;
+		this.saldo = valor;
+		this.cliente = cliente;
+		cliente.setConta(this);
 	}
 	
-		
+	
+	// MÉTODO PARA REALIZAR SAQUE
 	public void sacar(double valor) 
 	{
 		saldo -= valor;
 	}
 	
+	
+	// MÉTODO PARA REALIZAR DEPÓSITOS
 	public void depositar(double valor) 
 	{
 		saldo += valor;
 	}
 	
+	
+	// MÉTODO PARA REALIZAR TRANSFERÊNCIA
 	public void transferir(double valor, Conta contaDestino) {
 		this.sacar(valor); // INDICA UMA MOVIMENTAÇÃO DE SAQUE PARA ESSA CONTA
 		contaDestino.depositar(valor); // INDICA UMA MOVIMENTAÇÃO DE DEPÓSITO PARA OUTRA CONTA
 	}
 	
-	public abstract void extrato(); // MÉTODO ABSTRATO PORQUE CADA TIPO CONTA POSSUI UMA FORMA DE IMPRIMIR SUAS MOVIMENTAÇÕES
+	
+	// MÉTODO ABSTRATO PORQUE CADA TIPO CONTA POSSUI UMA FORMA DE IMPRIMIR SUAS MOVIMENTAÇÕES
+	public abstract void extrato(); 	
+	
 	
 	// Getters and Setters
 	public int getAgencia() {
@@ -52,5 +55,13 @@ public abstract class Conta extends Banco
 	
 	public double getSaldo() {
 		return saldo;
+	}
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 }
