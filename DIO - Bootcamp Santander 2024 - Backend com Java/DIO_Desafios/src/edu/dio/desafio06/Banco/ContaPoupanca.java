@@ -7,6 +7,8 @@ public class ContaPoupanca extends Conta
 		super(cliente, valor);	
 	}
 
+	public ContaPoupanca() {}
+	
 	
 	public void extrato()
 	{

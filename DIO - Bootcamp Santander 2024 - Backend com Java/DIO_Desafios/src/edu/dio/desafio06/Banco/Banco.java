@@ -13,8 +13,8 @@ public class Banco
 	protected final String bairroAgencia = "Sé";
 	protected final String estadoAgencia = "São Paulo";
 	
-	private List<PessoaFisica> clientesPF;
-	private List<PessoaJuridica> clientesPJ;
+	public List<PessoaFisica> clientesPF;
+	public List<PessoaJuridica> clientesPJ;
 	
 	Conta cc = new ContaCorrente(null, agencia);
 	Conta pp = new ContaPoupanca(null, agencia);
@@ -27,12 +27,15 @@ public class Banco
 	}
 	
 	
-	// MÉTODOS PARA REALIZAR ABERTURA DE CONTA PARA PESSOA FÍSICA E JURÍDICA.
+	/* 
+	 * MÉTODOS PARA REALIZAR ABERTURA DE CONTA PARA PESSOA FÍSICA E JURÍDICA.
+	 * COMO REGRA DE NEGÓCIO, OBRIGATÓRIAMENTE A ABERTURA DE CONTA PESSOA FÍSICA LEVA 5 REAIS
+	 * E AS CONTAS PESSOA JURÍDICA LEVAM 1000 NO ATO DA ABERTURA.
+	 */
 	public void abrirContaPF(String nome, String cpf, String rua, int numero, String bairro, String estado, String uf) 
 	{
 		PessoaFisica novoCliente = (new PessoaFisica (nome, cpf, rua, numero, bairro, estado, uf));
-		Conta contaCC = new ContaCorrente(novoCliente, 0.00);
-		Conta contaPP = new ContaPoupanca(novoCliente, 0.00);
+		Conta contaPP = new ContaPoupanca(novoCliente, 5.00);
 		clientesPF.add(novoCliente);
 		
 	}

@@ -6,6 +6,8 @@ public class ContaCorrente extends Conta
 	{
 		super(cliente, valor);
 	}
+	
+	public ContaCorrente() {}
 
 	
 	public void extrato()

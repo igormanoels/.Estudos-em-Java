@@ -6,12 +6,14 @@ public class Principal
 {
 	static int op;
 	static boolean continuar = true;
-	static String nome, cpf, cnpj, rua, bairro, estado, uf;
+	static String nome, cpf, cnpj, rua, bairro, estado, uf, conta1, conta2;
 	static int numero;
+	static double saque, deposito, transferencia;
 	
 	public static void main(String[] args)
 	{
-	//	Conta cc = new ContaCorrente();
+		Conta cc = new ContaCorrente();
+		Conta pp = new ContaPoupanca();
 		Banco banco = new Banco();
 		
 		while(continuar)
@@ -61,12 +63,65 @@ public class Principal
 					}
 					break;
 				case 2:
+					op = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual tipo de conta?\n"
+							+ "1 - Pessoa Física.\n"
+							+ "2 - Pessoa Jurídica.\n"
+							+ "0 - Cancelar operação.\n",
+							"OPERAÇÃO DE DEPÓSITO:", JOptionPane.QUESTION_MESSAGE));
+					
+					cpf = lerPFouPJcomRetorno();
+					
+					deposito = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor desejado:", 
+							"OPERAÇÃO DE DEPÓSITO:", JOptionPane.INFORMATION_MESSAGE));
+					
+					// implementar envio de parametros e chamada do método
+					pp.depositarPoupanca(cpf, deposito);
+					
 					break;
 				case 3:
+					op = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual tipo de conta?\n"
+							+ "1 - Pessoa Física.\n"
+							+ "2 - Pessoa Jurídica.\n"
+							+ "0 - Cancelar operação.\n",
+							"OPERAÇÃO DE SAQUE:", JOptionPane.QUESTION_MESSAGE));
+					
+					cnpj = lerPFouPJcomRetorno();
+					
+					saque = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor desejado:", 
+							"OPERAÇÃO DE SAQUE:", JOptionPane.INFORMATION_MESSAGE));
+					
+					// implementar envio de parametros e chamada do método
+					// banco.sacar(conta1, saque);
 					break;
 				case 4:
+					op = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual tipo de conta?\n"
+							+ "1 - Pessoa Física.\n"
+							+ "2 - Pessoa Jurídica.\n"
+							+ "0 - Cancelar operação.\n",
+							"OPERAÇÃO DE TRANSFERÊNCIA:", JOptionPane.QUESTION_MESSAGE));
+	
+					// MOVIMENTAR DA "CONTA 1" PARA A "CONTA 2"
+					conta1 = lerPFouPJcomRetorno(); 
+					conta2 = lerPFouPJcomRetorno();
+					
+					transferencia = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor desejado:", 
+							"OPERAÇÃO DE TRANSFERÊNCIA:", JOptionPane.INFORMATION_MESSAGE));
+					
+					// implementar envio de parametros e chamada do método
+					// banco.tranferencia(conta1, conta2, transferencia);
 					break;
 				case 5:
+					op = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual tipo de conta?\n"
+							+ "1 - Pessoa Física.\n"
+							+ "2 - Pessoa Jurídica.\n"
+							+ "0 - Cancelar operação.\n",
+							"CONSULTAR SALDO:", JOptionPane.QUESTION_MESSAGE));
+	
+					// MOVIMENTAR DA "CONTA 1" PARA A "CONTA 2"
+					conta1 = lerPFouPJcomRetorno(); 
+									
+					// implementar envio de parametros e chamada do método
+					// banco.consultarSaldo(conta1);
 					break;
 				case 6:
 					op = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual tipo de conta?\n"
@@ -140,6 +195,22 @@ public class Principal
 			cnpj = JOptionPane.showInputDialog(null, "Insira o CNPJ do cliente:",
 					"CADASTRAR CLIENTE:", JOptionPane.INFORMATION_MESSAGE);
 		}
+	}
+	
+	static String lerPFouPJcomRetorno()
+	{
+		if (op == 1) 
+		{
+			cpf = JOptionPane.showInputDialog(null, "Insira o CPF do cliente:",
+					"CADASTRAR CLIENTE:", JOptionPane.INFORMATION_MESSAGE);
+			return cpf;
+		} 
+		else 
+		{
+			cnpj = JOptionPane.showInputDialog(null, "Insira o CNPJ do cliente:",
+					"CADASTRAR CLIENTE:", JOptionPane.INFORMATION_MESSAGE);
+		}
+		return cnpj;
 	}
 
 }
