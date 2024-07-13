@@ -10,11 +10,18 @@ public class ContaCorrente extends Conta
 	public ContaCorrente() {}
 
 	
-	public void extrato()
+	public void extrato(String documento)
 	{
-		System.out.println("Extrato da Conta Corrente\n" 
-				+ "Agência: " + super.agencia + "\n"
-				+ "Conta: " + super.numero + "\n"
-				+ "Saldo: " + super.saldo + "\n");
+		for (PessoaJuridica pj : clientesPJ) 
+		{
+			if (pj.getDocumento().equalsIgnoreCase(documento)) 
+			{
+				System.out.println("Extrato da Conta Poupança\n"
+						+ "Cliente: " + getCliente() + "\n" 
+						+ "Agência: " + super.agencia + "\n"
+						+ "Conta: " + super.numero + "\n"
+						+ "Saldo: " + super.saldo + "\n");	
+			}
+		}
 	}
 }

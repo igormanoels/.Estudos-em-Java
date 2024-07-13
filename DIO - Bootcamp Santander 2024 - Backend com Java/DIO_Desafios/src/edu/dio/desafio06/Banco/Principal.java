@@ -6,7 +6,7 @@ public class Principal
 {
 	static int op;
 	static boolean continuar = true;
-	static String nome, cpf, cnpj, rua, bairro, estado, uf, conta1, conta2;
+	static String nome, cpf, cnpj, rua, bairro, estado, uf, conta1, conta2, documento;
 	static int numero;
 	static double saque, deposito, transferencia;
 	
@@ -69,13 +69,19 @@ public class Principal
 							+ "0 - Cancelar operação.\n",
 							"OPERAÇÃO DE DEPÓSITO:", JOptionPane.QUESTION_MESSAGE));
 					
-					cpf = lerPFouPJcomRetorno();
+					documento = lerPFouPJcomRetorno();
 					
 					deposito = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor desejado:", 
 							"OPERAÇÃO DE DEPÓSITO:", JOptionPane.INFORMATION_MESSAGE));
 					
-					// implementar envio de parametros e chamada do método
-					pp.depositarPoupanca(cpf, deposito);
+					if (op == 1) 
+					{
+						pp.depositarPoupanca(documento, deposito);
+					} 
+					else 
+					{
+						cc.depositarCorrente(documento, deposito);
+					}
 					
 					break;
 				case 3:
@@ -85,13 +91,20 @@ public class Principal
 							+ "0 - Cancelar operação.\n",
 							"OPERAÇÃO DE SAQUE:", JOptionPane.QUESTION_MESSAGE));
 					
-					cnpj = lerPFouPJcomRetorno();
+					documento = lerPFouPJcomRetorno();
 					
 					saque = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor desejado:", 
 							"OPERAÇÃO DE SAQUE:", JOptionPane.INFORMATION_MESSAGE));
 					
-					// implementar envio de parametros e chamada do método
-					// banco.sacar(conta1, saque);
+					if (op == 1) 
+					{
+						pp.sacarPoupanca(documento, saque);
+					} 
+					else 
+					{
+						cc.sacarCorrente(documento, saque);
+					}
+					
 					break;
 				case 4:
 					op = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual tipo de conta?\n"

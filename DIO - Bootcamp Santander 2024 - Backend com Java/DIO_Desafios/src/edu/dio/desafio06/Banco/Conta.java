@@ -34,6 +34,8 @@ public abstract class Conta extends Banco
 				if (pf.getDocumento().equalsIgnoreCase(documento)) 
 				{
 					saldo += valor;
+					ContaPoupanca pp = new ContaPoupanca();
+					pp.extrato(documento);
 					break;
 				}
 				
@@ -47,27 +49,98 @@ public abstract class Conta extends Banco
 
 		
 	}
+	
+	public void depositarCorrente(String documento, double valor) 
+	{
+		if (!(super.clientesPJ.isEmpty())) 
+		{
+			for (PessoaJuridica pj : clientesPJ) 
+			{
+				if (pj.getDocumento().equalsIgnoreCase(documento)) 
+				{
+					saldo += valor;
+					ContaCorrente cc = new ContaCorrente();
+					cc.extrato(documento);
+					break;
+				}
+				
+			}
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "A lista de clientes está vazia.",
+					"OPERAÇÃO DE DEPÓSITO:", JOptionPane.ERROR_MESSAGE);
+		}	
+
+		
+	}
+	
 
 		
 		
 	// MÉTODO PARA REALIZAR SAQUE
-	public void sacar(double valor) 
+	public void sacarPoupanca(String documento, double valor) 
 	{
-		saldo -= valor;
+		if (!(super.clientesPF.isEmpty())) 
+		{
+			for (PessoaFisica pf : clientesPF) 
+			{
+				if (pf.getDocumento().equalsIgnoreCase(documento)) 
+				{
+					saldo -= valor;
+					ContaPoupanca pp = new ContaPoupanca();
+					pp.extrato(documento);
+					break;
+				}
+			}
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "A lista de clientes está vazia.",
+					"OPERAÇÃO DE SAQUE:", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	
+	public void sacarCorrente(String documento, double valor) 
+	{
+		if (!(super.clientesPJ.isEmpty())) 
+		{
+			for (PessoaJuridica pj : clientesPJ) 
+			{
+				if (pj.getDocumento().equalsIgnoreCase(documento)) 
+				{
+					saldo -= valor;
+					ContaCorrente cc = new ContaCorrente();
+					cc.extrato(documento);
+					break;
+				}
+			}
+		} 
+		else 
+		{
+			JOptionPane.showMessageDialog(null, "A lista de clientes está vazia.",
+					"OPERAÇÃO DE SAQUE:", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 	
 	
 	
 	
 	// MÉTODO PARA REALIZAR TRANSFERÊNCIA
-	public void transferir(String documento, double valor) {
-		this.sacar(valor); // INDICA UMA MOVIMENTAÇÃO DE SAQUE PARA ESSA CONTA
-		//contaDestino.depositar(contaDestino, valor); // INDICA UMA MOVIMENTAÇÃO DE DEPÓSITO PARA OUTRA CONTA
+	public void transferirPoupanca(String contaOrigem, String contaDestino, double valor) {
+		this.sacarPoupanca(contaOrigem, valor); // INDICA UMA MOVIMENTAÇÃO DE SAQUE PARA ESSA CONTA
+		depositarPoupanca(contaDestino, valor); // INDICA UMA MOVIMENTAÇÃO DE DEPÓSITO PARA OUTRA CONTA
+		
+	}
+	
+	public void transferirCorrente(String docOrigem, String contaDestino, double valor) {
+		this.sacarCorrente(docOrigem, valor); // INDICA UMA MOVIMENTAÇÃO DE SAQUE PARA ESSA CONTA
+		depositarCorrente(contaDestino, valor); // INDICA UMA MOVIMENTAÇÃO DE DEPÓSITO PARA OUTRA CONTA
 	}
 	
 	
 	// MÉTODO ABSTRATO PORQUE CADA TIPO CONTA POSSUI UMA FORMA DE IMPRIMIR SUAS MOVIMENTAÇÕES
-	public abstract void extrato(); 	
+	public abstract void extrato(String documento); 	
 	
 	
 	// Getters and Setters

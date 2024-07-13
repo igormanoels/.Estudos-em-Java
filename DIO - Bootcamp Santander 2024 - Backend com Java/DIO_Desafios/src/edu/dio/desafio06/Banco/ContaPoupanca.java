@@ -10,11 +10,18 @@ public class ContaPoupanca extends Conta
 	public ContaPoupanca() {}
 	
 	
-	public void extrato()
+	public void extrato(String documento)
 	{
-		System.out.println("Extrato da Conta Poupança\n" 
-				+ "Agência: " + super.agencia + "\n"
-				+ "Conta: " + super.numero + "\n"
-				+ "Saldo: " + super.saldo + "\n");	
+		for (PessoaFisica pf : clientesPF) 
+		{
+			if (pf.getDocumento().equalsIgnoreCase(documento)) 
+			{
+				System.out.println("Extrato da Conta Poupança\n"
+						+ "Cliente: " + getCliente() + "\n" 
+						+ "Agência: " + super.agencia + "\n"
+						+ "Conta: " + super.numero + "\n"
+						+ "Saldo: " + super.saldo + "\n");	
+			}
+		}		
 	}
 }
