@@ -40,5 +40,5 @@ classDiagram
     User "1" --> "1" Account
     User "1" --> "1" Card
     User "1" --> "0..*" News
-    Account "1" --> "0..*" Feature
+    User "1" --> "0..*" Feature
 ``` 
