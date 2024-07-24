@@ -1,0 +1,1 @@
+web: java -jar build/libs/lab-padros-projeto-restful-0.0.1-SNAPSHOT.jar
