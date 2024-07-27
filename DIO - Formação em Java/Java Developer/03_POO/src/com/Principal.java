@@ -16,12 +16,6 @@ public class Principal
 	{
 		Empresa empresa = new Empresa();
 		
-		// CASO DE TESTE
-//		empresa.consultarColaborador("41224"); // DEVE APRESENTAR UM ERRO POR NÃO TER CADASTRO
-//		empresa.cadastrarVendedor("Igor", "4111", "Pessoa Física", "Rua de casa", "Guaianases", "SP", 855.00);		
-//		empresa.consultarColaboradorPF("4111");
-		
-		
 		while (continuar) 
 		{
 			op = Integer.parseInt(JOptionPane.showInputDialog(null, "0 - Encerrar.\n"
