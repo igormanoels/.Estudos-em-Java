@@ -1,17 +1,20 @@
-package com.empresa.colaboradores;
+package com.empresa.colaboradores.cargos;
 
 import com.empresa.Endereco;
+import com.empresa.colaboradores.PessoaFisica;
 
 public class Vendedor extends PessoaFisica
 {
 	private Double bonificacao;
 	private int quantidadeVendas;
+	private double remuneracao;
 
+	
 	// CONSTRUTORES
-	public Vendedor(String nome, String documento, String categoria, Double remuneração, Endereco endereco, int quantidadeVendas) 
+	public Vendedor(String nome, String documento, String categoria, Endereco endereco, double remuneracao) 
 	{
-		super(nome, documento, categoria, remuneração, endereco);
-		this.quantidadeVendas = quantidadeVendas;
+		super(nome, documento, categoria, endereco);
+		this.remuneracao = remuneracao;
 	}
 
 	
@@ -32,13 +35,21 @@ public class Vendedor extends PessoaFisica
 		this.quantidadeVendas = quantidadeVendas;
 	}
 	
+	public double getRemuneracao() {
+		return remuneracao;
+	}
+
+	public void setRemuneracao(double remuneracao) {
+		this.remuneracao = remuneracao;
+	}
+
+
 	// TOSTRING
 	@Override
-	public String toString() {
-		return super.toString() + "\nNúmero de Vendas: " + quantidadeVendas + "\nBonificação: " + bonificacao;
+	public String toString() 
+	{
+		return super.toString() + "\nRemuneracao: " + remuneracao + "\n" + "Bonificação: " + bonificacao  + "\n\n";
 	}
 	
 	
-	
-
 }

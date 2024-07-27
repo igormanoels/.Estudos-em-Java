@@ -6,6 +6,7 @@ public class Endereco
 	private String bairro;
 	private String complemento;
 	
+	
 	// CONSTRUTOR
 	public Endereco(String rua, String bairro, String complemento) 
 	{
@@ -13,6 +14,7 @@ public class Endereco
 		this.bairro = bairro;
 		this.complemento = complemento;
 	}
+	
 	
 	// GETTERS AND SETTERS
 	public String getRua() {
@@ -39,10 +41,12 @@ public class Endereco
 		this.complemento = complemento;
 	}
 	
+	
+	// TO STRING
 	@Override
 	public String toString() 
 	{
-		return "Endereço - Rua: " + rua + ", Bairro: " + bairro + ", Complemento: " + complemento;
+		return "\nEndereço - Rua: " + rua + ", Bairro: " + bairro + ", Complemento: " + complemento;
 	}
 	
 	
