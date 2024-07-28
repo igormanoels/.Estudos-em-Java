@@ -51,6 +51,26 @@ Valor A: 2 - Valor B: 2
 ## Pilhas
 - O conceito de pilhas leva em consideração o padrão last-in, first-out. Sempre o último elemento é o primeiro a sair
     - ex.  null <-- INT..ref <-- INT...ref <-- INT...ref <-- ref
-- Método Top: Pega o conteúdo do último elemento da pilha, e mantém ele na pilha
-- Método Pop: Pega o conteúdo do último elemento da pilha, removendo ele da pilha
-- Método push: Gera uma nova referencia de topo para a pilha
+- Métodos 
+    - Top: Pega o conteúdo do último elemento da pilha, e mantém ele na pilha
+    - Pop: Pega o conteúdo do último elemento da pilha, removendo ele da pilha
+    - Push: Gera uma nova referencia de topo para a pilha
+
+## Filas
+- FIFO (First in First out): o primeiro a entrar é o primeiro a sair
+    - ex. ref --> INT...ref --> INT..ref --> INT...ref --> INT...null
+- Métodos:
+    - enqueue(): Enfileirar, pega um elemento, joga atrás da fila, e faz com que a referente aponte pra ele
+    - dequeue(): Desenfileirar, pega o primeiro elemento da fila, remove, e faz com que o segundo aponte para nulo
+    - isEmpty: Está vazio, verifica se há conteudo
+
+## Listas Encadeadas
+- Métodos:
+    - add: Adciona um nó na lista, informando o indice, e altera as refencias do novo nó para o anterior e do posterior para ele
+    - remove: Remove um nó da lista, informando o indice, e aponta o nó posterior para o anterior  
+    - isEmpty:Verifica se há conteudo
+    - get: Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
+
+- ex. ref --> INT..ref --> INT...ref --> INT...null
+
+
