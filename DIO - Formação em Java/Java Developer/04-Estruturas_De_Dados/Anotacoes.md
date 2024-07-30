@@ -30,7 +30,7 @@ Valor A: 2 - Valor B: 2
 ## Conceito de Nó e Encadeamento
 - O nó é um espaço em memória que armazena um dado, e a referência para a próxima informação.
 - Essa ramificação não é infinica, ela se segue até o último nó apontar para nulo
-    - ex. INT...ref --> INT..ref --> INT...ref --> INT...null
+    - ex. Nó...ref --> Nó..ref --> Nó...ref --> Nó...null
     - System.out.println(no1.getProximoNo().getProximoNo().getProximoNo().getProximoNo());
     - Caso o haja uma tentativa de acessar um nó após o *null*, o java retorna um erro *NullPointerException*
 
@@ -50,7 +50,7 @@ Valor A: 2 - Valor B: 2
 
 ## Pilhas
 - O conceito de pilhas leva em consideração o padrão last-in, first-out. Sempre o último elemento é o primeiro a sair
-    - ex.  null <-- INT..ref <-- INT...ref <-- INT...ref <-- ref
+    - ex.  null <-- Nó..ref <-- Nó...ref <-- Nó...ref <-- Nó
 - Métodos 
     - Top: Pega o conteúdo do último elemento da pilha, e mantém ele na pilha
     - Pop: Pega o conteúdo do último elemento da pilha, removendo ele da pilha
@@ -58,7 +58,7 @@ Valor A: 2 - Valor B: 2
 
 ## Filas
 - FIFO (First in First out): o primeiro a entrar é o primeiro a sair
-    - ex. ref --> INT...ref --> INT..ref --> INT...ref --> INT...null
+    - ex. ref --> Nó...ref --> Nó..ref --> Nó...ref --> Nó...null
 - Métodos:
     - enqueue(): Enfileirar, pega um elemento, joga atrás da fila, e faz com que a referente aponte pra ele
     - dequeue(): Desenfileirar, pega o primeiro elemento da fila, remove, e faz com que o segundo aponte para nulo
@@ -70,7 +70,6 @@ Valor A: 2 - Valor B: 2
     - remove: Remove um nó da lista, informando o indice, e aponta o nó posterior para o anterior  
     - isEmpty:Verifica se há conteudo
     - get: Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
-
-- ex. ref --> INT..ref --> INT...ref --> INT...null
+- ex. ref --> Nó..ref --> Nó...ref --> Nó...null
 
 
