@@ -91,13 +91,11 @@ public class ListaEncadeada <T>
 		if (indice == 0) 
 		{
 			refEntrada = removerNo.getRefNo();
-			//return removerNo.getConteudo();
+			return removerNo.getConteudo();
 		}
-		else
-		{
-			No<T> noAnterior = getNo(indice);
-			noAnterior.setRefNo(removerNo.getRefNo());
-		}
+
+		No<T> noAnterior = getNo(indice - 1);
+		noAnterior.setRefNo(removerNo.getRefNo());
 		return removerNo.getConteudo();
 	}
 	

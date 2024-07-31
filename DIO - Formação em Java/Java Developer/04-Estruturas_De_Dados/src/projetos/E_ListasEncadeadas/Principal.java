@@ -18,8 +18,8 @@ public class Principal
 		
 		System.out.println(lista);
 		
-		
-		
+		System.out.println(lista.remove(2));
+		System.out.println(lista);
 		
 	}
 }
