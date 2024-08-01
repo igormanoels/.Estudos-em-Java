@@ -72,4 +72,12 @@ Valor A: 2 - Valor B: 2
     - get: Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
 - ex. ref --> Nó..ref --> Nó...ref --> Nó...null
 
-
+## Listas Duplamente Encadeadas
+- ex.              null <-- ref ant..Nó..ref pos --> ref ant..Nó..ref pos --> null 
+        ref.primeiro Nó -->                                               <-- ref ultimo Nó
+- Métodos:
+    - add(elemento): Adciona um nó na lista, informando o indice, e altera as refencias do novo nó para o anterior e do posterior para ele
+    - add(index, elemento)
+    - remove(index): Remove um nó da lista, informando o indice, e aponta o nó posterior para o anterior  
+    - isEmpty:Verifica se há conteudo
+    - get(index): Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
