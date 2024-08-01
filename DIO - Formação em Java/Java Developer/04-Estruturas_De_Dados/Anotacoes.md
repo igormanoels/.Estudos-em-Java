@@ -81,3 +81,13 @@ Valor A: 2 - Valor B: 2
     - remove(index): Remove um nó da lista, informando o indice, e aponta o nó posterior para o anterior  
     - isEmpty:Verifica se há conteudo
     - get(index): Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
+
+## Listas Circulares
+- ex. ref entrada --> Nó..ref --> Nó...ref --> Nó...ref entrada
+- Métodos:
+    - add(elemento): Adciona um nó na lista, informando o indice, e altera as refencias do novo nó para o anterior e do posterior para ele
+    - remove(index): Remove um nó da lista, informando o indice, e aponta o nó posterior para o anterior  
+    - isEmpty:Verifica se há conteudo
+    - get(index): Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
+
+
