@@ -111,3 +111,27 @@ Valor A: 2 - Valor B: 2
     - Nó Esquerda
     - Nó Direita
 
+## Equals
+- Permite a comparação entre igualdades
+
+## hashCode
+- Perminte melhorar a busca entre objetos
+
+## Stack Pilha
+- É uma estrutura de pilha
+
+## Queue
+- É uma estrutura de fila
+
+## List
+- É uma estrutura de lista
+- Preserva a ordem dos valores inseridos
+
+## Set
+- É uma estrutura de lista
+- Não preserva a ordem dos valores inseridos
+
+## Map
+- É uma estrutura de lista
+- Não preserva a ordem dos valores inseridos
+- Constituido por uma cadeira de chave e valor
