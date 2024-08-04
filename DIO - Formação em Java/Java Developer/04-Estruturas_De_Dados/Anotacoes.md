@@ -1,5 +1,4 @@
 # Estrutura de Dados
-
 ## Introdução 
 - Na manipulação de variáveis com valores atribuído, os valores em memória são copiados. Ou seja, a manipulação refere-se ao conteúdo do endereço de memória.
 - Já na manipulação de objetos, o que se é copiado é o endereço de memória.
@@ -27,12 +26,14 @@ System.out.println("Valor A: " + objA + " - Valor B: " + objB);
 Valor A: 1 - Valor B: 1
 Valor A: 2 - Valor B: 2
 
+
 ## Conceito de Nó e Encadeamento
 - O nó é um espaço em memória que armazena um dado, e a referência para a próxima informação.
 - Essa ramificação não é infinica, ela se segue até o último nó apontar para nulo
     - ex. Nó...ref --> Nó..ref --> Nó...ref --> Nó...null
     - System.out.println(no1.getProximoNo().getProximoNo().getProximoNo().getProximoNo());
     - Caso o haja uma tentativa de acessar um nó após o *null*, o java retorna um erro *NullPointerException*
+
 
 ## Gererics <T>
 - Usado para evitar o casting excessivo
@@ -48,6 +49,7 @@ Valor A: 2 - Valor B: 2
     - T para "Type", exemplo : Collections#addAll
     - ? quando genérico
 
+
 ## Pilhas
 - O conceito de pilhas leva em consideração o padrão last-in, first-out. Sempre o último elemento é o primeiro a sair
     - ex.  null <-- Nó..ref <-- Nó...ref <-- Nó...ref <-- Nó
@@ -55,6 +57,7 @@ Valor A: 2 - Valor B: 2
     - Top: Pega o conteúdo do último elemento da pilha, e mantém ele na pilha
     - Pop: Pega o conteúdo do último elemento da pilha, removendo ele da pilha
     - Push: Gera uma nova referencia de topo para a pilha
+
 
 ## Filas
 - FIFO (First in First out): o primeiro a entrar é o primeiro a sair
@@ -64,6 +67,7 @@ Valor A: 2 - Valor B: 2
     - dequeue(): Desenfileirar, pega o primeiro elemento da fila, remove, e faz com que o segundo aponte para nulo
     - isEmpty: Está vazio, verifica se há conteudo
 
+
 ## Listas Encadeadas
 - Métodos:
     - add: Adciona um nó na lista, informando o indice, e altera as refencias do novo nó para o anterior e do posterior para ele
@@ -71,6 +75,7 @@ Valor A: 2 - Valor B: 2
     - isEmpty:Verifica se há conteudo
     - get: Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
 - ex. ref --> Nó..ref --> Nó...ref --> Nó...null
+
 
 ## Listas Duplamente Encadeadas
 - ex.              null <-- ref ant..Nó..ref pos --> ref ant..Nó..ref pos --> null 
@@ -82,6 +87,7 @@ Valor A: 2 - Valor B: 2
     - isEmpty:Verifica se há conteudo
     - get(index): Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
 
+
 ## Listas Circulares
 - ex. ref entrada --> Nó..ref --> Nó...ref --> Nó...ref entrada
 - Métodos:
@@ -90,4 +96,18 @@ Valor A: 2 - Valor B: 2
     - isEmpty:Verifica se há conteudo
     - get(index): Pega o conteúdo pelo indece, sem remover da lista, sendo o último elemento iniciado em 0
 
+
+## Árvores
+- Estrutura de dados bidimensional
+- Utilização
+    - Sistemas de arquivos
+    - Banco de dados
+    - Interfaces gráficas
+    - Páginas Web
+- Árvore de busca binária
+    - Posição dos nós (maior a direita, menor a esquerda)
+- Nó é composto por
+    - Objeto
+    - Nó Esquerda
+    - Nó Direita
 
