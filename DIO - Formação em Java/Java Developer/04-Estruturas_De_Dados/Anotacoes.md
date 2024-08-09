@@ -135,3 +135,12 @@ Valor A: 2 - Valor B: 2
 - É uma estrutura de lista
 - Não preserva a ordem dos valores inseridos
 - Constituido por uma cadeira de chave e valor
+
+## Collections
+- É um objeto que agrupa múltiplos elementos dentro de uma única unidade.
+    - List
+        - Permite elementos duplicados
+        - Garante ordem de inserção
+        - ArrayList: Usa um array para guardar os elementos, menos eficiente para remover elementos.
+        - LinkedList: Usa uma estrutura de lista duplamente encadeada, mais eficiente para remover elementos. Pode implementar também a interface Queue
+
