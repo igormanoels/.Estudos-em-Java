@@ -1,4 +1,4 @@
-package projetos.E_ListasEncadeadas;
+package introducao.E_ListasEncadeadas;
 
 public class Principal 
 {

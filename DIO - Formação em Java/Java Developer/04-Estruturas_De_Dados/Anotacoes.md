@@ -143,4 +143,10 @@ Valor A: 2 - Valor B: 2
         - Garante ordem de inserção
         - ArrayList: Usa um array para guardar os elementos, menos eficiente para remover elementos.
         - LinkedList: Usa uma estrutura de lista duplamente encadeada, mais eficiente para remover elementos. Pode implementar também a interface Queue
+    - Set
+        - Não permite elementos duplicados
+        - Não garante a ordenação por inserção
+        - TreeSet: Mantém a ordem natural dos elementos inseridos, pior performance e não permite elementos nulos
+        - HashSet: Não mantem a ordem dos elementos inseridos, melhor performance e permite apenas um elemento nulo
+        - LinkedHashSet: mantém a ordem dos elementos inseridos e permite apenas um elemento nulo
 

@@ -1,4 +1,4 @@
-package projetos.I_equals_hashCode;
+package introducao.I_equals_hashCode;
 
 import java.util.Objects;
 

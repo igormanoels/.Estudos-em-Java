@@ -1,6 +1,6 @@
-package projetos.H_Arvores;
+package introducao.H_Arvores;
 
-import projetos.H_Arvores.model.Obj;
+import introducao.H_Arvores.model.Obj;
 
 public class Principal 
 {

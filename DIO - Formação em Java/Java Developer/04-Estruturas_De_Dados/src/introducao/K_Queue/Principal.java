@@ -1,4 +1,4 @@
-package projetos.K_Queue;
+package introducao.K_Queue;
 
 import java.util.LinkedList;
 import java.util.Queue;

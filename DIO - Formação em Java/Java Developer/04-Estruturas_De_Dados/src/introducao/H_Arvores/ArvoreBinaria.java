@@ -1,4 +1,4 @@
-package projetos.H_Arvores;
+package introducao.H_Arvores;
 
 public class ArvoreBinaria<T extends Comparable<T>> 
 {

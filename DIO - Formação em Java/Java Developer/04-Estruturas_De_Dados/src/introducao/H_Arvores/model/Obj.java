@@ -1,4 +1,4 @@
-package projetos.H_Arvores.model;
+package introducao.H_Arvores.model;
 
 import java.util.Objects;
 

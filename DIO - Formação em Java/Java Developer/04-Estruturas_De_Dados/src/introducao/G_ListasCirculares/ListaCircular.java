@@ -1,4 +1,4 @@
-package projetos.G_ListasCirculares;
+package introducao.G_ListasCirculares;
 
 public class ListaCircular <T>
 {

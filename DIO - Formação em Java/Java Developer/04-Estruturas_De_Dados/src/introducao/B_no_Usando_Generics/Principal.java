@@ -1,4 +1,4 @@
-package projetos.B_no_Usando_Generics;
+package introducao.B_no_Usando_Generics;
 
 public class Principal 
 {

@@ -1,4 +1,4 @@
-package projetos.H_Arvores.model;
+package introducao.H_Arvores.model;
 
 public abstract class ObjArvore<T> implements Comparable<T>
 {

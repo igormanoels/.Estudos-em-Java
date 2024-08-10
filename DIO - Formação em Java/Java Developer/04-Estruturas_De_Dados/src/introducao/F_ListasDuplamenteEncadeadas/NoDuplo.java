@@ -1,4 +1,4 @@
-package projetos.F_ListasDuplamenteEncadeadas;
+package introducao.F_ListasDuplamenteEncadeadas;
 
 public class NoDuplo <T>
 {
