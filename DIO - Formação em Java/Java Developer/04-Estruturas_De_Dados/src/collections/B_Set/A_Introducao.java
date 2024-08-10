@@ -50,6 +50,7 @@ public class A_Introducao
 		Set<Double> notas2 = new TreeSet<>(Arrays.asList(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6 ));
 		System.out.println(notas2); 
 		
+		notas2.clear(); // Limpa a lista
 		System.out.println("\nVerifica se está vazio: " + notas2.isEmpty());
 	}
 

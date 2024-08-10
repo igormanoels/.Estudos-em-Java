@@ -42,7 +42,7 @@ public class B_Ordenacao
 		
 		
 		Set<Pessoa> pessoas2 = new TreeSet<>();
-		System.out.println("Mantém os dados na ordem de inserção");
+		System.out.println("Mantém os dados na ordem natural");
 		pessoas2.add(new Pessoa("Igor", "masculino", 29));
 		pessoas2.add(new Pessoa("Lucio", "masculino", 39));
 		pessoas2.add(new Pessoa("Marta", "feminino", 29));
