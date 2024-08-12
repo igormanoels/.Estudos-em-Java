@@ -150,3 +150,9 @@ Valor A: 2 - Valor B: 2
         - HashSet: Não mantem a ordem dos elementos inseridos, melhor performance e permite apenas um elemento nulo
         - LinkedHashSet: mantém a ordem dos elementos inseridos e permite apenas um elemento nulo
 
+    - Map
+        - Permite elementos únicos chave, para cada valor
+        - TreeMap: É utilizado para a ordenação, não permite chaves nulas
+        - LinkedHashMap: Permite chaves nulas
+        - HashMap: Permite chaves nulas
+
