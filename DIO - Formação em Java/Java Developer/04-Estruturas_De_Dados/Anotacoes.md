@@ -155,4 +155,10 @@ Valor A: 2 - Valor B: 2
         - TreeMap: É utilizado para a ordenação, não permite chaves nulas
         - LinkedHashMap: Permite chaves nulas
         - HashMap: Permite chaves nulas
+    - Stream
+        - Classe Anonima: É a declaração de uma classe dentro de um método quando o seu uso é breve.
+        - Funcional Interface: Pode ser tratada como expressão lambda, sendo elas Comparator, Comsumer, Funcition e Predicate
+        - Lambda: O método é declado no mesmo local de uso, definida por (argumento) => (corpo)
+        - Reference Method: faz o uso de "::" para simplificar uma expressão lambda
+        - Stream API: Facilita a manipulação de coleções, combinada com expressões lambdas. 
 
