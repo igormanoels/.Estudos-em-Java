@@ -1,0 +1,16 @@
+package model.estrutura;
+
+public class No<T> {
+	private T valor;
+	private No<T> proximo;
+	
+	public No(T valor) {
+		this.proximo = null;
+		this.valor = valor;
+	}
+	
+	public No(T valor, No<T> proximo) {
+		this.valor = valor;
+		this.proximo = proximo;
+	}
+}
