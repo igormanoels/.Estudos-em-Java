@@ -38,6 +38,6 @@ public class Dependente {
 	}
 	
 	public String toString() {
-		return "Nome do dependente: " + nome + ", cpf: " + cpf + ", idade: " + idade;
+		return "Dependente: " + nome + ", cpf: " + cpf + ", idade: " + idade;
 	}
 }

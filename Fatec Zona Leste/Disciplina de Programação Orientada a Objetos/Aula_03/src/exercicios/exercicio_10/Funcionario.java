@@ -8,6 +8,7 @@ public class Funcionario {
 	private String nome;
 	private String cpf;
 	private String cargo;
+	// Dependentes compõem a classe funcionário
 	List<Dependente> dependentes;
 	
 	public Funcionario() {
@@ -25,12 +26,14 @@ public class Funcionario {
 		dependentes.add(new Dependente(vet[0], vet[1], vet[2]));
 	}
 	
-	public int contarDependentes() {
+	public void contarDependentes() {
 		int quant = 0;
-		if(dependentes.isEmpty() == true) return quant;
-		
-		for (Dependente d : dependentes) quant++;
-		return quant;
+		if(dependentes.isEmpty()) {
+			System.out.println(quant);
+		} else {
+			for (Dependente d : dependentes) ++quant;
+			System.out.println(quant);
+		}
 	}
 	
 	public void mostraDependentes() {
@@ -62,6 +65,6 @@ public class Funcionario {
 	}
 	
 	public String toString() {
-		return "Nome: " + nome + ", cpf: " + cpf + ", cargo: " + cargo;
+		return "Funcionário: " + nome + ", cpf: " + cpf + ", cargo: " + cargo;
 	}
 }
