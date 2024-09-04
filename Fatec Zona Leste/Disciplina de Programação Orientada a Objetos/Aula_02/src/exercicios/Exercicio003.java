@@ -1,4 +1,4 @@
-package exercicio;
+package exercicios;
 
 import java.util.ArrayList;
 import java.util.List;

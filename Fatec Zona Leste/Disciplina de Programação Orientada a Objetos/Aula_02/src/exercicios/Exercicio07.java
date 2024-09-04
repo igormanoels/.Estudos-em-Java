@@ -1,4 +1,4 @@
-package exercicio;
+package exercicios;
 
 /*
  * Ex07 - Métodos classe Caixa

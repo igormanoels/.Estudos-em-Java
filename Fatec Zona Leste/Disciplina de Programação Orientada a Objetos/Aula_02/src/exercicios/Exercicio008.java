@@ -1,4 +1,4 @@
-package exercicio;
+package exercicios;
 
 /*
  * Ex08 - Métodos classe Caixa com varargs

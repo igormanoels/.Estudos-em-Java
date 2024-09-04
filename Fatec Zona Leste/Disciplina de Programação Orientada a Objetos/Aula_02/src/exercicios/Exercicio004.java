@@ -1,4 +1,4 @@
-package exercicio;
+package exercicios;
 /*
  * Ex04-Declaração e inicialização de variáveis
  * 

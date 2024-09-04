@@ -1,4 +1,4 @@
-package exercicio;
+package exercicios;
 
 /*
  * Ex02-Estouro da memória Stack

@@ -1,4 +1,4 @@
-package exercicio;
+package exercicios;
 
 /*
  * Ex06 - Criar instâncias
