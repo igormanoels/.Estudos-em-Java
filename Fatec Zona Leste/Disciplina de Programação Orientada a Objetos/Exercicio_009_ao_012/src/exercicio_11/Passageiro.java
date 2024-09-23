@@ -1,4 +1,4 @@
-package exercicios.exercicio_11;
+package exercicio_11;
 
 public class Passageiro extends Pessoa{
 	

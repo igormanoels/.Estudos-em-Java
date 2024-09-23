@@ -7,7 +7,7 @@ package exercicios;
  * A função da venda deverá acrescer o valor do produto no saldo, e deverá retornar o valor do novo saldo
  * Faça também uma classe para testes que instancie o objeto Caixa e invoque a função venda.
  */
-public class Exercicio07 
+public class Exercicio007 
 {
 	public static void main(String[] args) 
 	{

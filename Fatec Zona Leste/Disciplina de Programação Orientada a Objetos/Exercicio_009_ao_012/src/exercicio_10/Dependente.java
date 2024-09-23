@@ -1,4 +1,4 @@
-package exercicios.exercicio_10;
+package exercicio_10;
 
 public class Dependente {
 	private String nome;

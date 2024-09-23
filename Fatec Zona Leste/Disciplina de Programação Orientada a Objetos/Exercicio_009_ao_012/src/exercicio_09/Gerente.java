@@ -1,4 +1,4 @@
-package exercicios.exercicio_09;
+package exercicio_09;
 
 public class Gerente extends Funcionario{
 
