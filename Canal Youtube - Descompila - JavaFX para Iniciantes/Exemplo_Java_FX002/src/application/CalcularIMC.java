@@ -60,9 +60,6 @@ public class CalcularIMC extends Application {
 			});
 			
 			
-			
-			grid.getChildren().addAll(tituloTxt, imcPeso, imcAltura, resultadoTxt); // Adciona os objetos na tela
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
