@@ -19,7 +19,7 @@ public class Aluno {
 	}
 	
 	private LocalDate converteData(String data) {
-		DateTimeFormatter formatData = DateTimeFormatter.ofPattern("dd/MM/yy");
+		DateTimeFormatter formatData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		return LocalDate.parse(data, formatData);
 	}
 	
@@ -46,6 +46,14 @@ public class Aluno {
 	
 	public String getNome() {
 		return this.nome;
+	}
+	
+	public void setId(String id) {
+		this.id = Long.parseLong(id);
+	}
+	
+	public Long getId() {
+		return this.id;
 	}
 	
 	

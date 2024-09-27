@@ -8,30 +8,47 @@ public class GestaoAlunos {
 	private Aluno[] alunos = new Aluno[50];
 	
 	public void criar(String...str) {
-		if (indice == 0) {
-			String id = String.valueOf(indice + 1);
-			Aluno aluno = new Aluno(str);
-			this.alunos[indice++] = aluno; // Verificar se o vetor est� sendo preenchido apartir da posi��o 1
-		} else {
-			// percorrer posi��es e descobrir qual a proxima vazia pelo id
-		}
-		
-		
+		Aluno novoAluno = new Aluno(String.valueOf(indice), str[0], str[1], str[2]);
+		alunos[indice] = novoAluno;				
+		indice++;
+		System.out.println("\n");
 	}
 	
-	public void atualizar() {
-		
+	public void atualizar(String...str) {
+		for (int i = 0; i < alunos.length; i++) {
+			Aluno aluno = alunos[i];
+			if (aluno != null && aluno.getRA().equalsIgnoreCase(str[1]) ) {
+				aluno.setData(str[0]);
+				aluno.setNome(str[2]);
+				System.out.println("Cadastro atualizado.\n\n");
+				return;
+			}
+		}
+		System.err.println("Aluno não encontrado.\n\n");		
 	}
+	
 	
 	public void excluir(String ra) {
-		
+	    for (int i = 0; i < alunos.length; i++) {
+	        Aluno aluno = alunos[i];
+	        if (aluno != null && aluno.getRA().equalsIgnoreCase(ra)) {
+	            alunos[i] = null;
+	            System.out.println("Aluno excluído.\n\n");
+	            return;
+	        }
+	    }
+	    System.err.println("Aluno não encontrado.\n\n");
 	}
+
 	
 	public void exibir() {
-		System.out.println("Lista de alunos cadastrados:");
+		System.out.println("\n\nLISTA DE ALUNOS CADASTRADOS:"); 
 		for (Aluno aluno : alunos) {
-			System.out.println(aluno);
+			if (aluno != null) {
+				System.out.println(aluno);
+			}
 		}
+		System.out.println("\n");
 	}
 	
 	public void menu() {
@@ -49,8 +66,9 @@ public class GestaoAlunos {
 			
 			switch (op) {
 				case "C":
-					System.out.print("\nVocê será direcionado para \"Criar\"");
+					System.out.print("\n\nVocê será direcionado para \"Criar\"");
 					animacao();
+					System.out.println("\n\nCRIAR CADASTRO DE ALUNO");
 					System.out.print("Informe a data de nascimento: ");
 					data = ler.nextLine();
 					System.out.print("Informe ra do aluno: ");
@@ -60,19 +78,29 @@ public class GestaoAlunos {
 					criar(data, ra, nome);
 					break;
 				case "E":
-					System.out.print("\nVocê será direcionado para \"Exibir\"");
+					System.out.print("\n\nVocê será direcionado para \"Exibir\"");
 					animacao();
 					exibir();
 					break;
 				case "R":
 					System.out.print("\nVocê será direcionado para \"Remover\"");
 					animacao();
-					excluir("");
+				    System.out.println("\n\nREMOVER ALUNO CADASTRADO:"); 
+					System.out.print("Informe ra do aluno: ");
+					ra = ler.nextLine();
+					excluir(ra);
 					break;
 				case "A":
 					System.out.print("\nVocê será direcionado para \"Atualizar\"");
 					animacao();
-					atualizar();
+					System.out.println("\n\nATUALIZAR ALUNO CADASTRADO:");
+					System.out.print("Informe a data de nascimento: ");
+					data = ler.nextLine();
+					System.out.print("Informe ra do aluno: ");
+					ra = ler.nextLine();
+					System.out.print("Informe nome do aluno: ");
+					nome = ler.nextLine();
+					atualizar(data, ra, nome);
 					break;
 				case "S":
 					System.out.println("\nObrigado por testar meu algoritmo!");
@@ -93,6 +121,7 @@ public class GestaoAlunos {
 				Thread.sleep(500);
 				System.out.print(".");
 			}
+			System.out.println("");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
