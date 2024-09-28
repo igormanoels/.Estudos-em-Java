@@ -1,0 +1,16 @@
+.text-field {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+}
+
+.button {
+	-fx-pref-width: 60px;
+	-fx-pref-height: 60px;
+}
+
+#limpar-Tela {
+	-fx-pref-width: 30px;
+	-fx-pref-height: 30px;
+}
+
+
