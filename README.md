@@ -6,9 +6,11 @@
 **Exercícios realizados no curso de Análise e Desenvolvimento de Sistemas, pela Fatec Zona Leste.**
 
 **Disciplinas:** 
-- Linguagem de Programação
-- Sistemas Operacionais I
 - Arquitetura e Organização de Computadores - Desafio: "Algoritmo em Java que converte nomes em código ASCII"
+- Linguagem de Programação
+- Estrutura de Dados
+- Sistemas Operacionais I
+- Programação Orientada a Objetos
 
 <br>
 
