@@ -26,6 +26,7 @@ public class TrabalhandoComMetodos01 {
 		
 		res = valor1 + valor2;
 			System.out.println("Soma: " + res);
+		ler.close();
 	}
 
 	public static void subtrair() {
@@ -40,6 +41,7 @@ public class TrabalhandoComMetodos01 {
 		res = valor1 - valor2;
 			System.out.println("Subtração: " + res);
 
+		ler.close();
 	}
 	
 	public static void multiplicar() {
@@ -53,7 +55,7 @@ public class TrabalhandoComMetodos01 {
 		
 		res = valor1 * valor2;
 			System.out.println("Multiplicação: " + res);
-		
+		ler.close();
 	}
 	
 	public static void dividir() {
@@ -67,6 +69,7 @@ public class TrabalhandoComMetodos01 {
 		
 		res = valor1 / valor2;
 			System.out.println("Divisão: " + res);
+		ler.close();
 	}
 	
 }

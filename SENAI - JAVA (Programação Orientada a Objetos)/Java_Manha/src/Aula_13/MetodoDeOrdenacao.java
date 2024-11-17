@@ -1,7 +1,5 @@
 package Aula_13;
 
-import java.util.Iterator;
-
 public class MetodoDeOrdenacao {
 
 	public static void main(String[] args) {

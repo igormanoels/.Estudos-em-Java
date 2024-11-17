@@ -21,13 +21,16 @@ public class TrabalhandoComMetodos04 {
 		System.out.println("Informe o segundo valor");
 		double valor2 = ler.nextDouble();
 // recebe o valor e armazena na variavel local (valor2) 
-		return valor2;	}
+		ler.close();
+		return valor2;
+	}
 // envia o valor armazenado na variavel local, para o metodo chamador
 
 	public static double lervalor1() {
 		Scanner ler = new Scanner(System.in);
 		System.out.println("Informe o primeiro valor");
 		double valor1 = ler.nextDouble();
+		ler.close();
 		return valor1;
 	}
 

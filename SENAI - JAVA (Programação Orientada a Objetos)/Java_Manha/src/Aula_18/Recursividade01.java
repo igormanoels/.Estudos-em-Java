@@ -45,6 +45,7 @@ public class Recursividade01 {
 		valor2 = ler.nextDouble();
 		res = valor1 * valor2;
 		System.out.println("Resultado: " + res);
+		ler.close();
 	}
 
 	private static void dividir() {
@@ -54,7 +55,8 @@ public class Recursividade01 {
 		System.out.print("Informe o segundo valor: ");
 		valor2 = ler.nextDouble();
 		res = valor1 / valor2;
-		System.out.println("Resultado: " + res);		
+		System.out.println("Resultado: " + res);
+		ler.close();
 	}
 
 	private static void subtrair() {
@@ -64,7 +66,8 @@ public class Recursividade01 {
 		System.out.print("Informe o segundo valor: ");
 		valor2 = ler.nextDouble();
 		res = valor1 - valor2;
-		System.out.println("Resultado: " + res);		
+		System.out.println("Resultado: " + res);
+		ler.close();
 	}
 
 	private static void somar() {
@@ -75,6 +78,7 @@ public class Recursividade01 {
 		valor2 = ler.nextDouble();
 		res = valor1 + valor2;
 		System.out.println("Resultado: " + res);
+		ler.close();
 	}
 
 }

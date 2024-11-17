@@ -4,7 +4,7 @@ public class Calculadora {
 
 	public static void main(String[] args) {
 		EntradaDosDados leitura = new EntradaDosDados();
-		OperacoesAritimeticas calcular = new OperacoesAritimeticas();
+		//OperacoesAritimeticas calcular = new OperacoesAritimeticas();
 		
 		System.out.println("------------------------------------------------");
 		System.out.println("   Seja Bem Vindo a minha primeira cáculadora!  ");
@@ -16,7 +16,7 @@ public class Calculadora {
 			leitura.setOperador();
 		
 			
-/*		System.out.println("Operador escolhido: " + leitura.getOperador());
+		System.out.println("Operador escolhido: " + leitura.getOperador());
 		
 		System.out.print("Agora informe o primeiro número: ");
 			leitura.setRecValor1();
@@ -25,7 +25,7 @@ public class Calculadora {
 		System.out.print("Agora informe o segundo número: ");
 			leitura.setRecValor2();
 		System.out.println("Primeiro valor informado: " + leitura.getRecValor2());
-*/
+
 	}
 
 }

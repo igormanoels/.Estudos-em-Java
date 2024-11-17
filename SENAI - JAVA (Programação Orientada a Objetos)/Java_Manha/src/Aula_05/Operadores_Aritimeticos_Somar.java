@@ -21,6 +21,8 @@ public class Operadores_Aritimeticos_Somar {
 		
 		status = valor1 != valor2;
 			System.out.println("Estado do valor se diferente = " + status);
+
+		ler.close();
 	}
 
 }

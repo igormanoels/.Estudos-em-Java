@@ -8,9 +8,9 @@ public class EntradaDosDados {
 	
 // ENTRADA DO OPERADOR
 	public void setOperador(){
-		this.operador = operador;
 		Scanner ler = new Scanner(System.in);
-		operador = ler.nextLine();
+		this.operador = ler.nextLine();
+		ler.close();
 	}
 	
 	public String getOperador() { 
@@ -19,9 +19,8 @@ public class EntradaDosDados {
 
 // ENTRADA DO VALOR UM
 	public void setRecValor1() {
-		this.valor1 = valor1;
 		Scanner ler = new Scanner(System.in);
-		valor1 = ler.nextDouble();
+		this.valor1 = ler.nextDouble();
 		ler.close();
 	}
 
@@ -31,9 +30,8 @@ public class EntradaDosDados {
 	
 // ENTRADA DO VALOR DOIS
 	public void setRecValor2() {
-		this.valor2 = valor2;
 		Scanner ler = new Scanner(System.in);
-		valor2 = ler.nextDouble();
+		this.valor2 = ler.nextDouble();
 		ler.close();
 	}
 

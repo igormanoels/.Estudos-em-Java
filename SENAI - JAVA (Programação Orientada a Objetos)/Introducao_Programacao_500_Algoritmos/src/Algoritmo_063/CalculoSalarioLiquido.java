@@ -29,6 +29,7 @@ public class CalculoSalarioLiquido {
 		
 		res = (hrtrabalhadas * quantaulas);
 		res = (res - ((res * desc)/100));
+		ler.close();
 		return res;
 	}
 	

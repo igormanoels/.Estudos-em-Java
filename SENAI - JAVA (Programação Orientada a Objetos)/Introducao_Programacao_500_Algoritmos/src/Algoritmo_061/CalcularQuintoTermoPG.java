@@ -21,8 +21,8 @@ public class CalcularQuintoTermoPG {
 		termo = ler.nextDouble();
 
 		double calculo = (termo * (Math.pow(razao, 4)));
+		ler.close();
 		return calculo;
-
 	}
 
 }

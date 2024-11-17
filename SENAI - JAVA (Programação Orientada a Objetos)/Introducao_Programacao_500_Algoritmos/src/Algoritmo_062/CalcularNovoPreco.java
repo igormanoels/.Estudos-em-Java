@@ -29,6 +29,7 @@ public class CalcularNovoPreco {
 			desc = ler.nextDouble();
 		
 		calculonpreco = (preco - ((preco * desc)/100));
+		ler.close();
 		return calculonpreco;
 	}
 
