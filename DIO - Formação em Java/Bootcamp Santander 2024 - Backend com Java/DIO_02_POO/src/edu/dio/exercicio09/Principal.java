@@ -1,9 +1,6 @@
 package edu.dio.exercicio09;
 
 import javax.swing.JOptionPane;
-
-import edu.dio.exercicio08.ContagemPalavras;
-
 /*
  * Livraria Online
  * Crie uma classe chamada "LivrariaOnline" que representa uma livraria online. 

@@ -1,9 +1,6 @@
 package edu.dio.exercicio06;
 
 import javax.swing.JOptionPane;
-
-import edu.dio.exercicio04.ConjuntoPalavrasUnicas;
-
 /*
  * 	Crie uma classe chamada "GerenciadorAlunos" que irá lidar com uma lista de alunos. 
  * 	Cada aluno terá atributos como nome, matrícula e nota. 

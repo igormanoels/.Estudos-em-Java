@@ -13,8 +13,12 @@ public class Principal
 		carros.add(new Carro("Chevrolet"));
 		carros.add(new Carro("BMW"));
 		carros.add(new Carro("Mazda"));
-	
-		System.out.println(carros.contains("ford")); // não possui, usa equals e retorna false
+		
+		// Teste se há um objeto dentro da lista.
+		Carro carroFord = new Carro("ford");
+		boolean contem = carros.contains(carroFord);
+		System.out.println(contem); 
+		
 		System.out.println(new Carro("Ford").hashCode()); // retorna a posição de memória do objeto
 	}
 }

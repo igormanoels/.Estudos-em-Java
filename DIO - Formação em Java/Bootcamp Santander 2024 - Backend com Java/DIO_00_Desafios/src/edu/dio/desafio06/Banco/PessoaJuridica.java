@@ -24,6 +24,7 @@ public class PessoaJuridica implements Cliente
 		this.uf = uf;
 	}
 	
+	public PessoaJuridica() {}
 	
 	// ToString
 	public String toString() 

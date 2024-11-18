@@ -25,7 +25,8 @@ public class Principal
 		System.out.println("Número atual de Tarefas: " + lt.ObterNumeroTotalDeTarefas());
 		
 		System.out.print("Informe a Tarefa desejada: ");
-		lt.AdcionarTarefa(tarefa = ler.nextLine());
+		tarefa = ler.nextLine();
+		lt.AdcionarTarefa(tarefa);
 		
 		System.out.print("Informe a Tarefa desejada: ");
 		lt.AdcionarTarefa(tarefa = ler.nextLine());

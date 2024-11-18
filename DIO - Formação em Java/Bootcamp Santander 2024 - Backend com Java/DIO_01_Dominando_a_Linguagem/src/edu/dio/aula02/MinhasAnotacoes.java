@@ -20,7 +20,8 @@ public class MinhasAnotacoes
 		int numero1 = 1;
 		int numeroUm = 1;
 		int longo = 1;
-		
+		System.out.print(numero$um + numero1 + numeroUm + longo);
+
 		
 		// Tipos de Variáveis
 		String meuNome = "Igor";
@@ -31,7 +32,7 @@ public class MinhasAnotacoes
 		long numeroLongo = 455584777;			// Uma sequência de 9 digitos inteiros
 		double numeroDecimal = 2.5;
 		float numeroFlutuante = 2.5f;
-		boolean usaOculos = true;				// 0 ou 1 bit 
+		boolean usaOculos = true;				// 0 ou 1 bit
 		
 		
 		// Operadores Aritiméticos
@@ -60,13 +61,11 @@ public class MinhasAnotacoes
 		
 		double e = 5.5;							// Casting de um valor
 		int f = (int) e; 
-
 		
 		// Operadores Ternários
         String categoria = (idade >= 18) ? "Maior de Idade" : "Menor de Idade";		
         	// Verifica se uma condição é verdadeira ou falsa
         	// Tipo Varialvel = Condicao ? Verdadeiro : Falso;
-        
         
         // Operadores Relacionais
         categoria = (idade > 18) ? "Maior" : "Menor ou Igual";		// Operador maior  
@@ -80,7 +79,6 @@ public class MinhasAnotacoes
         String texto2 = "roupa";
         boolean compara = texto1.equals(texto2); 					// retorna true ou false        
         
-        
         // Operadores Lógicos
         int nota = 7;
         String avaliar1 = (nota >= 6 && nota <= 10) ? "Aprovado" : "Reprovado";				// Condição 'E'/'AND'
@@ -93,10 +91,14 @@ public class MinhasAnotacoes
         
 		// Testes
 		String nomeCompleto = meuNome.concat(" " + sobreNome); // Concatena um texto
-		System.out.println(avaliar4);
 		
 		final String br = "Brasil"; // a palavra reservada final faz com que a variável se torne imutável
+
+
 		
-				
+		// PRINT APENAS PARA TIRAR O ERRO POR NÃO USAR AS VARIÁVEIS
+		System.out.println(somar + subtrair + multiplicar + dividir + resto + x + y + ""+ b +""+ d + f + "Compara: " + compara);
+		System.out.println(avaliar1 + avaliar2 + avaliar3 + nomeCompleto + avaliar4 + br + categoria);
+		System.out.println(sexo + numeroCurto + numeroLongo + numeroDecimal + numeroFlutuante + ""+ usaOculos); 
 	}
 }

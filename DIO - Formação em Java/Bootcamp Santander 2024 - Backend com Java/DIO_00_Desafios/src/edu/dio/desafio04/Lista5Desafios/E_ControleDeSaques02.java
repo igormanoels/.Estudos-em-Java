@@ -26,11 +26,13 @@ public class E_ControleDeSaques02
 	{
 		Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Informe o limite diário: ");
         double limiteDiario = scanner.nextDouble();
 
         
-        for (int i = 1; ; i++) {
+        while (true) {
 
+            System.out.print("Informe o valor do saque: ");
             double valorSaque = scanner.nextDouble();
 
             if (valorSaque == 0) 

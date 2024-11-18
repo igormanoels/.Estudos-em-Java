@@ -1,9 +1,6 @@
 package edu.dio.exercicio09;
 
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import javax.swing.JOptionPane;
@@ -23,30 +20,33 @@ public class LivrariaOnline
 		livrariaMap.put(link, new Livro(titulo, autor, preco));
 	}
 	
-	public void removerLivro(String titulo)
-	{
-		if (!(livrariaMap.isEmpty()))
-		{
-			Livro livroParaRemover = null;
-
-			for(Livro l : livrariaMap.values())
-			{
-				if (l.getTitulo().equalsIgnoreCase(titulo)) 
-				{
-					livroParaRemover = l;
+	public void removerLivro(String titulo) {
+		if (!livrariaMap.isEmpty()) {
+			String chaveParaRemover = null;
+	
+			// Procurar a chave do livro com base no título
+			for (Map.Entry<String, Livro> entry : livrariaMap.entrySet()) {
+				if (entry.getValue().getTitulo().equalsIgnoreCase(titulo)) {
+					chaveParaRemover = entry.getKey();
 					break;
 				}
 			}
-			livrariaMap.remove(livroParaRemover);
-			JOptionPane.showMessageDialog(null, "O livro: " + titulo + "foi removido",
-					"REMOVER LIVRO: ", JOptionPane.INFORMATION_MESSAGE);
+	
+			// Verificar se encontrou o livro para remover
+			if (chaveParaRemover != null) {
+				livrariaMap.remove(chaveParaRemover); // Remover pelo identificador
+				JOptionPane.showMessageDialog(null, "O livro '" + titulo + "' foi removido.",
+						"REMOVER LIVRO", JOptionPane.INFORMATION_MESSAGE);
+			} else {
+				JOptionPane.showMessageDialog(null, "O livro '" + titulo + "' não está presente na livraria.",
+						"REMOVER LIVRO", JOptionPane.ERROR_MESSAGE);
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "A livraria está vazia.",
+					"REMOVER LIVRO", JOptionPane.ERROR_MESSAGE);
 		}
-		else
-		{
-			JOptionPane.showMessageDialog(null, "O livro " + titulo + "não está presete na livraria",
-					"REMOVER LIVRO: ", JOptionPane.ERROR_MESSAGE);
-		}	
 	}
+	
 	
 	public void exibirLivrosOrdenadosPorPreco()
 	{
@@ -60,8 +60,6 @@ public class LivrariaOnline
 	{
 		if (!(livrariaMap.isEmpty()))
 		{
-			Livro livroPorAutor = null;
-
 			for(Livro l : livrariaMap.values())
 			{
 				if (l.getAutor().equalsIgnoreCase(autor)) 

@@ -38,13 +38,11 @@ public class Convidado
 		return "Nome: " + nome + "Num. convite: " + codigoConvite + "";
 	}
 	
-	/* Ao incrementar um objeto,é realizado uma verificação para que valores não sejam inseridos em duplicidade 
-	 * 
-	 */
+	// Ao incrementar um objeto,é realizado uma verificação para que valores não sejam inseridos em duplicidade 
 	public boolean equals(Object obj) 
 	{
 		if (this == obj) return true;
-		if (!(obj instanceof Convidado convidado)) return false;
+		if (!(obj instanceof Convidado)) return false;
 		return getCodigoConvite() == getCodigoConvite();
 	}
 	

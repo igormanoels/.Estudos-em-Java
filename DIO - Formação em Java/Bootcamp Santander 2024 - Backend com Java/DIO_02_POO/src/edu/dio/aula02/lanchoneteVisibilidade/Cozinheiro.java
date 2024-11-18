@@ -19,6 +19,7 @@ public class Cozinheiro
 	private void prepararLanche() {
 		selecionarIngredientesLanche();
 		lavarIngredientes();
+		prepararCombo();
 		System.out.println("PREPARANDO LANCHE TIPO HAMBÚRGUER");
 	}
 	private void prepararVitamina() {

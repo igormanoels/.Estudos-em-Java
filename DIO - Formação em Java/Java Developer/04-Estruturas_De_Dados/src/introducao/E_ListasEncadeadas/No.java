@@ -3,7 +3,7 @@ package introducao.E_ListasEncadeadas;
 public class No <T>
 {
 	private T conteudo;
-	private No refNo;
+	private No<T> refNo;
 	
 	public No() 
 	{ 
@@ -16,7 +16,7 @@ public class No <T>
 		this.conteudo = conteudo;
 	}
 	
-	public No(T conteudo, No refNo)
+	public No(T conteudo, No<T> refNo)
 	{
 		this.refNo = refNo;
 		this.conteudo = conteudo;
@@ -30,11 +30,11 @@ public class No <T>
 		this.conteudo = conteudo;
 	}
 
-	public No getRefNo() {
+	public No<T> getRefNo() {
 		return refNo;
 	}
 
-	public void setRefNo(No refNo) {
+	public void setRefNo(No<T> refNo) {
 		this.refNo = refNo;
 	}
 	

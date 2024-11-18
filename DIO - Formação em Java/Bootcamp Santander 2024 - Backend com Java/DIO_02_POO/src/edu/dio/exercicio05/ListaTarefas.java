@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 public class ListaTarefas 
 {
 	private Set<Tarefa> tarefasSet;
-	private Set<Tarefa> limparTarefas;
 
 	public ListaTarefas() 
 	{

@@ -3,7 +3,7 @@ package introducao.G_ListasCirculares;
 public class No <T>
 {
 	private T conteudo;
-	private No priximoNo;
+	private No<T> priximoNo;
 	
 	public No(T conteudo) 
 	{
@@ -12,24 +12,24 @@ public class No <T>
 	}
 
 	public T getConteudo() {
-		return conteudo;
+		return this.conteudo;
 	}
 
 	public void setConteudo(T conteudo) {
 		this.conteudo = conteudo;
 	}
 
-	public No getPriximoNo() {
-		return priximoNo;
+	public No<T> getPriximoNo() {
+		return this.priximoNo;
 	}
 
-	public void setPriximoNo(No priximoNo) {
+	public void setPriximoNo(No<T> priximoNo) {
 		this.priximoNo = priximoNo;
 	}
 	
 	@Override
 	public String toString() 
 	{
-		return "" + conteudo;
+		return "" + this.conteudo;
 	}
 }

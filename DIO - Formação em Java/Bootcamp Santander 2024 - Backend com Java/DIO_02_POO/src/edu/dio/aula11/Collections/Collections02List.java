@@ -10,7 +10,7 @@ public class Collections02List
 	public static void main(String[] args) 
 	{
 		Scanner ler = new Scanner(System.in);
-		List<String> alunos = new ArrayList();
+		List<String> alunos = new ArrayList<>();
 		
 		//Adcionando nomes a lista
 		alunos.add("Alex");

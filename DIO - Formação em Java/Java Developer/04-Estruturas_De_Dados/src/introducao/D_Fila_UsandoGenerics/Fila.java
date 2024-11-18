@@ -18,7 +18,7 @@ public class Fila<T>
 	// enfileirar
 	public void enqueue(T obj) 
 	{
-		No novoNo = new No(obj);
+		No<T> novoNo = new No<T>(obj);
 		novoNo.setRefNo(refEntrada);
 		refEntrada = novoNo;
 	}
@@ -28,7 +28,7 @@ public class Fila<T>
 	{
 		if (!this.isEmpty()) 
 		{
-			No primeiroNo = refEntrada;
+			No<T> primeiroNo = refEntrada;
 			while(true)
 			{
 				if (primeiroNo.getRefNo() != null) 
@@ -50,8 +50,8 @@ public class Fila<T>
 	{
 		if (!this.isEmpty()) 
 		{
-			No primeiroNo = refEntrada;
-			No auxiliar = refEntrada;
+			No<T> primeiroNo = refEntrada;
+			No<T> auxiliar = refEntrada;
 			while(true)
 			{
 				if (primeiroNo.getRefNo() != null) 
@@ -74,7 +74,7 @@ public class Fila<T>
 	public String toString() 
 	{
 		String retorno = "";
-		No auxiliar = refEntrada;
+		No<T> auxiliar = refEntrada;
 		
 		if (!this.isEmpty()) 
 		{

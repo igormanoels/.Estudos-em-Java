@@ -2,7 +2,7 @@ package edu.dio.desafio07.POO.dominio;
 
 public abstract class Conteudo 
 {
-	protected static final double xpPadrao = 10;
+	protected final double xpPadrao = 10;
 	
 	private String titulo;
 	private String descricao;

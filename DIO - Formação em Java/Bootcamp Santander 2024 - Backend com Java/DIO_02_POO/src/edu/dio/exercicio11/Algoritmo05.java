@@ -79,7 +79,7 @@ class Desafio
 			{
 				System.out.println("Senha incorreta!");
 			}
-			
+			scanner.close();
 		}
 		else if(tipoCofre.equalsIgnoreCase("fisico"))
 		{

@@ -1,9 +1,6 @@
 package edu.dio.exercicio03;
 
 import javax.swing.JOptionPane;
-
-import edu.dio.exercicio02.SomaNumeros;
-
 /*
  * 2. Ordenação de Números
  * Crie uma classe chamada "OrdenacaoNumeros" que possui uma lista de números inteiros como atributo. 

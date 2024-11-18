@@ -37,7 +37,7 @@ public class Banco
 		PessoaFisica novoCliente = (new PessoaFisica (nome, cpf, rua, numero, bairro, estado, uf));
 		Conta contaPP = new ContaPoupanca(novoCliente, 5.00);
 		clientesPF.add(novoCliente);
-		
+		System.out.println(contaPP);
 	}
 
 	public void abrirContaPJ(String nome, String cnpj, String rua, int numero, String bairro, String estado, String uf) 
@@ -45,6 +45,7 @@ public class Banco
 		PessoaJuridica novoCliente = (new PessoaJuridica (nome, cnpj, rua, numero, bairro, estado, uf));
 		Conta contaCC = new ContaCorrente(novoCliente, 1000.00);
 		clientesPJ.add(novoCliente);
+		System.out.println(contaCC);
 	}
 	
 	
@@ -88,7 +89,7 @@ public class Banco
 					break;
 				}
 			}
-			clientesPF.remove(removerPJ);
+			clientesPJ.remove(removerPJ);
 			JOptionPane.showMessageDialog(null, "O cliente: " + removerPJ.getNome() + " - CNPJ: " + removerPJ.getDocumento(),
 					"ENCERRAR CONTA PESSOA FÍSICA: ", JOptionPane.INFORMATION_MESSAGE);
 		} 
@@ -98,5 +99,6 @@ public class Banco
 					"ENCERRAR CONTA PESSOA JURÍDICA: ", JOptionPane.ERROR_MESSAGE);
 		}
 	}
+
 	
 }

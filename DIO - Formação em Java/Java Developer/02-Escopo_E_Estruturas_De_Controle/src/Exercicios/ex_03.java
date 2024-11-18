@@ -27,12 +27,10 @@ public class ex_03
 		Scanner leitor = new Scanner(System.in);
 		int C = leitor.nextInt();
 		String nome;
-		int N = 0;
 
 		for (int i = 0; i < C; i++) 
 		{
 			nome = leitor.next();
-			N = leitor.nextInt();
 			if (nome.equals("Thor")) 
 			{
 				System.out.println("Y");

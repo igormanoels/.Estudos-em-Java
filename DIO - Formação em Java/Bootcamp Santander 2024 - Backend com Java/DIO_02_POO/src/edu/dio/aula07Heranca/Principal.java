@@ -8,7 +8,7 @@ public class Principal
 		Moto moto = new Moto();
 		
 		carro.ligar();
-		
+		moto.ligar();
 		
 	}
 }

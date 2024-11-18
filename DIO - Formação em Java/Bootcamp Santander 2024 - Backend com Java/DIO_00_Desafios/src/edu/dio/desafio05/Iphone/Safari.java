@@ -16,6 +16,7 @@ public class Safari extends Conexao
 		VerificarConexao();
 		
 		System.out.println("Contúdo do site sendo visualizado pelo usuário");
+		ler.close();
 	}	
 
 	

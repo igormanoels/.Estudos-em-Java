@@ -1,9 +1,6 @@
 package edu.dio.exercicio05;
 
 import javax.swing.JOptionPane;
-
-import edu.dio.exercicio04.ConjuntoPalavrasUnicas;
-
 /*
  * 	Crie uma classe chamada "ListaTarefas" que possui um conjunto de objetos do tipo 
  * 	"Tarefa" como atributo. Cada tarefa possui um atributo de descrição e um atributo 

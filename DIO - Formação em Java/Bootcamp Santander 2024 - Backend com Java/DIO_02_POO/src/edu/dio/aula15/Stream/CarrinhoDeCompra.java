@@ -18,9 +18,7 @@ public class CarrinhoDeCompra
 	
 	
 	public double calcularValorTotal() 
-	{
-		double valorTotal = 0d;
-		
+	{	
 		// Lança uma exceção caso a lista esteja vazio
 		if(carrinhoSet.isEmpty())
 		{

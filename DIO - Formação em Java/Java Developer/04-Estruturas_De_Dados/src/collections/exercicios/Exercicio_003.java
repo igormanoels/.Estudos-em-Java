@@ -39,7 +39,7 @@ public class Exercicio_003
 		
 		
 		System.out.println("\nInvertendo a ordem alfabética das cores");
-		List<String> coresTemp = new LinkedList(cores2);
+		List<String> coresTemp = new LinkedList<>(cores2);
 		Collections.reverse(coresTemp);
 		Set<String>coresInvertidas = new LinkedHashSet<>(coresTemp);
 		for (String cor: coresInvertidas) System.out.println(cor);

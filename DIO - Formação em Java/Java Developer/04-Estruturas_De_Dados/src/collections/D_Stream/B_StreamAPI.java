@@ -16,25 +16,23 @@ public class B_StreamAPI
 		List<String> numeros = Arrays.asList("1","4","5","9","9","4","3","2","8","7");
 		
 		// Imprime todos os elementos
-		System.out.println("Usando Consumer");
+		System.out.print("Usando Consumer: ");
 		numeros.stream().forEach(new Consumer<String>() {
 			public void accept(String s) {
 				System.out.print(s + " ");
 			}
 		});
 		
-		System.out.println("\n\nUsando lambda");
-		numeros.stream().forEach(System.out::print);
+		System.out.print("\n\nUsando lambda: ");
+		numeros.stream().forEach(s -> System.out.print(s + " "));
 		
-		System.out.println("\n\nUsando lambda sem o stream");
+		System.out.print("\n\nUsando lambda sem o stream: ");
 		numeros.forEach(s -> System.out.print(s + " "));
-		
-		
 		
 		
 		// 5 primeiros números, lembrado que o SET, não armazena números repetidos, 
 		// logo ele retorna 4 valores porque o 9 se repete
-		System.out.println("\n\nImprima os 5 primeiros números");
+		System.out.print("\n\nImprima os 5 primeiros números: ");
 		numeros.stream()
 			.limit(5)
 			.collect(Collectors.toSet())
@@ -45,13 +43,10 @@ public class B_StreamAPI
 				.limit(5)
 				.collect(Collectors.toSet());
 		
-		
 		coletarSet.forEach(s -> System.out.print(s + " "));
+			
 		
-		
-		
-		
-		System.out.println("\n\nConverte os valores em inteiro");
+		System.out.print("\n\nConverte os valores em inteiro: ");
 		List<Integer> numerosMaiores = numeros.stream()
 				.map(s -> Integer.parseInt(s))
 				.collect(Collectors.toList());
@@ -75,12 +70,12 @@ public class B_StreamAPI
 				.mapToInt(Integer::parseInt)
 				.average();		
 		
-		media.ifPresent(m -> System.out.println("A média é: " + m));
+		media.ifPresent(m -> System.out.print("A média é: " + m));
 		
 		
 		
 		
-		System.out.println("\n\nRemova os valores impares");
+		System.out.print("\n\nRemova os valores impares: ");
 		// é uma método de lista, por isso ele consegue alterar a lista
 		numerosConvertidos.removeIf(i -> (i % 2 != 0));
 		
@@ -91,34 +86,34 @@ public class B_StreamAPI
 		
 		
 		
-		System.out.println("\n\nA soma dos valores");
+		System.out.print("\n\nA soma dos valores: ");
 		int somatoria = numeros.stream()
 				.mapToInt(Integer::parseInt)
 				.sum();
-		System.out.println(somatoria);
+		System.out.print(somatoria);
 
 		
 		
-		System.out.println("\n\nO maior valor");
+		System.out.print("\n\nO maior valor: ");
 		OptionalInt maior = numeros.stream()
 				.mapToInt(Integer::parseInt)
 				.max();
 		maior.ifPresent(i -> System.out.print(i + " "));
 		
 		
-		System.out.println("\n\nO menor valor");
+		System.out.print("\n\nO menor valor: ");
 		OptionalInt menor = numeros.stream()
 				.mapToInt(Integer::parseInt)
 				.min();
 		menor.ifPresent(i -> System.out.print(i + " "));
 		
 		
-		System.out.println("\n\nNúmeros ordenados");
+		System.out.print("\n\nNúmeros ordenados: ");
 		List<Integer> numerosOrdenados = numeros.stream()
 				.map(Integer::parseInt)
 				.sorted()
 				.collect(Collectors.toList());
-		numeros.forEach(i -> System.out.print(i + " "));
+		numerosOrdenados.forEach(i -> System.out.print(i + " "));
 	}
 }
 
