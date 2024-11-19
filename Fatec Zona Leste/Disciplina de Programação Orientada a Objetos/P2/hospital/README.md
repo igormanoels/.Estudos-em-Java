@@ -20,5 +20,5 @@ Esse projeto consiste em uma aplicação em Java, com implementação de um Banc
 - IDE Utilizada - [Eclipse 2024-06](https://eclipseide.org/)
 - Java FX - [JavaFX and Eclipse](https://openjfx.io/openjfx-docs/#introduction)
 - Diagrama - [Visual Paradigm 17.2](https://www.drawio.com/)
-- SQL Server - [MariaDB Server 10.5.27](https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.5.27&os=windows&cpu=x86_64&pkg=msi&mirror=fder)
+- MariaDB Server - [MariaDB Server 10.5.27](https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.5.27&os=windows&cpu=x86_64&pkg=msi&mirror=fder)
 
