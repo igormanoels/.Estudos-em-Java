@@ -2,8 +2,8 @@ package conexaoMariaDB;
 
 public class MariaDB {
 
-//    private String URL = "jdbc:mariadb://localhost:3306/hospital?allowMultiQueries=true";
-    private String URL = "jdbc:mariadb://localhost:3306/hospital";
+    private String URL = "jdbc:mariadb://localhost:3306/hospital?allowMultiQueries=true";
+//    private String URL = "jdbc:mariadb://localhost:3306/hospital";
     private String USER = "pooUser";
     private String PASS = "123456";
 

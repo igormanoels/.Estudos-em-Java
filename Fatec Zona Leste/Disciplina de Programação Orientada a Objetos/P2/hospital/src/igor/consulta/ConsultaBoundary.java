@@ -10,7 +10,7 @@ import tela.Menu;
 
 public class ConsultaBoundary {
 
-    private ConsultaControl control = new ConsultaControl();
+//     private ConsultaControl control = new ConsultaControl();
     protected TextField txtCpf = new TextField();
     protected TextField txtRegistro = new TextField();
     protected TextField txtAgendamento = new TextField();
@@ -42,7 +42,7 @@ public class ConsultaBoundary {
 
 
         Button btnGravar = new Button("Gravar");
-//        btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
+//        btnGravar.setOnAction(e -> control.);
         grid.add(btnGravar, 0, 7);
 
         Button btnPesquisar = new Button("Pesquisar");
