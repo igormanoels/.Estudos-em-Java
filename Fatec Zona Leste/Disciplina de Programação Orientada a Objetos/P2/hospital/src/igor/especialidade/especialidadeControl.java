@@ -17,30 +17,32 @@ public class EspecialidadeControl {
         this.boundary = boundary;
     }
 
-    public String inserirEspecialidade() {
+    public void inserirEspecialidade() {
         try {
-            Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-            
-            PreparedStatement stm = conexao.prepareStatement("""
-                INSERT INTO especialidade (especialidade) 
-                VALUES (?)
-             """);
-            String esp = boundary.txtEspecialidade.getText().trim();
-            stm.setString(1, esp);
+            if(boundary.txtId.getText().isEmpty()) {
+                Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
+                
+                PreparedStatement stm = conexao.prepareStatement("""
+                    INSERT INTO especialidade (especialidade) 
+                    VALUES (?)
+                """);
+                String esp = boundary.txtEspecialidade.getText().trim();
+                stm.setString(1, esp);
 
-            int linhasAfetadas = stm.executeUpdate();
-            mensagem = (linhasAfetadas > 0) ? "Especialidade: " + esp + ", gravada com sucesso!" : "Falha ao gravar a especialidade.";
-
+                int linhasAfetadas = stm.executeUpdate();
+                mensagem = (linhasAfetadas > 0) ? "Especialidade: " + esp + ", gravada com sucesso!" : "Falha ao gravar a especialidade.";
+            } else {
+                mensagem = "Informe apenas o nome da especialidade";
+            }
         } catch (Exception e) {
             mensagem = "Erro: " + e.getMessage();
         }
 
         boundary.AlertaTela(mensagem);
         boundary.limparTela();
-        return mensagem;
     }
 
-    public String buscarEspecialidade() {
+    public void buscarEspecialidade() {
         try {
             int linhasAfetadas = 0;
             Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
@@ -72,14 +74,60 @@ public class EspecialidadeControl {
         }
 
         boundary.AlertaTela(mensagem);
-        return mensagem;
     }
 
-//     public void alterarEspecialidade() {
-// // CHAMAR A pegarEspecialidade PARA ALTERAR
-//     }
+    public void alterarEspecialidade() {
+        try {
+            Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
+            String sql;
+            
+            if (boundary.txtId.getText().isEmpty() && boundary.txtEspecialidade.getText().isEmpty()) {    
+                mensagem = "Informe o id e o nome da especialidade para atualizar";
+            } else {
+                sql = """
+                    UPDATE especialidade SET especialidade=? 
+                    WHERE id=?
+                """;
+                PreparedStatement stm = conexao.prepareStatement(sql);
+                stm.setString(1, boundary.txtEspecialidade.getText().trim());
+                stm.setString(2, boundary.txtId.getText().trim());
+                int linhasAfetadas = stm.executeUpdate();
+                mensagem = (linhasAfetadas > 0) ? "Especialidade alterada com sucesso!" : "Falha ao alterar a especialidade.";
+            }
+        } catch (Exception e) {
+            mensagem = "Erro: " + e.getMessage();
+        }
+        boundary.AlertaTela(mensagem);
+        boundary.limparTela();
+    }
 
-//     public void removerEspecialidade() {
-// // CHAMAR A pegarEspecialidade PARA REMOVER
-//     }
+    public void removerEspecialidade() {
+        try {
+            Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
+            String sql, op;
+            
+            if (boundary.txtId.getText().isEmpty()) {    
+                sql = """
+                    DELETE FROM especialidade WHERE especialidade = ?
+                """;
+                op = boundary.txtEspecialidade.getText().trim();
+                
+            } else {
+                sql = """
+                    DELETE FROM especialidade WHERE id = ?
+                """;
+                op = boundary.txtId.getText().trim();
+            }
+
+            PreparedStatement stm = conexao.prepareStatement(sql);
+            stm.setString(1, op);
+            int linhasAfetadas = stm.executeUpdate();
+            mensagem = (linhasAfetadas > 0) ? "Especialidade removida com sucesso!" : "Falha ao remover a especialidade.";
+
+        } catch (Exception e) {
+            mensagem = "Erro: " + e.getMessage();
+        }
+        boundary.AlertaTela(mensagem);
+        boundary.limparTela();
+    }
 }

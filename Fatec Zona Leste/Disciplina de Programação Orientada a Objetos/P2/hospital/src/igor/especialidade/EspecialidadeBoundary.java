@@ -34,11 +34,11 @@ public class EspecialidadeBoundary {
         grid.add(btnPesquisar, 1, 3);
 
         Button btnAlterar = new Button("Alterar");
-        // btnAlterar.setOnAction(e -> control.alterarEspecialidade());
+        btnAlterar.setOnAction(e -> control.alterarEspecialidade());
         grid.add(btnAlterar, 2, 3);
 
         Button btnRemover = new Button("Remover");
-        // btnRemover.setOnAction(e -> control.removerEspecialidade());
+        btnRemover.setOnAction(e -> control.removerEspecialidade());
         grid.add(btnRemover, 3, 3);
 
         Button btnVoltar = new Button("Voltar ao Menu");
