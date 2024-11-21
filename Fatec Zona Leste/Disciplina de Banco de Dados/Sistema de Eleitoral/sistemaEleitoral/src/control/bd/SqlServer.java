@@ -2,9 +2,8 @@ package control.bd;
 
 public class SqlServer {
 
-    private String URL = "jdbc:mariadb://localhost:3306/hospital?allowMultiQueries=true";
-    //    private String URL = "jdbc:mariadb://localhost:3306/hospital";
-    private String USER = "pooUser";
+    private String URL = "jdbc:sqlserver://localhost:1433;databaseName=NomeDoBanco";
+    private String USER = "SA";
     private String PASS = "123456";
     
     public String getURL() {
