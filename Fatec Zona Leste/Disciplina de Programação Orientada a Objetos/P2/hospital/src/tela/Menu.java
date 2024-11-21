@@ -1,15 +1,20 @@
 package tela;
 import igor.consulta.ConsultaBoundary;
 import igor.especialidade.EspecialidadeBoundary;
+import thiago.cruds.gestaoPedidos.estoque.EstoqueBoundary;
+import thiago.cruds.receita.ReceitaBoundary;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+
 public class Menu {
 
     private ConsultaBoundary csBoundary = new ConsultaBoundary();
     private EspecialidadeBoundary espBoundary = new EspecialidadeBoundary();
+    private EstoqueBoundary estBoundary = new EstoqueBoundary();
+    private ReceitaBoundary recBoundary = new ReceitaBoundary();
 
     public Scene telaPrincipal(Stage stage) {
         GridPane grid = new GridPane();
@@ -31,6 +36,8 @@ public class Menu {
         
         Button btnCadMedicamento = new Button("Cadastrar novo Medicamento");
         grid.add(btnCadMedicamento, 0, 3);
+        btnCadMedicamento.setOnAction(e -> stage.setScene(estBoundary.telaEstoque(stage, this)));
+
 
         
         Button btnCadDoador = new Button("Cadastrar Doador de Sangue");
@@ -56,7 +63,11 @@ public class Menu {
         
         Button btnSolicitarCompra = new Button("Abrir Solicitação de Compra");
         grid.add(btnSolicitarCompra, 0, 9);
-       
+        
+        Button btnReceitar = new Button("Abrir Solicitação de Receita");
+        grid.add(btnReceitar, 0, 10);
+        btnReceitar.setOnAction(e -> stage.setScene(recBoundary.telaReceita(stage, this)));
+
         
 
         stage.setTitle("Sistema Hospitalar: Menu");

@@ -1,6 +1,8 @@
 package igor.consulta;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -10,7 +12,6 @@ import tela.Menu;
 
 public class ConsultaBoundary {
 
-//     private ConsultaControl control = new ConsultaControl();
     protected TextField txtCpf = new TextField();
     protected TextField txtRegistro = new TextField();
     protected TextField txtAgendamento = new TextField();
@@ -18,9 +19,9 @@ public class ConsultaBoundary {
     protected TextField txtSala = new TextField();
     protected TextField txtEspecialidade = new TextField();
     protected TextField txtDescricao = new TextField();
-
-
-    public Scene cadastrarConsulta(Stage stage, Menu menu){
+    private ConsultaBoundary control = new ConsultaBoundary(); 
+    
+    public Scene cadastrarConsulta(Stage stage, Menu menu) {
         GridPane grid = new GridPane();
         Scene consulta = new Scene(grid, 800, 600);
 
@@ -65,6 +66,24 @@ public class ConsultaBoundary {
 
         stage.setTitle("Sistema Hospitalar: Agendamento de Consulta");
         return consulta;    
+    }
+
+     public void AlertaTela(String msg) {
+        Alert alerta = new Alert(AlertType.INFORMATION);
+        alerta.setTitle("Aviso:");
+        alerta.setHeaderText("Atenção!");
+        alerta.setContentText(msg); 
+        alerta.show();
+    }
+
+    public void limparTela() {
+        this.txtCpf.setText("");
+        this.txtRegistro.setText("");
+        this.txtAgendamento.setText("");
+        this.txtHorario.setText("");
+        this.txtSala.setText("");
+        this.txtEspecialidade.setText("");
+        this.txtDescricao.setText("");
     }
     
 }
