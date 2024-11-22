@@ -28,6 +28,10 @@ public class PartidoView {
         grid.add(txtNome, 1, 1);
         grid.add(txtRep, 1, 2);
 
+        GridPane.setColumnSpan(txtCnpj, 3);
+        GridPane.setColumnSpan(txtNome, 3);
+        GridPane.setColumnSpan(txtRep, 3);
+
 
         Button btnGravar = new Button("Gravar");
         grid.add(btnGravar, 0, 4);
@@ -35,11 +39,11 @@ public class PartidoView {
 
         Button btnAlterar = new Button("Alterar");
         grid.add(btnAlterar, 1, 4);
-        //btnCadEspecialidade.setOnAction(e -> stage.setScene(espBoundary.cadastrarEspecialidade(stage, this)));
+        btnAlterar.setOnAction(e -> control.alterarPartido());
 
         Button btnBuscar = new Button("Buscar");
         grid.add(btnBuscar, 2, 4);
-        //btnCadEspecialidade.setOnAction(e -> stage.setScene(espBoundary.cadastrarEspecialidade(stage, this)));
+        btnBuscar.setOnAction(e -> control.buscarPartido());
 
         Button btnRemover = new Button("Remover");
         grid.add(btnRemover, 3, 4);

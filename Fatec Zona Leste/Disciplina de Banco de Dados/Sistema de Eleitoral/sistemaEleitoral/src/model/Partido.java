@@ -12,6 +12,8 @@ public class Partido {
         this.rep = str[2];
     }
 
+    public Partido() {}
+
     public String getNome() {
         return nome;
     }

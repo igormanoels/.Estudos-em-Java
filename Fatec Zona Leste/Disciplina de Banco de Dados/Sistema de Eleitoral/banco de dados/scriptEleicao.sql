@@ -51,6 +51,7 @@ GO
 INSERT INTO Voto (eleitorCpf, candidatoNumero)
 VALUES ('12345678920', 22);
 
+USE eleicao
 SELECT * FROM Eleitor
 SELECT * FROM Voto
 SELECT * FROM Partido
@@ -60,3 +61,7 @@ INSERT INTO Voto (eleitorCpf, candidatoNumero) VALUES ('12345678940', 22);
 
 DELETE FROM Candidato WHERE partidoCnpj = '12345678901234';
 DELETE Partido WHERE cnpj = '12345678901234';
+
+INSERT INTO Partido (cnpj, nome, representante) VALUES ('12345678901235', 'Partido 2', 'Josué');
+
+SELECT * FROM Partido WHERE cnpj = '12345678901234';
