@@ -4,10 +4,11 @@ import java.time.LocalDate;
 
 public class Candidato {
     
+    private int numero;
     private String nome;
+    private String cpf;
     private LocalDate nascimento;
     private String estado;
-    private int numero;
 
     public String getNome() {
         return nome;
@@ -41,7 +42,12 @@ public class Candidato {
         this.numero = numero;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
 
-
-    
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+   
 }

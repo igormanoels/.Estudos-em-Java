@@ -2,7 +2,7 @@ package control.bd;
 
 public class SqlServer {
 
-    private String URL = "jdbc:sqlserver://localhost:1433;databaseName=NomeDoBanco";
+    private String URL = "jdbc:sqlserver://localhost:1433;databaseName=eleicao;encrypt=true;trustServerCertificate=true";
     private String USER = "SA";
     private String PASS = "123456";
     

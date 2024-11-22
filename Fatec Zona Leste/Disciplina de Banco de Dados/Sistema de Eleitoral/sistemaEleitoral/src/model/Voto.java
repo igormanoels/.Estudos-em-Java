@@ -2,23 +2,28 @@ package model;
 
 public class Voto {
     
-    private Candidato candidato;
-    private int votos;
+    private Eleitor eleitor;
+    private int numero;
 
-    public Candidato getCandidato() {
-        return candidato;
+    public Voto (String...str) {
+        this.eleitor = new Eleitor(str[0]);
+        this.numero = Integer.parseInt(str[1]);
+    }
+
+    public Eleitor getEleitor() {
+        return eleitor;
     }
     
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
+    public void setEleitor(Eleitor eleitor) {
+        this.eleitor = eleitor;
     }
     
-    public int getVotos() {
-        return votos;
+    public int getNumero() {
+        return numero;
     }
     
-    public void setVotos(int votos) {
-        this.votos = votos;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     

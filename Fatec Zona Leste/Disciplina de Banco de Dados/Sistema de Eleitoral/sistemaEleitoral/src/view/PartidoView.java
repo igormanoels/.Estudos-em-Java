@@ -1,5 +1,6 @@
 package view;
 
+import control.PartidoControl;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,9 +10,10 @@ import javafx.stage.Stage;
 
 public class PartidoView {
 
-    protected TextField txtCnpj = new TextField();
-    protected TextField txtNome = new TextField();
-    protected TextField txtRepresentante = new TextField();
+    private PartidoControl control = new PartidoControl(this);
+    public TextField txtCnpj = new TextField();
+    public TextField txtNome = new TextField();
+    public TextField txtRep = new TextField();
 
     public Scene telaPartido (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
@@ -22,7 +24,7 @@ public class PartidoView {
         grid.add(new Label("REPRESENTANTE: "), 0, 2);
         grid.add(txtCnpj, 1, 0);
         grid.add(txtNome, 1, 1);
-        grid.add(txtRepresentante, 1, 2);
+        grid.add(txtRep, 1, 2);
 
 
         Button btnGravar = new Button("Gravar");
@@ -58,7 +60,7 @@ public class PartidoView {
     public void limparTela() {
         this.txtCnpj.setText("");
         this.txtNome.setText("");
-        this.txtRepresentante.setText("");
+        this.txtRep.setText("");
     }
 
 }

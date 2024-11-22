@@ -2,9 +2,15 @@ package model;
 
 public class Partido {
 
+    private String cnpj;
     private String nome;
     private String representante;
-    private String cnpj;
+  
+    public Partido (String...str) {
+        this.cnpj = str[0];
+        this.nome = str[1];
+        this.representante = str[2];
+    }
 
     public String getNome() {
         return nome;
