@@ -1,0 +1,57 @@
+/* Estilo para o GridPane */
+.grid-pane {
+    -fx-alignment: center; /* Centraliza o conteúdo */
+    -fx-hgap: 20px; /* Espaçamento horizontal */
+    -fx-vgap: 20px; /* Espaçamento vertical */
+    -fx-padding: 20px; /* Margem interna */
+}
+
+/* Estilo para os rótulos */
+.label {
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-text-fill: #333; /* Cor do texto */
+    -fx-font-weight: bold; /* Negrito para destaque */
+}
+
+/* Estilo para os campos de texto */
+.text-field {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 8px; /* Espaçamento interno */
+    -fx-pref-width: 250px; /* Largura padrão */
+    -fx-border-color: #ccc; /* Borda cinza */
+    -fx-border-radius: 5px; /* Borda arredondada */
+    -fx-background-radius: 5px; /* Fundo arredondado */
+}
+
+/* Estilo para os botões */
+.button {
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-background-color: #4caf50; /* Cor de fundo verde */
+    -fx-text-fill: white; /* Cor do texto branco */
+    -fx-padding: 10px 20px; /* Margem interna */
+    -fx-border-radius: 10px; /* Bordas arredondadas */
+    -fx-background-radius: 10px;
+    -fx-cursor: hand; /* Cursor tipo "mão" */
+}
+
+/* Botão específico para ações */
+.button:first-of-type {
+    -fx-background-color: #2196f3; /* Azul */
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Fundo verde mais escuro */
+}
+
+.button:first-of-type:hover {
+    -fx-background-color: #1e88e5; /* Azul mais escuro */
+}
+
+/* Botão específico para remover */
+.button:nth-of-type(4) {
+    -fx-background-color: #f44336; /* Vermelho */
+}
+
+.button:nth-of-type(4):hover {
+    -fx-background-color: #e53935; /* Vermelho mais escuro */
+}

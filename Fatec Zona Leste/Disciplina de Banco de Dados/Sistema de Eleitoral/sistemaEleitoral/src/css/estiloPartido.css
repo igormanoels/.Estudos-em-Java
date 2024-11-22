@@ -1,0 +1,42 @@
+/* Estilo para o GridPane */
+.grid-pane {
+    -fx-alignment: center; /* Centraliza o conteúdo */
+    -fx-hgap: 20px; /* Espaçamento horizontal */
+    -fx-vgap: 20px; /* Espaçamento vertical */
+    -fx-padding: 20px; /* Margem interna */
+}
+
+/* Estilo para os rótulos */
+.label {
+    -fx-font-size: 16px; /* Aumenta o tamanho da fonte */
+    -fx-text-fill: #333; /* Cor do texto */
+}
+
+/* Estilo para os campos de texto */
+.text-field {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 8px; /* Margem interna */
+    -fx-pref-width: 200px; /* Largura padrão */
+}
+
+/* Estilo para os botões */
+.button {
+    -fx-background-color: #4caf50; /* Cor de fundo verde */
+    -fx-text-fill: white; /* Cor do texto */
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-padding: 10px 20px; /* Espaçamento interno */
+    -fx-border-radius: 10px; /* Bordas arredondadas */
+    -fx-background-radius: 10px;
+    -fx-cursor: hand; /* Altera o cursor ao passar sobre o botão */
+}
+
+/* Efeito ao passar o mouse */
+.button:hover {
+    -fx-background-color: #45a049; /* Cor de fundo mais escura no hover */
+}
+
+/* Estilo para o botão "Voltar ao Menu" */
+.button:focused {
+    -fx-background-color: #3e8e41;
+}
+

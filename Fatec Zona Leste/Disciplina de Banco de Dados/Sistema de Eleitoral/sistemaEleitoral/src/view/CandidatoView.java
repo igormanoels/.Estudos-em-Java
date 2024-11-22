@@ -16,6 +16,7 @@ public class CandidatoView {
 
     public Scene telaCandidato (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
+        grid.getStyleClass().add("grid-pane"); // Aplica o estilo ao GridPane
         Scene principal = new Scene(grid, 800, 600);
 
         grid.add(new Label("NOME: "), 0, 0);
@@ -54,6 +55,7 @@ public class CandidatoView {
         btnLimpar.setOnAction(e -> limparTela());
 
 
+        principal.getStylesheets().add(getClass().getResource("/css/estiloCandidato.css").toExternalForm());
         stage.setTitle("Sistema de Votação: Candidato");
         return principal;
     }

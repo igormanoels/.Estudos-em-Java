@@ -45,12 +45,18 @@ VALUES (13, 'Maria Candidata', '98765432100', '1985-06-15', 'SP', '1234567890123
 GO
 -- Inserir dados no Eleitor
 INSERT INTO Eleitor (cpf)
-VALUES ('12345678900');
+VALUES ('12345678930');
 GO
 -- Inserir dados no Voto
 INSERT INTO Voto (eleitorCpf, candidatoNumero)
-VALUES ('12345678900', 13);
+VALUES ('12345678920', 22);
 
+SELECT * FROM Eleitor
 SELECT * FROM Voto
+SELECT * FROM Partido
 
+INSERT INTO Eleitor (cpf) VALUES ('12345678920');
+INSERT INTO Voto (eleitorCpf, candidatoNumero) VALUES ('12345678940', 22);
 
+DELETE FROM Candidato WHERE partidoCnpj = '12345678901234';
+DELETE Partido WHERE cnpj = '12345678901234';

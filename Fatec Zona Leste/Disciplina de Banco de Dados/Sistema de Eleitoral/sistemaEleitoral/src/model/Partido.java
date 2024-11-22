@@ -4,12 +4,12 @@ public class Partido {
 
     private String cnpj;
     private String nome;
-    private String representante;
+    private String rep;
   
     public Partido (String...str) {
         this.cnpj = str[0];
         this.nome = str[1];
-        this.representante = str[2];
+        this.rep = str[2];
     }
 
     public String getNome() {
@@ -21,11 +21,11 @@ public class Partido {
     }
 
     public String getRepresentante() {
-        return representante;
+        return rep;
     }
 
-    public void setRepresentante(String representante) {
-        this.representante = representante;
+    public void setRepresentante(String rep) {
+        this.rep = rep;
     }
 
     public String getCnpj() {

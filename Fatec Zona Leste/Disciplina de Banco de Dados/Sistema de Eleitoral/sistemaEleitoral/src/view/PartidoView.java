@@ -17,7 +17,9 @@ public class PartidoView {
 
     public Scene telaPartido (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
+        grid.getStyleClass().add("grid-pane");
         Scene principal = new Scene(grid, 800, 600);
+
 
         grid.add(new Label("CNPJ: "), 0, 0);
         grid.add(new Label("NOME: "), 0, 1);
@@ -29,7 +31,7 @@ public class PartidoView {
 
         Button btnGravar = new Button("Gravar");
         grid.add(btnGravar, 0, 4);
-        //btnCadEspecialidade.setOnAction(e -> stage.setScene(espBoundary.cadastrarEspecialidade(stage, this)));
+        btnGravar.setOnAction(e -> control.registrarPartido());
 
         Button btnAlterar = new Button("Alterar");
         grid.add(btnAlterar, 1, 4);
@@ -41,7 +43,7 @@ public class PartidoView {
 
         Button btnRemover = new Button("Remover");
         grid.add(btnRemover, 3, 4);
-        //btnCadEspecialidade.setOnAction(e -> stage.setScene(espBoundary.cadastrarEspecialidade(stage, this)));
+        btnRemover.setOnAction(e -> control.removerPartido());
 
 
         Button btnVoltar = new Button("Voltar ao Menu");
@@ -52,7 +54,7 @@ public class PartidoView {
         grid.add(btnLimpar, 1, 5);
         btnLimpar.setOnAction(e -> limparTela());
 
-
+        principal.getStylesheets().add(getClass().getResource("/css/estiloPartido.css").toExternalForm());
         stage.setTitle("Sistema de Votação: Partido");
         return principal;
     }

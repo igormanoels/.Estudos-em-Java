@@ -21,6 +21,7 @@ public class VotarView {
     
     public Scene telaVoto (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
+        grid.getStyleClass().add("grid-pane"); // Aplica o estilo ao GridPane
         Scene principal = new Scene(grid, 800, 600);
 
         grid.add(new Label("CPF DO ELEITOR: "), 0, 0);
@@ -45,7 +46,7 @@ public class VotarView {
         grid.add(btnBuscar, 0, 3);
         btnBuscar.setOnAction(e -> votar.encerrarVotacao(stage, menu));
 
-
+        principal.getStylesheets().add(getClass().getResource("/css/estiloVotar.css").toExternalForm());
         stage.setTitle("Sistema de Votação: Votação");
         return principal;
     }
