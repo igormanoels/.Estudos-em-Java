@@ -34,6 +34,7 @@ CREATE TABLE Voto (
 
 -- drop database eleicao
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 -- TESTE
 -- Inserir dados no Partido
 INSERT INTO Partido (cnpj, nome, representante)
@@ -55,6 +56,8 @@ USE eleicao
 SELECT * FROM Eleitor
 SELECT * FROM Voto
 SELECT * FROM Partido
+SELECT * FROM Candidato
+SELECT * FROM 
 
 INSERT INTO Eleitor (cpf) VALUES ('12345678920');
 INSERT INTO Voto (eleitorCpf, candidatoNumero) VALUES ('12345678940', 22);

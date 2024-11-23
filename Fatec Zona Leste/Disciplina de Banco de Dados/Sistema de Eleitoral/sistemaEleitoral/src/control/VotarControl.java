@@ -29,51 +29,48 @@ public class VotarControl {
     }
 
     public void RegistrarVoto() {
-        if (!(this.votaram.contains(this.telaVoto.txtCPF.getText()))) {
-            Voto voto = new Voto(telaVoto.txtCPF.getText(), telaVoto.txtNumero.getText());
-            //this.votaram.add(telaVoto.txtCPF.getText());
-            this.votaram.add(voto.getEleitor().getCpf());
+        if(!(telaVoto.txtCPF.getText().isEmpty() && telaVoto.txtNumero.getText().isEmpty())) {
+            if (!(this.votaram.contains(this.telaVoto.txtCPF.getText()))) {
+                Voto voto = new Voto(telaVoto.txtCPF.getText(), telaVoto.txtNumero.getText());
+                //this.votaram.add(telaVoto.txtCPF.getText());
+                this.votaram.add(voto.getEleitor().getCpf());
 
-            try {
-                if (!(telaVoto.txtCPF.getText().isEmpty() || telaVoto.txtNumero.getText().isEmpty())) {
-                    Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
-                    PreparedStatement stm = conexao.prepareStatement("""
-                        INSERT INTO Eleitor (cpf) 
-                            VALUES (?);
-                        GO
-                        INSERT INTO Voto (eleitorCpf, candidatoNumero) 
-                            VALUES (?, ?);
-                    """);
-//stm.setString(0, telaVoto.txtCPF.getText());
-//stm.setString(1, telaVoto.txtCPF.getText());
-//stm.setInt(2, Integer.parseInt(telaVoto.txtNumero.getText()));
-                    stm.setString(0, voto.getEleitor().getCpf());
-                    stm.setString(1, voto.getEleitor().getCpf());
-                    stm.setInt(2, voto.getNumero());
-                    int linhasAfetadas = stm.executeUpdate();
-                    this.mensagem = (linhasAfetadas > 0) ? "Seu voto foi confirmado com sucesso!" : "Seu voto não foi confirmado, tente novamente!";
-                    System.out.println(this.mensagem);
-                } else {
-                    this.mensagem = "Seu voto não foi confirmado, tente novamente!";
-                    System.out.println(this.mensagem);
+                try {
+                    if (!(telaVoto.txtCPF.getText().isEmpty() || telaVoto.txtNumero.getText().isEmpty())) {
+                        Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
+                        PreparedStatement stm = conexao.prepareStatement("""
+                            INSERT INTO Eleitor (cpf) 
+                                VALUES (?);
+                            GO
+                            INSERT INTO Voto (eleitorCpf, candidatoNumero) 
+                                VALUES (?, ?);
+                        """);
+                        stm.setString(0, voto.getEleitor().getCpf());
+                        stm.setString(1, voto.getEleitor().getCpf());
+                        stm.setInt(2, voto.getNumero());
+                        int linhasAfetadas = stm.executeUpdate();
+                        this.mensagem = (linhasAfetadas > 0) ? "Seu voto foi confirmado com sucesso!" : "Seu voto não foi confirmado, tente novamente!";
+                        alerta.setAlertType(AlertType.CONFIRMATION);
+                    } else {
+                        this.mensagem = "Seu voto não foi confirmado, tente novamente!";
+                        alerta.setAlertType(AlertType.INFORMATION);
+                    }
+                } catch (SQLException e) {
+                    this.mensagem = "Erro na conexão: " + e.getMessage();
+                    alerta.setAlertType(AlertType.ERROR);
+
                 }
-            } catch (SQLException e) {
-                this.mensagem = "Erro na conexão: " + e.getMessage();
-                System.err.println("Erro na conexão: " + e.getMessage());
             }
+        } else{
+            this.mensagem = "Preencha ambos os campos!";
+            alerta.setAlertType(AlertType.ERROR);
+        }      
 
             alerta.setAlertType(AlertType.INFORMATION);
             alerta.setTitle("Atenção!");
             alerta.setHeaderText(null);
             alerta.setContentText(this.mensagem);
             alerta.showAndWait();
-        } else {
-            alerta.setAlertType(AlertType.ERROR);
-            alerta.setTitle("Erro!");
-            alerta.setHeaderText("Voto inválido, seu voto já foi registrado!");
-            alerta.setContentText("Favor verificar o CPF informado.");
-            alerta.showAndWait();
-        }
        
         telaVoto.limparTela();
     }
