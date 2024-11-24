@@ -23,11 +23,14 @@ public class ApuracaoControl {
     private String mensagem;
     private boolean resp;
     private List<Apuracao> apuracaoCandidatos;
+    private List<Apuracao> buscaApuracao;
+
 
 
     public  ApuracaoControl(ApuracaoView ap) {
         this.telaApuracao = ap;
         this.apuracaoCandidatos = new ArrayList<>();
+        this.buscaApuracao = new  ArrayList<>();
     }
 
     public boolean verificar () {
@@ -103,61 +106,94 @@ public class ApuracaoControl {
             this.mensagem = "Erro: " + e.getMessage();
             System.out.println(e);
             dispararAlerta();
-            e.printStackTrace();
         }
     }
 
 
     public void BuscarApuracao() {
         try {
+            this.buscaApuracao.clear();
             Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
             PreparedStatement stm = conexao.prepareStatement("""
                 SELECT Candidato.numero, Candidato.nome, Candidato.cpf, Candidato.nascimento, 
-                       Candidato.estado, Partido.nome, COUNT(Voto.eleitorCpf) AS totalVotos
+                    Candidato.estado, Partido.nome, Apuracao.quantidadeVotos, Apuracao.dataApuracao
                 FROM Candidato
-                LEFT JOIN Voto ON Candidato.numero = Voto.candidatoNumero
-                LEFT JOIN Partido ON Candidato.partidoCnpj = Partido.cnpj
-                GROUP BY Candidato.numero, Candidato.nome, Candidato.cpf, Candidato.nascimento, 
-                         Candidato.estado, Partido.nome;
+                INNER JOIN Partido ON Candidato.partidoCnpj = Partido.cnpj
+                INNER JOIN Apuracao ON Candidato.numero = Apuracao.candidatoNumero
+                WHERE Apuracao.dataApuracao = ?;
             """);
-    
+            stm.setDate(1, java.sql.Date.valueOf(telaApuracao.dataApuracao.getValue()));
             ResultSet res = stm.executeQuery();
             while (res.next()) {
-                Apuracao apuracao = new Apuracao(
+                Apuracao ap = new Apuracao(
                     res.getInt(1),
                     res.getString(2),
                     res.getString(3),
                     res.getDate(4).toLocalDate(),
                     res.getString(5),
                     res.getString(6),
-                    res.getInt(7)                        
+                    res.getInt(7),
+                    res.getDate(8).toLocalDate()
                 );
-                this.apuracaoCandidatos.add(apuracao);
-    
-                PreparedStatement stm2 = conexao.prepareStatement("""
-                    INSERT INTO Apuracao (quantidadeVotos, dataApuracao, CandidatoNumero) 
-                    VALUES (?, ?, ?);
-                """);
-                stm2.setInt(1, apuracao.getQuantidadeVotos());
-                stm2.setDate(2, java.sql.Date.valueOf(apuracao.getDataApuracao()));
-                stm2.setInt(3, apuracao.getNumero());
-                stm2.executeUpdate();
+                this.buscaApuracao.add(ap);
             }
     
-            for (Apuracao a : apuracaoCandidatos) {
+            telaApuracao.dadosApuracao.clear();
+            for (Apuracao a : buscaApuracao) {
                 telaApuracao.dadosApuracao.add(a);
             }
     
-            this.mensagem = "A apuração foi concluída com sucesso!";
+            this.mensagem = "A busca foi concluída com sucesso!";
             alerta.setAlertType(AlertType.INFORMATION);
             dispararAlerta();
     
         } catch (Exception e) {
             alerta.setAlertType(AlertType.ERROR);
             this.mensagem = "Erro: " + e.getMessage();
-            System.out.println(e);
             dispararAlerta();
-            e.printStackTrace();
+        }
+    }
+
+
+    public void BuscarApuracaoTodos() {
+        try {
+            this.buscaApuracao.clear();
+            Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
+            PreparedStatement stm = conexao.prepareStatement("""
+                SELECT Candidato.numero, Candidato.nome, Candidato.cpf, Candidato.nascimento, 
+                    Candidato.estado, Partido.nome, Apuracao.quantidadeVotos, Apuracao.dataApuracao
+                FROM Candidato
+                INNER JOIN Partido ON Candidato.partidoCnpj = Partido.cnpj
+                INNER JOIN Apuracao ON Candidato.numero = Apuracao.candidatoNumero
+            """);
+            ResultSet res = stm.executeQuery();
+            while (res.next()) {
+                Apuracao ap = new Apuracao(
+                    res.getInt(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getDate(4).toLocalDate(),
+                    res.getString(5),
+                    res.getString(6),
+                    res.getInt(7),
+                    res.getDate(8).toLocalDate()
+                );
+                this.buscaApuracao.add(ap);
+            }
+    
+            telaApuracao.dadosApuracao.clear();
+            for (Apuracao a : buscaApuracao) {
+                telaApuracao.dadosApuracao.add(a);
+            }
+    
+            this.mensagem = "A busca foi concluída com sucesso!";
+            alerta.setAlertType(AlertType.INFORMATION);
+            dispararAlerta();
+    
+        } catch (Exception e) {
+            alerta.setAlertType(AlertType.ERROR);
+            this.mensagem = "Erro: " + e.getMessage();
+            dispararAlerta();
         }
     }
     

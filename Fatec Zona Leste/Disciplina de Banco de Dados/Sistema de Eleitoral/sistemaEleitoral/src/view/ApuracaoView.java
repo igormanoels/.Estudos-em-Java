@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import control.ApuracaoControl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -15,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import model.Apuracao;
 
@@ -59,40 +62,34 @@ public class ApuracaoView {
             tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
             tabela.setPrefWidth(1000);
             tabela.setPrefHeight(600);
-            GridPane.setColumnSpan(tabela, 9);
+            GridPane.setColumnSpan(tabela, 7);
             grid.add(tabela, 0, 0);
             tabela.setItems(dadosApuracao);
 
+            grid.setHgap(10);
+            grid.setVgap(15);
+            grid.setPadding(new Insets(20));
 
-
-            Button btnVoltar = new Button("Voltar ao Menu");
-            grid.add(btnVoltar, 0, 7);
+            Button btnVoltar = new Button("Menu");
             btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
 
-
-            Button btnApurar = new Button("Apurar Votos");
-            grid.add(btnApurar, 1, 7);
+            Button btnApurar = new Button("Apuração");
             btnApurar.setOnAction(e -> control.contarVotos());
 
-
             Button btnBuscarApuracao = new Button("Buscar");
-            grid.add(btnBuscarApuracao, 2, 7);
-            //GridPane.setColumnSpan(btnBuscarApuracao, 2);
-            grid.add(dataApuracao, 6, 1);
             btnBuscarApuracao.setOnAction(e -> control.BuscarApuracao());
-            
-            
-            Button btnLimpar = new Button("Limpar Tela");
-            grid.add(btnLimpar, 3, 7);
+
+            Button btnBuscarApuracaoTodos = new Button("Todos");
+            btnBuscarApuracaoTodos.setOnAction(e -> control.BuscarApuracaoTodos());
+
+            Button btnLimpar = new Button("Limpar");
             btnLimpar.setOnAction(e -> limparTela());
 
-            Button btnLimparSistema = new Button("Resetar Sistema");
-            grid.add(btnLimparSistema, 5, 7);
-            
+            Button btnLimparSistema = new Button("Resetar");
             btnLimparSistema.setOnAction(e -> {
                 confimar.setTitle("Resetar Sistema! Essa ação é irreversível!");
-                confimar.setHeaderText("Ao resetar o sistema, todos os dados de votação, incluindo o Partidos, "
-                    + "Candidatos e Votos e Apuração serão apagados do sistema. ");
+                confimar.setHeaderText("Ao resetar o sistema, todos os dados de votação, incluindo Partidos, "
+                    + "Candidatos, Votos e Apuração serão apagados do sistema.");
                 confimar.setContentText("Você tem certeza que deseja apagar o sistema?");
                 confimar.getButtonTypes().setAll(btnSim, btnNao);
                 confimar.showAndWait().ifPresent(resp -> {
@@ -101,6 +98,12 @@ public class ApuracaoView {
                     }
                 });
             });
+
+            HBox botoes = new HBox(15);
+            botoes.getChildren().addAll(btnVoltar, btnApurar, btnBuscarApuracao, dataApuracao,
+                btnBuscarApuracaoTodos, btnLimpar, btnLimparSistema);
+                botoes.setAlignment(Pos.CENTER); 
+            grid.add(botoes, 0, 7, 7, 1);
 
 
             principal.getStylesheets().add(getClass().getResource("/css/estiloCandidato.css").toExternalForm());

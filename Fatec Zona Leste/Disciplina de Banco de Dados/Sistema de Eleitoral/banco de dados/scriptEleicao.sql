@@ -72,14 +72,7 @@ DELETE FROM Partido;
 EXEC sp_msforeachtable "ALTER TABLE ? CHECK CONSTRAINT ALL";
 DBCC CHECKIDENT ('Apuracao', RESEED, 0);
 
-private int numero;
-private String nome;
-private String cpf;
-private LocalDate nascimento;
-private String estado;
-private String nomePartido;
-private int quantidadeVotos;
-private LocalDate dataApuracao;
+
 
 -- cotagem os votos
 SELECT Candidato.numero, Candidato.nome, Candidato.cpf, Candidato.nascimento, Candidato.estado, Partido.nome, 
@@ -90,7 +83,12 @@ LEFT JOIN Partido ON Candidato.partidoCnpj = Partido.cnpj
 GROUP BY Candidato.numero, Candidato.nome, Candidato.cpf, Candidato.nascimento, Candidato.estado, Partido.nome;
 
 
-
+SELECT Candidato.numero, Candidato.nome, Candidato.cpf, Candidato.nascimento, 
+	Candidato.estado, Partido.nome, Apuracao.quantidadeVotos, Apuracao.dataApuracao
+FROM Candidato
+INNER JOIN Partido ON Candidato.partidoCnpj = Partido.cnpj
+INNER JOIN Apuracao ON Candidato.numero = Apuracao.candidatoNumero
+WHERE Apuracao.dataApuracao = '2024-11-01';
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 -- INSERT  PARA TESTAR AS FUNÇÕES
 
@@ -126,10 +124,10 @@ INSERT INTO Voto (eleitorCpf, candidatoNumero) VALUES
 ('888888888888', 30),
 ('999999999999', 30);
 GO
-INSERT INTO Apuracao (id, quantidadeVotos, dataApuracao, candidatoNumero) VALUES 
-(1, 5, '2024-11-01', 10),
-(2, 2, '2024-11-01', 20),
-(3, 1, '2024-11-01', 30);
+INSERT INTO Apuracao (quantidadeVotos, dataApuracao, candidatoNumero) VALUES 
+(5, '2024-11-01', 10),
+(2, '2024-11-01', 20),
+(1, '2024-11-01', 30);
 
 
 

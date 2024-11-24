@@ -25,6 +25,18 @@ public class Apuracao {
         this.dataApuracao = LocalDate.now();
     }
 
+    public Apuracao(Integer numero, String nome, String cpf, LocalDate nascimento, 
+    String estado, String partido, Integer votos, LocalDate dataApuracao) {
+    this.numero = numero;
+    this.nome = nome;
+    this.cpf = cpf;
+    this.nascimento = nascimento;
+    this.estado = estado;
+    this.nomePartido = partido;
+    this.quantidadeVotos = votos;
+    this.dataApuracao = dataApuracao;
+}
+
     public int getNumero() {
         return numero;
     }
