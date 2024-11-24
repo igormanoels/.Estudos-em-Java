@@ -1,20 +1,20 @@
 package model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Candidato {
     
     private int numero;
     private String nome;
     private String cpf;
-    private Date nascimento;
+    private LocalDate nascimento;
     private String estado;
 
     public Candidato(Object...obj) {
         this.numero = Integer.parseInt((String) obj[0]);
         this.nome = String.valueOf(obj[1]);
         this.cpf = String.valueOf(obj[2]);
-        this.nascimento = (Date) obj[3];
+        this.nascimento = (LocalDate) obj[3];
         this.estado = String.valueOf(obj[4]);
     }
 
@@ -26,11 +26,11 @@ public class Candidato {
         this.nome = nome;
     }
 
-    public Date getNascimento() {
+    public LocalDate getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
 

@@ -24,7 +24,7 @@ public class CandidatoView {
     public Scene telaCandidato (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
         grid.getStyleClass().add("grid-pane");
-        Scene principal = new Scene(grid, 800, 600);
+        Scene principal = new Scene(grid, 1024, 768);
 
         grid.add(new Label("NUMERO PARA VOTO: "), 0, 0);
         grid.add(new Label("NOME: "), 0, 1);
@@ -85,6 +85,7 @@ public class CandidatoView {
         this.txtCpf.setText("");
         this.dpAniversario.setValue(null);
         this.txtEstado.setText("");
+        this.txtCnpj.setText("");
     }
     
 }

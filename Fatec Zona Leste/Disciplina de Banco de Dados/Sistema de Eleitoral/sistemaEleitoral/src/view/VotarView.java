@@ -22,7 +22,7 @@ public class VotarView {
     public Scene telaVoto (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
         grid.getStyleClass().add("grid-pane"); // Aplica o estilo ao GridPane
-        Scene principal = new Scene(grid, 800, 600);
+        Scene principal = new Scene(grid, 1024, 768);
 
         grid.add(new Label("CPF DO ELEITOR: "), 0, 0);
         grid.add(new Label("NUMERO CANDIDATO: "), 0, 1);

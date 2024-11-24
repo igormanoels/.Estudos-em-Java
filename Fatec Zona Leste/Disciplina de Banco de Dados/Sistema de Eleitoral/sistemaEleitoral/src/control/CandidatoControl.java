@@ -25,16 +25,16 @@ public class CandidatoControl {
 
     public void registrarCandidato() {
         try {
-            Candidato c = criarCandidato();
-            if (!(c.getCpf().isEmpty()) && telaCand.txtCnpj.getText().isEmpty()) {
+            if (!(telaCand.txtCpf.getText().isEmpty() && telaCand.txtCnpj.getText().isEmpty())) {
+                Candidato c = criarCandidato();
                 Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
                 PreparedStatement stm = conexao.prepareStatement( """
-                    INSERT INTO Candidato (numero, nome, cpf, nacimento, estado, partidoCnpj) VALUES (?, ?, ?, ?, ?, ?);
+                    INSERT INTO Candidato (numero, nome, cpf, nascimento, estado, partidoCnpj) VALUES (?, ?, ?, ?, ?, ?);
                 """);
                 stm.setInt(1, c.getNumero());
                 stm.setString(2, c.getNome());
                 stm.setString(3, c.getCpf());
-                stm.setDate(4, c.getNascimento());
+                stm.setDate(4, java.sql.Date.valueOf(c.getNascimento()));
                 stm.setString(5, c.getEstado());
                 stm.setString(6, telaCand.txtCnpj.getText());
 
@@ -43,6 +43,8 @@ public class CandidatoControl {
                 conexao.close();
                 this.mensagem = (linhasAfetadas > 0) ? "O Candidato foi registrado com sucesso!" : "O Candidato não foi registrado, tente novamente!";
                 alerta.setAlertType(AlertType.INFORMATION);
+                stm.close();
+                conexao.close();
             } else {
                 this.mensagem = "Verifique o número do CPF/CNPJ, do Candidado/Partido foram informados.";
                 alerta.setAlertType(AlertType.ERROR);
@@ -54,11 +56,8 @@ public class CandidatoControl {
             this.mensagem = "Erro: " + e.getMessage();
             alerta.setAlertType(AlertType.ERROR);
         }
-        
-        alerta.setTitle("Atenção!");
-        alerta.setHeaderText(null);
-        alerta.setContentText(this.mensagem);
-        alerta.showAndWait();
+        telaCand.limparTela();
+        dispararAlerta();
     }
 
     
@@ -68,19 +67,26 @@ public class CandidatoControl {
                 Candidato c = criarCandidato();
                 Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
                 PreparedStatement stm = conexao.prepareStatement("""
-                        UPDATE Candidato SET nome = ?, representante = ? WHERE cnpj = ?;
+                        UPDATE Candidato SET 
+                            numero = ?, nome = ?, nascimento = ?, estado = ?, partidoCnpj = ?
+                            WHERE cpf = ?;
                         """);
                         stm.setInt(1, c.getNumero());
                         stm.setString(2, c.getNome());
-                        stm.setString(3, c.getCpf());
-                        stm.setDate(4, c.getNascimento());
-                        stm.setString(5, c.getEstado());
+                        stm.setDate(3, java.sql.Date.valueOf(c.getNascimento()));
+                        stm.setString(4, c.getEstado());
+                        stm.setString(5, telaCand.txtCnpj.getText());
+                        stm.setString(6, c.getCpf());
+
                 int linhasAfetadas = stm.executeUpdate();
                 this.mensagem = (linhasAfetadas > 0) ? "O Candidato foi alterado com sucesso!" : "O Candidato não foi alterado, tente novamente!";
                 alerta.setAlertType(AlertType.INFORMATION);
+                stm.close();
+                conexao.close();
             } else {
-             this.mensagem = "Informe o número do CPF para alterar o Candidato desejado.";
-             alerta.setAlertType(AlertType.INFORMATION);
+                this.mensagem = "Informe o número do CPF para alterar o Candidato desejado.";
+                alerta.setAlertType(AlertType.INFORMATION);
+             
             }
         } catch (SQLIntegrityConstraintViolationException e) {
             this.mensagem = "O Candidato já está vinculado a Candidatos/ Eleitores, e não pode ser removido.";
@@ -89,60 +95,58 @@ public class CandidatoControl {
             this.mensagem = "Erro: " + e.getMessage();
             alerta.setAlertType(AlertType.ERROR);
         } 
-        alerta.setTitle("Atenção!");
-        alerta.setHeaderText(null);
-        alerta.setContentText(this.mensagem);
-        alerta.showAndWait();
+        dispararAlerta();
     }
 
 
     public void buscarCandidato() {
         int linhasAfetadas = 0;
         try {
-            if (!(telaCand.txtCnpj.getText().isEmpty())) {
+            if (!(telaCand.txtCpf.getText().isEmpty())) {
                 Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
                 PreparedStatement stm = conexao.prepareStatement("""
-                        SELECT * FROM Candidato WHERE cnpj = ?;
+                        SELECT * FROM Candidato WHERE cpf = ?;
                         """);
-                stm.setString(1, telaCand.txtCnpj.getText());
+                stm.setString(1, telaCand.txtCpf.getText());
                 ResultSet res = stm.executeQuery();
                 while(res.next()){
-                    telaCand.txtCnpj.setText(res.getString(1));
+                    telaCand.txtNumero.setText(String.valueOf(res.getInt(1)));
                     telaCand.txtNome.setText(res.getString(2));
-                    telaCand.txtRep.setText(res.getString(3));
+                    telaCand.txtCpf.setText(res.getString(3));
+                    telaCand.dpAniversario.setValue(res.getDate(4).toLocalDate());
+                    telaCand.txtEstado.setText(res.getString(5));
+                    telaCand.txtCnpj.setText(res.getString(6));
                     linhasAfetadas+=1;
                 }
                 this.mensagem = (linhasAfetadas > 0) ? "O Candidato foi localizado com sucesso!" : "O Candidato não foi localizado, tente novamente!";
                 alerta.setAlertType(AlertType.INFORMATION);
+                stm.close();
+                conexao.close();
             } else {
-             this.mensagem = "Informe o número do CNPJ para localizar o Candidato desejado.";
+             this.mensagem = "Informe o número do CPF para localizar o Candidato desejado.";
              alerta.setAlertType(AlertType.INFORMATION);
             }
         } catch (Exception e) {
             this.mensagem = "Erro: " + e.getMessage();
             alerta.setAlertType(AlertType.ERROR);
         } 
-        alerta.setTitle("Atenção!");
-        alerta.setHeaderText(null);
-        alerta.setContentText(this.mensagem);
-        alerta.showAndWait();
+        dispararAlerta();
     }
 
 
     public void removerCandidato() {
         try {
-            if (!(telaCand.txtCnpj.getText().isEmpty())) {
-                this.cnpj = telaCand.txtCnpj.getText();
+            if (!(telaCand.txtCpf.getText().isEmpty())) {
                 Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
                 PreparedStatement stm = conexao.prepareStatement( """
-                    DELETE Candidato WHERE cnpj = ?;        
+                    DELETE Candidato WHERE cpf = ?;        
                 """);
-                stm.setString(1, cnpj);
+                stm.setString(1, telaCand.txtCpf.getText());
                 int linhasAfetadas = stm.executeUpdate();
-                stm.close();
-                conexao.close();
                 this.mensagem = (linhasAfetadas > 0) ? "O Candidato foi removido com sucesso!" : "O Candidato não foi removido, tente novamente!";
                 alerta.setAlertType(AlertType.INFORMATION);
+                stm.close();
+                conexao.close();
             } else {
                 this.mensagem = "Informe o número do CNPJ para remover o Candidato desejado.";
                 alerta.setAlertType(AlertType.ERROR);
@@ -154,10 +158,7 @@ public class CandidatoControl {
             this.mensagem = "Erro: " + e.getMessage();
             alerta.setAlertType(AlertType.ERROR);
         } 
-        alerta.setTitle("Atenção!");
-        alerta.setHeaderText(null);
-        alerta.setContentText(this.mensagem);
-        alerta.showAndWait();
+        dispararAlerta();
     }
 
     private Candidato criarCandidato(){
@@ -169,6 +170,13 @@ public class CandidatoControl {
             telaCand.txtEstado.getText()
         );
         return c;
+    }
+
+    private void dispararAlerta() {
+        alerta.setTitle("Atenção!");
+        alerta.setHeaderText(null);
+        alerta.setContentText(this.mensagem);
+        alerta.showAndWait();
     }
     
 

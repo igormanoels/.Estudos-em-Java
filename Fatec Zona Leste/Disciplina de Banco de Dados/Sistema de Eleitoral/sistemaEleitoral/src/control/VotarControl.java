@@ -39,15 +39,12 @@ public class VotarControl {
                     if (!(telaVoto.txtCPF.getText().isEmpty() || telaVoto.txtNumero.getText().isEmpty())) {
                         Connection conexao = DriverManager.getConnection(sql.getURL(), sql.getUSER(), sql.getPASS());
                         PreparedStatement stm = conexao.prepareStatement("""
-                            INSERT INTO Eleitor (cpf) 
-                                VALUES (?);
-                            GO
-                            INSERT INTO Voto (eleitorCpf, candidatoNumero) 
-                                VALUES (?, ?);
+                            INSERT INTO Eleitor (cpf) VALUES (?);
+                            INSERT INTO Voto (eleitorCpf, candidatoNumero) VALUES (?, ?);
                         """);
-                        stm.setString(0, voto.getEleitor().getCpf());
                         stm.setString(1, voto.getEleitor().getCpf());
-                        stm.setInt(2, voto.getNumero());
+                        stm.setString(2, voto.getEleitor().getCpf());
+                        stm.setInt(3, voto.getNumero());
                         int linhasAfetadas = stm.executeUpdate();
                         this.mensagem = (linhasAfetadas > 0) ? "Seu voto foi confirmado com sucesso!" : "Seu voto não foi confirmado, tente novamente!";
                         alerta.setAlertType(AlertType.CONFIRMATION);

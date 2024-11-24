@@ -9,7 +9,7 @@ import conexaoMariaDB.MariaDB;
 public class ConsultaControl {
 
     private MariaDB mdb = new MariaDB();
-    private ConsultaBoundary boundary;
+    private ConsultaBoundary boundary;e
     private String mensagem;
 
     public ConsultaControl(ConsultaBoundary boundary) {

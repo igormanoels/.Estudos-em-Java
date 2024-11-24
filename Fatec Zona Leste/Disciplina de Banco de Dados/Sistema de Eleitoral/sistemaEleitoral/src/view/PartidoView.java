@@ -18,7 +18,7 @@ public class PartidoView {
     public Scene telaPartido (Stage stage, Menu menu) {
         GridPane grid = new GridPane();
         grid.getStyleClass().add("grid-pane");
-        Scene principal = new Scene(grid, 800, 600);
+        Scene principal = new Scene(grid, 1024, 768);
 
 
         grid.add(new Label("CNPJ: "), 0, 0);
