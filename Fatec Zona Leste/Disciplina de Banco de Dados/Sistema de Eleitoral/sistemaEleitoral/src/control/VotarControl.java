@@ -97,9 +97,5 @@ public class VotarControl {
         });
 
     }
-
-    public void apurarVotos() {
-
-    }
     
 }
