@@ -9,7 +9,7 @@ Esse projeto consiste em uma aplicação em Java, com implementação de um Banc
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 ## **Autores**
-- [Fábio Alves]()
+- [Fábio Alves](https://github.com/FabioAS7)
 - [Felype Dantas](https://github.com/FelypeDantas)
 - [Igor Manoel](https://github.com/igormanoels)
 - [Thiago](https://github.com/thiagosilvaantenor)
