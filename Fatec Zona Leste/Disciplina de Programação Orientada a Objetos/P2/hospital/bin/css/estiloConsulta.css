@@ -1,0 +1,45 @@
+/* Define o fundo para a tela de Especialidade */
+.root {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-padding: 50px;
+    -fx-alignment: center; /* Centraliza o conteúdo */
+}
+
+/* Alinhamento do GridPane */
+.grid-pane {
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-alignment: center; /* Centraliza o conteúdo dentro do GridPane */
+    -fx-padding: 50px;
+}
+
+/* Estilo dos botões */
+.button {
+    -fx-background-color: #000000; /* Cor de fundo preta */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 10px 20px; /* Espaçamento interno */
+    -fx-border-radius: 5px; /* Bordas arredondadas */
+    -fx-cursor: hand; /* Cursor de mão */
+    -fx-min-width: 200px; /* Tamanho mínimo dos botões */
+    -fx-alignment: center; /* Centraliza o texto dentro do botão */
+}
+
+/* Efeito de hover para os botões */
+.button:hover {
+    -fx-background-color: #333333; /* Cor de fundo um pouco mais clara quando o mouse passa */
+}
+
+/* Estilo dos Labels */
+.label {
+    -fx-text-fill: black; /* Cor da fonte preta para os Labels */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Deixa o texto dos Labels em negrito */
+}
+
+/* Ajustando os botões para ficarem alinhados ao centro */
+.grid-pane .button {
+    -fx-alignment: center; /* Centraliza os botões dentro do GridPane */
+}

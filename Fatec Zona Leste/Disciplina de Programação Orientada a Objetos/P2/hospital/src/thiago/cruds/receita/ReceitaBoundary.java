@@ -88,10 +88,10 @@ public class ReceitaBoundary extends Application {
 
     // vincularPropriedades();
 
+    paneForm.getStylesheets().add(getClass().getResource("/css/estiloEspecialidade.css").toExternalForm());
     panePrincipal.setTop(paneForm);
     panePrincipal.setCenter(tableView);
-
-      return new Scene(panePrincipal, 800, 600);
+    return new Scene(panePrincipal, 1000, 600);
   }
 
   private void alert(Alert.AlertType tipo, String msg) {
@@ -101,6 +101,7 @@ public class ReceitaBoundary extends Application {
     alertWindow.showAndWait();
   }
 
+  @SuppressWarnings("unchecked")
   private void generateColumns() {
     TableColumn<Receita, Integer> col1 = new TableColumn<>("Id");
     col1.setCellValueFactory(new PropertyValueFactory<>("id"));

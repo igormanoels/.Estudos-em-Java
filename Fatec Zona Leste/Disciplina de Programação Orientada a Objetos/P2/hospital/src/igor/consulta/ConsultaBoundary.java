@@ -12,63 +12,61 @@ import tela.Menu;
 
 public class ConsultaBoundary {
 
-    protected TextField txtCpf = new TextField();
-    protected TextField txtRegistro = new TextField();
-    protected TextField txtAgendamento = new TextField();
-    protected TextField txtHorario = new TextField();
-    protected TextField txtSala = new TextField();
-    protected TextField txtEspecialidade = new TextField();
+    // Campos de texto para a interface
+    protected TextField txtAgendamentoId = new TextField();
     protected TextField txtDescricao = new TextField();
-    private ConsultaBoundary control = new ConsultaBoundary(); 
+    protected TextField txtMedicoCrm = new TextField();
+    protected TextField txtEspecialidadeId = new TextField();
     
-    public Scene cadastrarConsulta(Stage stage, Menu menu) {
+    // Controle de ações
+    private ConsultaControl control = new ConsultaControl(this); 
+    
+    public Scene telaConsulta(Stage stage, Menu menu) {
+        // Layout principal
         GridPane grid = new GridPane();
-        Scene consulta = new Scene(grid, 800, 600);
+        grid.getStyleClass().add("grid-pane");
+        Scene consulta = new Scene(grid, 1000, 600);
 
-        grid.add((new Label("CPF: ")), 0, 0);
-        grid.add((new Label("Registro: ")), 0, 1);
-        grid.add(new Label("Agendamento: "), 0, 2);
-        grid.add(new Label("Horario: "), 0, 3);
-        grid.add(new Label("Sala: "), 0, 4);
-        grid.add(new Label("Especialidade: "), 0, 5);
-        grid.add(new Label("Descrição: "), 0, 6);
+        // Labels e campos de texto para os dados da consulta
+        grid.add(new Label("Agendamento ID: "), 0, 0);
+        grid.add(new Label("Descrição: "), 0, 1);
+        grid.add(new Label("CRM Médico: "), 0, 2);
+        grid.add(new Label("Especialidade ID: "), 0, 3);
 
-        grid.add(txtCpf, 1, 0);
-        grid.add(txtRegistro, 1, 1);
-        grid.add(txtAgendamento, 1, 2);
-        grid.add(txtHorario, 1, 3);
-        grid.add(txtSala, 1, 4);
-        grid.add(txtEspecialidade, 1, 5);
-        grid.add(txtDescricao, 1, 6);
+        grid.add(txtAgendamentoId, 1, 0);
+        grid.add(txtDescricao, 1, 1);
+        grid.add(txtMedicoCrm, 1, 2);
+        grid.add(txtEspecialidadeId, 1, 3);
 
-
+        // Botões de ação
         Button btnGravar = new Button("Gravar");
-//        btnGravar.setOnAction(e -> control.);
-        grid.add(btnGravar, 0, 7);
+        btnGravar.setOnAction(e -> control.gravar());
+        grid.add(btnGravar, 0, 4);
 
         Button btnPesquisar = new Button("Pesquisar");
-//        btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
-        grid.add(btnPesquisar, 1, 7);
+        btnPesquisar.setOnAction(e -> control.pesquisar());
+        grid.add(btnPesquisar, 1, 4);
 
         Button btnAlterar = new Button("Alterar");
-//        btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
-        grid.add(btnAlterar, 2, 7);
+        btnAlterar.setOnAction(e -> control.alterar());
+        grid.add(btnAlterar, 2, 4);
 
         Button btnRemover = new Button("Remover");
-//        btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
-        grid.add(btnRemover, 3, 7);
-
+        btnRemover.setOnAction(e -> control.remover());
+        grid.add(btnRemover, 3, 4);
 
         Button btnVoltar = new Button("Voltar ao menu");
         btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
-        grid.add(btnVoltar, 0, 8);
+        grid.add(btnVoltar, 0, 5);
 
-
-        stage.setTitle("Sistema Hospitalar: Agendamento de Consulta");
+        // Estilos CSS
+        grid.getStylesheets().add(getClass().getResource("/css/estiloConsulta.css").toExternalForm());
+        stage.setTitle("Sistema Hospitalar: Agendamento de consultas");
         return consulta;    
     }
 
-     public void AlertaTela(String msg) {
+    // Método para exibir alertas
+    public void AlertaTela(String msg) {
         Alert alerta = new Alert(AlertType.INFORMATION);
         alerta.setTitle("Aviso:");
         alerta.setHeaderText("Atenção!");
@@ -76,14 +74,29 @@ public class ConsultaBoundary {
         alerta.show();
     }
 
+    // Método para limpar os campos da tela
     public void limparTela() {
-        this.txtCpf.setText("");
-        this.txtRegistro.setText("");
-        this.txtAgendamento.setText("");
-        this.txtHorario.setText("");
-        this.txtSala.setText("");
-        this.txtEspecialidade.setText("");
+        this.txtAgendamentoId.setText("");
         this.txtDescricao.setText("");
+        this.txtMedicoCrm.setText("");
+        this.txtEspecialidadeId.setText("");
     }
-    
+
+    // Método para coletar os dados da tela e criar um objeto Consulta
+    public Consulta obterDadosDaTela() {
+        Consulta consulta = new Consulta();
+        consulta.setAgendamentoId(Integer.parseInt(txtAgendamentoId.getText()));
+        consulta.setDescricao(txtDescricao.getText());
+        consulta.setMedicoCrm(txtMedicoCrm.getText());
+        consulta.setEspecialidadeId(Integer.parseInt(txtEspecialidadeId.getText()));
+        return consulta;
+    }
+
+    // Método para preencher os campos da tela com dados da consulta
+    public void preencherDadosNaTela(Consulta consulta) {
+        txtAgendamentoId.setText(String.valueOf(consulta.getAgendamentoId()));
+        txtDescricao.setText(consulta.getDescricao());
+        txtMedicoCrm.setText(consulta.getMedicoCrm());
+        txtEspecialidadeId.setText(String.valueOf(consulta.getEspecialidadeId()));
+    }
 }

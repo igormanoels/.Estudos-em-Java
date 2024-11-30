@@ -32,24 +32,21 @@ public class EstoqueBoundary {
 
     public Scene telaEstoque(Stage stage, Menu menu) {
         BorderPane panePrincipal = new BorderPane();
-        VBox vboxForm = gerarFormulario();
+        VBox vboxForm = gerarFormulario(stage, menu);
         panePrincipal.setTop(vboxForm);
 
         table = gerarTabela();
         panePrincipal.setCenter(table);
 
-        Button btnVoltar = new Button("Voltar ao Menu");
-        btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
-        panePrincipal.setBottom(btnVoltar);
-        BorderPane.setMargin(btnVoltar, new Insets(10));
-
-        Scene scene = new Scene(panePrincipal, 800, 600);
-        stage.setTitle("Gestão de Estoque");
+        Scene scene = new Scene(panePrincipal, 1000, 600);
+        stage.setTitle("Sistema Hospitalar: Gestão de Estoque");
         return scene;
     }
 
-    private VBox gerarFormulario() {
-        GridPane grid = new GridPane();
+    private VBox gerarFormulario(Stage stage, Menu menu) {
+        GridPane grid = new GridPane();        
+        grid.getStyleClass().add("grid-pane");
+
         grid.setPadding(new Insets(10));
         grid.setHgap(10);
         grid.setVgap(10);
@@ -96,15 +93,22 @@ public class EstoqueBoundary {
         Button btnLimpar = new Button("Limpar");
         btnLimpar.setOnAction(e -> control.limparTudo());
 
-        grid.add(btnSalvar, 0, 5);
-        grid.add(btnPesquisar, 1, 5);
-        grid.add(btnLimpar, 2, 5);
+        Button btnVoltar = new Button("Voltar ao menu");
+        btnVoltar.setOnAction(e -> stage.setScene(menu.telaPrincipal(stage)));
+        
+        
+        grid.add(btnVoltar, 0, 5);
+        grid.add(btnSalvar, 1, 5);
+        grid.add(btnPesquisar, 2, 5);
+        grid.add(btnLimpar, 3, 5);
 
+        grid.getStylesheets().add(getClass().getResource("/css/estiloEstoque.css").toExternalForm());
         VBox vbox = new VBox(grid);
         vbox.setPadding(new Insets(10));
         return vbox;
     }
 
+    @SuppressWarnings("unchecked")
     private TableView<Estoque> gerarTabela() {
         TableColumn<Estoque, Number> colId = new TableColumn<>("ID");
         colId.setCellValueFactory(data -> Bindings.createObjectBinding(() -> data.getValue().getId()));

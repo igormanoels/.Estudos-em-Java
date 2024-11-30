@@ -1,0 +1,76 @@
+/* Define o fundo para a tela de Paciente */
+.root {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-padding: 50px;
+    -fx-alignment: center; /* Centraliza o conteúdo */
+}
+
+/* Estilo do GridPane para o formulário */
+.grid-pane {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-alignment: center; /* Centraliza o conteúdo dentro do GridPane */
+    -fx-padding: 50px;
+}
+
+/* Estilo dos botões */
+.button {
+    -fx-background-color: #000000; /* Cor de fundo preta */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 10px 20px; /* Espaçamento interno */
+    -fx-border-radius: 5px; /* Bordas arredondadas */
+    -fx-cursor: hand; /* Cursor de mão */
+    -fx-min-width: 150px; /* Tamanho mínimo dos botões */
+    -fx-alignment: center; /* Centraliza o texto dentro do botão */
+}
+
+/* Efeito de hover para os botões */
+.button:hover {
+    -fx-background-color: #333333; /* Cor de fundo um pouco mais clara quando o mouse passa */
+}
+
+/* Estilo dos Labels */
+.label {
+    -fx-text-fill: black; /* Cor da fonte preta para os Labels */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Deixa o texto dos Labels em negrito */
+}
+
+/* Estilo dos campos de texto */
+.text-field {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 5px; /* Espaçamento interno */
+    -fx-border-color: #666666; /* Cor da borda */
+    -fx-border-radius: 3px; /* Bordas arredondadas */
+    -fx-background-radius: 3px;
+    -fx-min-width: 200px; /* Largura mínima */
+}
+
+/* Estilo do DatePicker */
+.date-picker {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 5px; /* Espaçamento interno */
+    -fx-border-color: #666666; /* Cor da borda */
+    -fx-border-radius: 3px; /* Bordas arredondadas */
+    -fx-background-radius: 3px;
+}
+
+/* Estilo da TableView */
+.table-view {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-border-color: #000000; /* Cor da borda da tabela */
+    -fx-border-radius: 5px; /* Bordas arredondadas */
+    -fx-background-color: #ffffff; /* Fundo branco */
+    -fx-padding: 10px;
+}
+
+/* Estilo das colunas da TableView */
+.table-column {
+    -fx-font-weight: bold; /* Negrito no cabeçalho das colunas */
+    -fx-background-color: #dddddd; /* Fundo do cabeçalho */
+    -fx-border-color: #cccccc; /* Cor das bordas */
+}

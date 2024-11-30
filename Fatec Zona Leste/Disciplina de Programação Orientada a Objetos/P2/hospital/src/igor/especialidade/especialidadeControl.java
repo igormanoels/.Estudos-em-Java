@@ -1,133 +1,62 @@
 package igor.especialidade;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import conexaoMariaDB.MariaDB;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class EspecialidadeControl {
 
-    private MariaDB mdb = new MariaDB();
     private EspecialidadeBoundary boundary;
-    private String mensagem;
+    EspecialidadeDAOImpl dao = new EspecialidadeDAOImpl();
 
     public EspecialidadeControl(EspecialidadeBoundary boundary) {
         this.boundary = boundary;
     }
 
     public void inserirEspecialidade() {
-        try {
-            if(boundary.txtId.getText().isEmpty()) {
-                Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-                
-                PreparedStatement stm = conexao.prepareStatement("""
-                    INSERT INTO especialidade (especialidade) 
-                    VALUES (?)
-                """);
-                String esp = boundary.txtEspecialidade.getText().trim();
-                stm.setString(1, esp);
-
-                int linhasAfetadas = stm.executeUpdate();
-                mensagem = (linhasAfetadas > 0) ? "Especialidade: " + esp + ", gravada com sucesso!" : "Falha ao gravar a especialidade.";
-            } else {
-                mensagem = "Informe apenas o nome da especialidade";
-            }
-        } catch (Exception e) {
-            mensagem = "Erro: " + e.getMessage();
-        }
-
-        boundary.AlertaTela(mensagem);
+        Especialidade novaEspecialidade = new Especialidade(boundary.txtEspecialidade.getText().trim());
+        String mensagem = dao.gravar(novaEspecialidade);
+        AlertaTela(mensagem);
         boundary.limparTela();
-    }
-
-    public void buscarEspecialidade() {
-        try {
-            int linhasAfetadas = 0;
-            Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-            String sql, op;
-            if (boundary.txtId.getText().isEmpty()) {
-                System.out.println("Está vázio");
-                sql = """
-                    SELECT * FROM especialidade WHERE especialidade = ?;
-                 """;
-                op = boundary.txtEspecialidade.getText().trim();
-            } else {
-                sql = """
-                    SELECT * FROM especialidade WHERE id = ?;
-                 """;
-                op = boundary.txtId.getText().trim();
-            }
-            PreparedStatement stm = conexao.prepareStatement(sql);
-            stm.setString(1, op);
-            ResultSet res = stm.executeQuery();
-            while (res.next()) {
-                boundary.txtId.setText(String.valueOf(res.getInt("id")));
-                boundary.txtEspecialidade.setText(res.getString("especialidade"));
-                linhasAfetadas+=1;
-            }
-            mensagem = (linhasAfetadas > 0) ? "Especialidade foi localizada com sucesso!" : "Especialidade não encontrada.";
-
-        } catch (Exception e) {
-            mensagem = "Erro: " + e.getMessage();
-        }
-
-        boundary.AlertaTela(mensagem);
     }
 
     public void alterarEspecialidade() {
-        try {
-            Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-            String sql;
-            
-            if (boundary.txtId.getText().isEmpty() && boundary.txtEspecialidade.getText().isEmpty()) {    
-                mensagem = "Informe o id e o nome da especialidade para atualizar";
-            } else {
-                sql = """
-                    UPDATE especialidade SET especialidade=? 
-                    WHERE id=?
-                """;
-                PreparedStatement stm = conexao.prepareStatement(sql);
-                stm.setString(1, boundary.txtEspecialidade.getText().trim());
-                stm.setString(2, boundary.txtId.getText().trim());
-                int linhasAfetadas = stm.executeUpdate();
-                mensagem = (linhasAfetadas > 0) ? "Especialidade alterada com sucesso!" : "Falha ao alterar a especialidade.";
-            }
-        } catch (Exception e) {
-            mensagem = "Erro: " + e.getMessage();
+        Especialidade novaEspecialidade = new Especialidade(
+                boundary.txtEspecialidade.getText().trim(),
+                Integer.parseInt(boundary.txtId.getText().trim())
+        );
+        Especialidade especialidadeAtualizada = dao.atualizar(novaEspecialidade);
+        if (especialidadeAtualizada != null) {
+            boundary.txtId.setText(String.valueOf(especialidadeAtualizada.getId()));
+            boundary.txtEspecialidade.setText(especialidadeAtualizada.getEspecialidade());
         }
-        boundary.AlertaTela(mensagem);
-        boundary.limparTela();
     }
 
     public void removerEspecialidade() {
-        try {
-            Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-            String sql, op;
-            
-            if (boundary.txtId.getText().isEmpty()) {    
-                sql = """
-                    DELETE FROM especialidade WHERE especialidade = ?
-                """;
-                op = boundary.txtEspecialidade.getText().trim();
-                
-            } else {
-                sql = """
-                    DELETE FROM especialidade WHERE id = ?
-                """;
-                op = boundary.txtId.getText().trim();
-            }
+        Especialidade novaEspecialidade = new Especialidade(
+                null,
+                Integer.parseInt(boundary.txtId.getText().trim())
+        );
+        String mensagem = dao.remover(novaEspecialidade);
+        AlertaTela(mensagem);
+    }
 
-            PreparedStatement stm = conexao.prepareStatement(sql);
-            stm.setString(1, op);
-            int linhasAfetadas = stm.executeUpdate();
-            mensagem = (linhasAfetadas > 0) ? "Especialidade removida com sucesso!" : "Falha ao remover a especialidade.";
-
-        } catch (Exception e) {
-            mensagem = "Erro: " + e.getMessage();
+    public void buscarEspecialidade() {
+        Especialidade novaEspecialidade = new Especialidade(
+                null,
+                Integer.parseInt(boundary.txtId.getText().trim())
+        );
+        Especialidade resultado = dao.procurar(novaEspecialidade);
+        if (resultado != null) {
+            boundary.txtId.setText(String.valueOf(resultado.getId()));
+            boundary.txtEspecialidade.setText(resultado.getEspecialidade());
         }
-        boundary.AlertaTela(mensagem);
-        boundary.limparTela();
+    }
+
+    public void AlertaTela(String msg) {
+        Alert alerta = new Alert(AlertType.INFORMATION);
+        alerta.setTitle("Aviso:");
+        alerta.setHeaderText("Atenção!");
+        alerta.setContentText(msg);
+        alerta.show();
     }
 }

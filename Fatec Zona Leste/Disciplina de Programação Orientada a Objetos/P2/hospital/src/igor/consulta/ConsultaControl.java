@@ -1,132 +1,61 @@
 package igor.consulta;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-
-import conexaoMariaDB.MariaDB;
-
 public class ConsultaControl {
-
-    private MariaDB mdb = new MariaDB();
-    private ConsultaBoundary boundary;e
-    private String mensagem;
+    private ConsultaBoundary boundary;
+    private ConsultaDAO consultaDAO = new ConsultaDAOImpl();
 
     public ConsultaControl(ConsultaBoundary boundary) {
         this.boundary = boundary;
     }
 
-    public void inserirEspecialidade() {
+    public void gravar() {
         try {
-            if(boundary.txtCpf.getText().isEmpty()) {
-                Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-                
-                PreparedStatement stm = conexao.prepareStatement("""
-                    INSERT INTO especialidade (especialidade) 
-                    VALUES (?)
-                """);
-                String esp = boundary.txtEspecialidade.getText().trim();
-                stm.setString(1, esp);
-
-                int linhasAfetadas = stm.executeUpdate();
-                mensagem = (linhasAfetadas > 0) ? "Especialidade: " + esp + ", gravada com sucesso!" : "Falha ao gravar a especialidade.";
-            } else {
-                mensagem = "Informe apenas o nome da especialidade";
-            }
+            Consulta consulta = boundary.obterDadosDaTela();
+            String mensagem = consultaDAO.gravar(consulta);
+            boundary.mostrarAlerta(mensagem);
+            boundary.limparTela();
         } catch (Exception e) {
-            mensagem = "Erro: " + e.getMessage();
+            boundary.mostrarAlerta("Erro ao gravar consulta: " + e.getMessage());
         }
-
-        boundary.AlertaTela(mensagem);
-        boundary.limparTela();
     }
 
-    // public void buscarEspecialidade() {
-    //     try {
-    //         int linhasAfetadas = 0;
-    //         Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-    //         String sql, op;
-    //         if (boundary.txtId.getText().isEmpty()) {
-    //             System.out.println("Está vázio");
-    //             sql = """
-    //                 SELECT * FROM especialidade WHERE especialidade = ?;
-    //              """;
-    //             op = boundary.txtEspecialidade.getText().trim();
-    //         } else {
-    //             sql = """
-    //                 SELECT * FROM especialidade WHERE id = ?;
-    //              """;
-    //             op = boundary.txtId.getText().trim();
-    //         }
-    //         PreparedStatement stm = conexao.prepareStatement(sql);
-    //         stm.setString(1, op);
-    //         ResultSet res = stm.executeQuery();
-    //         while (res.next()) {
-    //             boundary.txtId.setText(String.valueOf(res.getInt("id")));
-    //             boundary.txtEspecialidade.setText(res.getString("especialidade"));
-    //             linhasAfetadas+=1;
-    //         }
-    //         mensagem = (linhasAfetadas > 0) ? "Especialidade foi localizada com sucesso!" : "Especialidade não encontrada.";
+    public void pesquisar() {
+        try {
+            Consulta consulta = boundary.obterDadosDaTela();
+            Consulta resultado = consultaDAO.procurar(consulta);
+            if (resultado != null) {
+                boundary.preencherDadosNaTela(resultado);
+            } else {
+                boundary.mostrarAlerta("Consulta não encontrada.");
+            }
+        } catch (Exception e) {
+            boundary.mostrarAlerta("Erro ao pesquisar consulta: " + e.getMessage());
+        }
+    }
 
-    //     } catch (Exception e) {
-    //         mensagem = "Erro: " + e.getMessage();
-    //     }
+    public void alterar() {
+        try {
+            Consulta consulta = boundary.obterDadosDaTela();
+            Consulta consultaAtualizada = consultaDAO.atualizar(consulta);
+            if (consultaAtualizada != null) {
+                boundary.mostrarAlerta("Consulta atualizada com sucesso!");
+                boundary.limparTela();
+            } else {
+                boundary.mostrarAlerta("Consulta não encontrada.");
+            }
+        } catch (Exception e) {
+            boundary.mostrarAlerta("Erro ao atualizar consulta: " + e.getMessage());
+        }
+    }
 
-    //     boundary.AlertaTela(mensagem);
-    // }
-
-    // public void alterarEspecialidade() {
-    //     try {
-    //         Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-    //         String sql;
-            
-    //         if (boundary.txtId.getText().isEmpty() && boundary.txtEspecialidade.getText().isEmpty()) {    
-    //             mensagem = "Informe o id e o nome da especialidade para atualizar";
-    //         } else {
-    //             sql = """
-    //                 UPDATE especialidade SET especialidade=? 
-    //                 WHERE id=?
-    //             """;
-    //             PreparedStatement stm = conexao.prepareStatement(sql);
-    //             stm.setString(1, boundary.txtEspecialidade.getText().trim());
-    //             stm.setString(2, boundary.txtId.getText().trim());
-    //             int linhasAfetadas = stm.executeUpdate();
-    //             mensagem = (linhasAfetadas > 0) ? "Especialidade alterada com sucesso!" : "Falha ao alterar a especialidade.";
-    //         }
-    //     } catch (Exception e) {
-    //         mensagem = "Erro: " + e.getMessage();
-    //     }
-    //     boundary.AlertaTela(mensagem);
-    //     boundary.limparTela();
-    // }
-
-    // public void removerEspecialidade() {
-    //     try {
-    //         Connection conexao = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
-    //         String sql, op;
-            
-    //         if (boundary.txtId.getText().isEmpty()) {    
-    //             sql = """
-    //                 DELETE FROM especialidade WHERE especialidade = ?
-    //             """;
-    //             op = boundary.txtEspecialidade.getText().trim();
-                
-    //         } else {
-    //             sql = """
-    //                 DELETE FROM especialidade WHERE id = ?
-    //             """;
-    //             op = boundary.txtId.getText().trim();
-    //         }
-
-    //         PreparedStatement stm = conexao.prepareStatement(sql);
-    //         stm.setString(1, op);
-    //         int linhasAfetadas = stm.executeUpdate();
-    //         mensagem = (linhasAfetadas > 0) ? "Especialidade removida com sucesso!" : "Falha ao remover a especialidade.";
-
-    //     } catch (Exception e) {
-    //         mensagem = "Erro: " + e.getMessage();
-    //     }
-    //     boundary.AlertaTela(mensagem);
-    //     boundary.limparTela();
-    // }
+    public void remover() {
+        try {
+            Consulta consulta = boundary.obterDadosDaTela();
+            String mensagem = consultaDAO.remover(consulta);
+            boundary.mostrarAlerta(mensagem);
+            boundary.limparTela();
+        } catch (Exception e) {
+            boundary.mostrarAlerta("Erro ao remover consulta: " + e.getMessage());
+        }
+    }
 }

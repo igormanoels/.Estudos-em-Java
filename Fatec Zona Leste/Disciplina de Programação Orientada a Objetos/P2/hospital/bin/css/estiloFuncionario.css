@@ -1,0 +1,91 @@
+/* Define o fundo para a tela de Funcionários */
+.root {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-padding: 20px; /* Espaçamento interno */
+    -fx-alignment: center; /* Centraliza o conteúdo */
+}
+
+/* Estilo do GridPane do formulário */
+.grid-pane {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-hgap: 10px; /* Espaçamento horizontal entre os elementos */
+    -fx-vgap: 10px; /* Espaçamento vertical entre os elementos */
+    -fx-padding: 20px; /* Margem interna */
+    -fx-alignment: center; /* Centraliza o formulário na tela */
+    -fx-border-color: #cccccc; /* Borda cinza clara */
+    -fx-border-width: 1px; /* Espessura da borda */
+    -fx-border-radius: 8px; /* Bordas arredondadas */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); /* Sombra leve */
+}
+
+/* Estilo dos Labels */
+.label {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Negrito */
+    -fx-text-fill: #333333; /* Cor da fonte */
+}
+
+/* Estilo dos campos de texto */
+.text-field {
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 5px; /* Espaçamento interno */
+    -fx-border-color: #cccccc; /* Borda cinza clara */
+    -fx-border-radius: 4px; /* Bordas arredondadas */
+    -fx-background-radius: 4px; /* Fundo arredondado */
+}
+
+/* Estilo dos botões */
+.button {
+    -fx-background-color: #000000; /* Cor de fundo preta */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 10px 20px; /* Espaçamento interno */
+    -fx-border-radius: 5px; /* Bordas arredondadas */
+    -fx-cursor: hand; /* Cursor de mão */
+    -fx-min-width: 200px; /* Tamanho mínimo dos botões */
+    -fx-alignment: center; /* Centraliza o texto dentro do botão */
+}
+
+/* Efeito de hover para os botões */
+.button:hover {
+    -fx-background-color: #333333; /* Cor de fundo um pouco mais clara quando o mouse passa */
+}
+
+/* Estilo do botão apagar na tabela */
+.table-view .button {
+    -fx-background-color: #ff4c4c; /* Vermelho para destacar */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 12px; /* Tamanho da fonte */
+    -fx-padding: 5px 10px; /* Espaçamento interno */
+    -fx-border-radius: 3px; /* Bordas arredondadas */
+    -fx-background-radius: 3px; /* Fundo arredondado */
+}
+
+/* Efeito de hover para o botão apagar */
+.table-view .button:hover {
+    -fx-background-color: #cc0000; /* Vermelho mais escuro no hover */
+}
+
+/* Estilo da tabela */
+.table-view {
+    -fx-background-color: #ffffff; /* Fundo branco */
+    -fx-border-color: #cccccc; /* Borda cinza clara */
+    -fx-border-width: 1px; /* Espessura da borda */
+    -fx-border-radius: 4px; /* Bordas arredondadas */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+}
+
+.table-column {
+    -fx-text-fill: #333333; /* Cor do texto */
+    -fx-font-weight: bold; /* Negrito para os títulos */
+}
+
+/* Estilo das linhas da tabela */
+.table-row-cell {
+    -fx-background-color: #f9f9f9; /* Fundo alternado */
+    -fx-border-color: transparent transparent #cccccc transparent; /* Borda inferior cinza */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #ffffff; /* Fundo branco para linhas alternadas */
+}

@@ -1,0 +1,102 @@
+/* Geral */
+.root {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-font-family: Arial, sans-serif;
+    -fx-padding: 20px;
+}
+
+.grid-pane {
+    -fx-background-color: #b2caca; /* Cor de fundo */
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-alignment: center; /* Centraliza o conteúdo dentro do GridPane */
+    -fx-padding: 50px;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black; /* Cor da fonte preta para os Labels */
+}
+
+/* Campos de Texto */
+.text-field {
+    -fx-pref-width: 250px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-background-color: #ffffff;
+}
+
+/* Botões */
+.button {
+    -fx-background-color: #000000; /* Cor de fundo preta */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 10px 20px; /* Espaçamento interno */
+    -fx-border-radius: 5px; /* Bordas arredondadas */
+    -fx-cursor: hand; /* Cursor de mão */
+    -fx-min-width: 200px; /* Tamanho mínimo dos botões */
+    -fx-alignment: center; /* Centraliza o texto dentro do botão */
+}
+
+.button:hover {
+    -fx-background-color: #333333; /* Cor de fundo um pouco mais clara quando o mouse passa */
+}
+
+/* Botão Limpar (Diferenciado) */
+.button:has-text("*") {
+    -fx-background-color: #ff4d4d;
+    -fx-text-fill: #ffffff;
+}
+
+.button:has-text("*"):hover {
+    -fx-background-color: #cc0000;
+}
+
+/* Tabela */
+.table-view {
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.table-column {
+    -fx-alignment: center-left;
+    -fx-font-size: 13px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #007bff;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f2f2f2;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+}
+
+/* Layout do Formulário */
+.grid-pane {
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-padding: 10px;
+}
+
+.border-pane {
+    -fx-padding: 20px;
+}

@@ -12,17 +12,14 @@ import conexaoMariaDB.MariaDB;
 
 public class EstoqueDAOImpl implements EstoqueDAO {
   
-  MariaDB mdb = new MariaDB();
   private static final String DB_CLASS = "org.mariadb.jdbc.Driver";
-  private final String DB_URL = mdb.getURL();
-  private final String DB_USER = mdb.getUSER();
-  private final String DB_PASS = mdb.getPASS();
+  private MariaDB mdb = new MariaDB();
   private Connection con = null;
 
   public EstoqueDAOImpl() throws EstoqueException {
     try {
       Class.forName(DB_CLASS);
-      con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+      con = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
       throw new EstoqueException(e);
@@ -79,7 +76,7 @@ public class EstoqueDAOImpl implements EstoqueDAO {
           """;
       PreparedStatement stm = con.prepareStatement(SQL);
       stm.setInt(1, e.getId());
-      int i = stm.executeUpdate();
+      stm.executeUpdate();
     } catch (SQLException er) {
       er.printStackTrace();
       throw new EstoqueException(er);

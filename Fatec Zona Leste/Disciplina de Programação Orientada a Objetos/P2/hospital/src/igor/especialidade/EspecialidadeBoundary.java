@@ -1,11 +1,9 @@
 package igor.especialidade;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import tela.Menu;
@@ -18,7 +16,8 @@ public class EspecialidadeBoundary {
 
     public Scene cadastrarEspecialidade(Stage stage, Menu menu) {
         GridPane grid = new GridPane();
-        Scene especialidade = new Scene(grid, 800, 600);
+        grid.getStyleClass().add("grid-pane");
+        Scene especialidade = new Scene(grid, 1000, 600);
 
         grid.add(new Label("ID Especialidade: "), 0, 0);
         grid.add(txtId, 1, 0);
@@ -49,16 +48,10 @@ public class EspecialidadeBoundary {
         btnLimpar.setOnAction(e -> limparTela());
         grid.add(btnLimpar, 1, 4);
 
+
+        grid.getStylesheets().add(getClass().getResource("/css/estiloEspecialidade.css").toExternalForm());
         stage.setTitle("Sistema Hospitalar: Cadastrar uma nova Especialidade");
         return especialidade;
-    }
-
-    public void AlertaTela(String msg) {
-        Alert alerta = new Alert(AlertType.INFORMATION);
-        alerta.setTitle("Aviso:");
-        alerta.setHeaderText("Atenção!");
-        alerta.setContentText(msg); 
-        alerta.show();
     }
 
     public void limparTela() {

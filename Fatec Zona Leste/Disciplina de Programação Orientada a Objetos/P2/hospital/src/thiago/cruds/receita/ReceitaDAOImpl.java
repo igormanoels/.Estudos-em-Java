@@ -10,21 +10,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import conexaoMariaDB.MariaDB;
 import thiago.cruds.gestaoPedidos.estoque.Estoque;
 import thiago.cruds.gestaoPedidos.estoque.EstoqueException;
 
 public class ReceitaDAOImpl implements ReceitaDAO {
 
   private static final String DB_CLASS = "org.mariadb.jdbc.Driver";
-  private static final String DB_URL = "jdbc:mariadb://localhost:3306/hospitaldb?allowPublicKeyRetrieval=true";
-  private static final String DB_USER = "root";
-  private static final String DB_PASS = "123456";
+  private MariaDB mdb = new MariaDB();
   private Connection con = null;
 
   public ReceitaDAOImpl() throws ReceitaException {
     try {
       Class.forName(DB_CLASS);
-      con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+      con = DriverManager.getConnection(mdb.getURL(), mdb.getUSER(), mdb.getPASS());
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
       throw new ReceitaException(e);
