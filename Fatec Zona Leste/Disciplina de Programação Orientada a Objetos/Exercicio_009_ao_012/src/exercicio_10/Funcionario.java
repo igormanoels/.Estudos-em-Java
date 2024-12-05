@@ -31,7 +31,11 @@ public class Funcionario {
 		if(dependentes.isEmpty()) {
 			System.out.println(quant);
 		} else {
-			for (Dependente d : dependentes) ++quant;
+			for (Dependente d : dependentes) {
+				if (!(d.getCpf().isEmpty())) {
+					++quant;
+				}
+			}
 			System.out.println(quant);
 		}
 	}

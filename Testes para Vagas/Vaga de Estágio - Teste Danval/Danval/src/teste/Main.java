@@ -13,7 +13,7 @@ public class Main {
 	{
 		int n = 0;
 		for (int i = array[0]; i <= array[array.length-1]; i++) {
-			for (int j = n; j < array.length; j++) {
+			for (int j = n; j < array.length;) {
 				if (array[j] == i) {
 					break;
 				} else {

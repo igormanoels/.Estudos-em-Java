@@ -58,7 +58,12 @@ public class Departamento {
 		int quantFunc = 0;
 		if(funcionarios.isEmpty() == true) return quantFunc;
 		
-		for (Funcionario f : funcionarios) ++quantFunc;
+		for (Funcionario f : funcionarios) {
+			if (!(f.dependentes.isEmpty())) {
+				++quantFunc;
+			}
+		}
+		
 		return quantFunc;		
 	}
 	

@@ -3,6 +3,7 @@ package edu.nobreza;
 public class Conselheiro {
 	
 	private String nome;
+	@SuppressWarnings("unused")
 	private Bispo bispo;
 
 	public Conselheiro(String nome, Bispo bispo) {
@@ -12,7 +13,6 @@ public class Conselheiro {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return nome;
 	}
 
