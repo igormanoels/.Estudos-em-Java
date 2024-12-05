@@ -1,0 +1,23 @@
+package teste;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int[] array = {1, 5, 12};
+		
+		System.out.printf("Menor número faltando: %.0f.", MenorNumeroFaltando(array));
+		
+	}
+	
+	public static double MenorNumeroFaltando(int[] array)
+	{
+		int menor = array[array.length-1];
+		for (int i = array[array.length-1]; i >= array[0]; i--) {
+			if (i < menor) {
+				menor = i;
+			}
+		}
+		return menor;
+	}
+
+}

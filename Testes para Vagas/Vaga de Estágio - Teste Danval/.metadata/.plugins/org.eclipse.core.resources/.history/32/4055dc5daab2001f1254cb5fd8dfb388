@@ -1,0 +1,25 @@
+package teste;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int[] array = {1, 2, 5, 12};
+		
+		System.out.printf("Menor número faltando: %d.", menorNumeroFaltando(array));
+	}
+	
+	public static int menorNumeroFaltando(int[] array) {
+		for (int i = 1; ; i++) { // Começa no menor número positivo
+			boolean encontrado = false;
+			for (int num : array) {
+				if (num == i) { // Se o número está no array, marca como encontrado
+					encontrado = true;
+					break; // Sai do loop interno
+				}
+			}
+			if (!encontrado) {
+				return i; // Retorna o primeiro número ausente
+			}
+		}
+	}
+}

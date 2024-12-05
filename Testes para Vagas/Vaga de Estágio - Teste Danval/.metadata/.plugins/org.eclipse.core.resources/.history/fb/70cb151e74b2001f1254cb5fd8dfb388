@@ -1,0 +1,24 @@
+package teste;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int[] array = {1, 5, 12};
+		
+		System.out.printf("Menor número faltando: %.0f.", MenorNumeroFaltando(array));
+		
+	}
+	
+	public static double MenorNumeroFaltando(int[] array)
+	{
+		int menor = Integer.MAX_VALUE;
+		List<int> numeros = new ArrayList<>();
+		for (int i = array[0]; i <= array[array.length-1]; i++) {
+		}
+		return menor;
+	}
+
+}
