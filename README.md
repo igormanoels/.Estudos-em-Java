@@ -41,8 +41,20 @@
 <br>
 
 ### **DIO - Bootcamp Claro 2024 - Java com Spring Boot**
+- Introdução ao Ambiente Java e Projetos Colaborativos
+- Sintaxe Básica com Java
+- Programação Orientada a Objetos com Java
+- Testes e Gerenciamento de Dependências em Projetos Java
+- Banco de Dados SQL e NoSQL Para Desenvolvedores Back-end
+- Ganhando Produtividade no Java com Spring Framework
 
 <br>
 
 ### **DIO - Java Developer**
-
+- Aprendendo a sintaxe
+- Escopo e estrutura de controle
+- Programação Orientada a Objetos
+- Estrutura de Dados e API
+- Gerenciamento de Dependências e Build
+- Qualidade de Código e boas práticas
+- Spring Framework
