@@ -58,3 +58,14 @@
 - Gerenciamento de Dependências e Build
 - Qualidade de Código e boas práticas
 - Spring Framework
+
+<br>
+
+### **DIO - Formação Java Fundamentals**
+- Programação Orientada a Objetos
+- Gerenciamento de Exceções
+- Uso de interfaces
+- Expressões lambda
+- Manipulação de arquivos com I/O
+- Uso de ferramentas como Maven e Gradle para gerenciamento de dependências
+
