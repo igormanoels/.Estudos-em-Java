@@ -1,5 +1,7 @@
 package br.com.dio.Aula_002;
 
+import java.util.Scanner;
+
 /*
  * Escreva um código para verificar o imc segundo.
  * 
@@ -13,5 +15,33 @@ package br.com.dio.Aula_002;
  */
 
 public class ex_002 {
-
+	
+	public static void main(String[] args) {
+		Scanner ler = new Scanner(System.in);
+		
+		System.out.print("Informe o peso do paciente: ");
+		float peso = ler.nextFloat();
+		
+		System.out.print("Agora informe a altura do paciente: ");
+		float altura = ler.nextFloat();
+		
+		float imc = peso / ((float) Math.pow(altura, 2));
+		
+		if (imc <= 18.5) {
+			System.out.println("Abaixo do peso.");
+		} else if (imc <= 24.9) {
+			System.out.println("Peso ideal.");
+		} else if (imc <= 29.9) {
+			System.out.println("Obesidade Grau I");
+		} else if (imc <= 39.9) {
+			System.out.println("Obesidade Grau II (severa)");
+		} else {
+			System.out.println("Obesidade Grau III (mórbida)");
+		}
+		
+		
+	
+		ler.close();
+	}
+	
 }

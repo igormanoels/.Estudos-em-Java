@@ -33,6 +33,7 @@ public class anotacoes_01 {
 	
 		
 		// Decisão Ternária
+		@SuppressWarnings("unused")
 		var resultado = 4 > 5 ? "É maior": "É menor";
 		System.out.println(resultado);
 	}
