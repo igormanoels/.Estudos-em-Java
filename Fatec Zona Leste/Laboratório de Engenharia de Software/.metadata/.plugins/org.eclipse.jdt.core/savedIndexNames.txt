@@ -1,0 +1,2 @@
+INDEX VERSION 1.134+D:\GitHub\.Estudos-em-Java\Fatec Zona Leste\Laboratório de Engenharia de Software\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
