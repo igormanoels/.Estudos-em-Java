@@ -1,4 +1,4 @@
-package br.edu.dio.Aula_003.Interfaces;
+package br.edu.dio.Aula_003_Interfaces;
 
 public record MusicBox(String musica, boolean pausada) implements PlayerMusic {
 

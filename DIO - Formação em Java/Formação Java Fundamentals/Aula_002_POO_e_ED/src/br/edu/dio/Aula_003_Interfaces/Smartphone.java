@@ -1,4 +1,4 @@
-package br.edu.dio.Aula_003.Interfaces;
+package br.edu.dio.Aula_003_Interfaces;
 
 public class Smartphone implements PlayerVideo, PlayerMusic{
 

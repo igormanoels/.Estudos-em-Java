@@ -1,4 +1,4 @@
-package br.edu.dio.Aula_003.ex_001;
+package br.edu.dio.Aula_003_Interfaces.ex_001;
 
 
 /* 

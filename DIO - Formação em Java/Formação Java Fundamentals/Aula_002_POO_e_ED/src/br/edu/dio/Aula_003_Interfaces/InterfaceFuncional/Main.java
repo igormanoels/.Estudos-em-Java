@@ -1,4 +1,4 @@
-package br.edu.dio.Aula_003.InterfaceFuncional;
+package br.edu.dio.Aula_003_Interfaces.InterfaceFuncional;
 
 import java.util.List;
 import java.util.function.Consumer;
