@@ -56,6 +56,8 @@ public class Main {
 				System.out.println("\n\nObrigado por visitar minha atividade!");
 				break;
 		}
+
+		ler.close();
 	}
 	
 	static void verificaSO() 
@@ -124,6 +126,7 @@ public class Main {
 		mataPID.mataPid(process, systemOP);
 		menu();
 		
+		ler.close();
 	}
 	
 	static void matandoProcNome()
@@ -149,7 +152,8 @@ public class Main {
 		System.out.println("\n\n");
 		mataNome.mataNome(process, systemOP);
 		menu();
-		
+
+		ler.close();
 	}
 	
 }

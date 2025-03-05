@@ -22,8 +22,9 @@ public class DistroController {
     /***********************************************************
 	 * Função para verifiacar as propriedades da distribuição.
 	 */ 
-    public static void exibirDistro() {
+    public void exibirDistro() {
         try {
+            @SuppressWarnings("deprecation")
             Process processo = Runtime.getRuntime().exec("cat /etc/os-release");
             BufferedReader leitura = new BufferedReader(new InputStreamReader(processo.getInputStream()));
             String linhas;

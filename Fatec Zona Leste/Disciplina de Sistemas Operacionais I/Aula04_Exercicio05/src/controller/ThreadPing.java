@@ -23,6 +23,7 @@ public class ThreadPing extends Thread {
 			{
 				try 
 				{
+					@SuppressWarnings("deprecation")
 					Process process = Runtime.getRuntime().exec("ping -4 -c 1 " + site);
 					BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 					String line;

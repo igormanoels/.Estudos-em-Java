@@ -37,6 +37,7 @@ public class RedesController {
         try {
             if (os.toLowerCase().contains("windows")) 
             {
+                @SuppressWarnings("deprecation")
                 Process process = Runtime.getRuntime().exec("ipconfig");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
@@ -51,6 +52,7 @@ public class RedesController {
             } 
             else if (os.toLowerCase().contains("linux")) 
             {
+                @SuppressWarnings("deprecation")
                 Process process = Runtime.getRuntime().exec("ifconfig");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
@@ -87,6 +89,7 @@ public class RedesController {
         {
             if (os.toLowerCase().contains("windows")) 
             {
+                @SuppressWarnings("deprecation")
                 Process process = Runtime.getRuntime().exec("ping -4 -n 10 www.google.com.br");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
@@ -101,6 +104,7 @@ public class RedesController {
             } 
             else if (os.toLowerCase().contains("linux")) 
             {
+                @SuppressWarnings("deprecation")
                 Process process = Runtime.getRuntime().exec("ping -4 -c 10 www.google.com.br");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;

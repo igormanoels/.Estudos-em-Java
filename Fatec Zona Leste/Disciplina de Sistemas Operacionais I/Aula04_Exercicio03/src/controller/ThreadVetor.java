@@ -11,6 +11,7 @@ public class ThreadVetor extends Thread {
 		this.ThreadNum = n;
 	}
 	
+	@SuppressWarnings({ "deprecation", "unused" })
 	public void run() 
 	{
 		long tempInit, tempFn;

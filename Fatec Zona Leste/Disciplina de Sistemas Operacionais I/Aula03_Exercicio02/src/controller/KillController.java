@@ -49,6 +49,7 @@ public class KillController {
         }
 
         try {
+            @SuppressWarnings("deprecation")
             Process processo = Runtime.getRuntime().exec(command);
             BufferedReader leitura = new BufferedReader(new InputStreamReader(processo.getInputStream()));
             String linha;
@@ -90,6 +91,7 @@ public class KillController {
 
         try 
         {
+            @SuppressWarnings("deprecation")
             Process processo = Runtime.getRuntime().exec(command);
             BufferedReader leitura = new BufferedReader(new InputStreamReader(processo.getInputStream()));
             String linha;
@@ -129,6 +131,7 @@ public class KillController {
         }
 
         try {
+            @SuppressWarnings("deprecation")
             Process processo = Runtime.getRuntime().exec(comando);
             BufferedReader leitura = new BufferedReader(new InputStreamReader(processo.getInputStream()));
             String linha;

@@ -9,6 +9,7 @@ public class Threads extends Thread {
         this.ThreadSoma = linhaMatriz;
     }
 
+    @SuppressWarnings("deprecation")
     public void run() 
     {
         int somaLinha = 0;
