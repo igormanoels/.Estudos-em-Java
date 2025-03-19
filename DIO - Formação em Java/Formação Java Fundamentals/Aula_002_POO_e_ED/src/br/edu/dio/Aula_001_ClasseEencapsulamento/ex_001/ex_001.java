@@ -55,7 +55,7 @@ public class ex_001 {
 				break;
 			}
 		}
-		
+		ler.close();
 		
 	}
 	
