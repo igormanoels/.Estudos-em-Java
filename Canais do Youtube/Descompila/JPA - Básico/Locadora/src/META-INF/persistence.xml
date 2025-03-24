@@ -6,15 +6,17 @@
     <persistence-unit name="LocadoraPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         
-        <class>
-        	model.Marca
-        </class>
+        <class> model.Marca </class>
+        <class> test.Conexao</class>
+        <class> test.MarcaTeste </class>
         
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="123456"/>
+            
 
             <!-- Configuração do EclipseLink 
             <property name="eclipselink.logging.level" value="FINE"/>

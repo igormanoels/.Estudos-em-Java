@@ -11,17 +11,25 @@ public class MarcaTeste {
 
 	public static void main(String[] args) {
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("LocadoraPU");
-		EntityManager em = emf.createEntityManager();
+		try {
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("LocadoraPU");
+			EntityManager em = emf.createEntityManager();
+			
+			EntityTransaction et = em.getTransaction();
+			et.begin();
+			
+			System.out.println("Conectado.");
+			Marca marca = new Marca();
+			marca.setDescricao("Ford");
+			
+			em.persist(marca);
+			et.commit();
+			
+			
+		} catch (Exception e) {
+			System.out.println("Erro ao conectar");
+		}
 		
-		EntityTransaction et = em.getTransaction();
-		
-		et.begin();
-		Marca marca = new Marca();
-		marca.setDescricao("Ford");
-				
-		em.persist(marca);
-		et.commit();
 		
 	}
 	
