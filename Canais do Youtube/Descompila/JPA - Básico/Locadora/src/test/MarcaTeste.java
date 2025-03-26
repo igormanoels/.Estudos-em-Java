@@ -20,10 +20,10 @@ public class MarcaTeste {
 			
 			System.out.println("Conectado.");
 			Marca marca = new Marca();
-			marca.setDescricao("Ford");
+			marca.setDescricao("Mercedes");
 			
-			em.persist(marca);
-			et.commit();
+			em.persist(marca); // Envia para o banco de dados
+			et.commit(); // Faz o commit daquela informação, gravando no banco de dados
 			
 			
 		} catch (Exception e) {
