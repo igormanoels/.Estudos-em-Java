@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-    <entry loc="C:\Users\igor_\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.1.v20241024-1700" stamp="1735177561082"/>
-    <entry loc="C:\Users\igor_\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.1.v20241024-1700\jre" stamp="1735177561078"/>
+    <entry loc="C:\Program Files\Java\jdk-17" stamp="1735176756270"/>
+    <entry loc="C:\Users\igor_\Downloads\spring-tools-for-eclipse-4.30.0.RELEASE-e4.35.0-win32.win32.x86_64\sts-4.30.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.6.v20250130-0529\jre" stamp="1744944056000"/>
+    <entry loc="C:\Users\igor_\Downloads\spring-tools-for-eclipse-4.30.0.RELEASE-e4.35.0-win32.win32.x86_64\sts-4.30.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.6.v20250130-0529" stamp="1744944056000"/>
+    <entry loc="C:\Program Files\Java\jre1.8.0_451" stamp="1745591337232"/>
+    <entry loc="C:\Program Files\Java\jdk-21" stamp="1735176853347"/>
 </dirs>

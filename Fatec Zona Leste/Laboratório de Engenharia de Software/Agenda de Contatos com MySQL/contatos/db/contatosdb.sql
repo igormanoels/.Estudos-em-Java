@@ -1,0 +1,5 @@
+SHOW DATABASES;
+
+CREATE DATABASE contatosdb;
+
+
