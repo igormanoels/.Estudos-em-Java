@@ -76,6 +76,7 @@ public class ex_002 {
 			
 		} while (op != 0);
 		
+		ler.close();
 	}
 
 }
