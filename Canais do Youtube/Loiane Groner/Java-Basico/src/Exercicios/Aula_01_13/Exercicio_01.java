@@ -1,4 +1,4 @@
-package Aula_13.Exercicios;
+package Exercicios.Aula_01_13;
 
 // 1. Faça um Programa que mostre a mensagem "Alo mundo" na tela. 
 
