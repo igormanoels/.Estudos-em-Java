@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Exercicio_07 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
 		
@@ -43,6 +44,9 @@ public class Exercicio_07 {
 				menor = num3;
 			}
 		}
+		
+		System.out.println("O maior número é " + maior + " e o menor número é " + menor);
+
 		
 		ler.close();
 	}
