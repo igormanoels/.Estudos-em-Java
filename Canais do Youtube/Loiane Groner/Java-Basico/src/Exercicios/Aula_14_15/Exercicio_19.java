@@ -1,5 +1,7 @@
 package Exercicios.Aula_14_15;
 
+import java.util.Scanner;
+
 /* 19. Faça um Programa que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, 
  * dezenas e unidades do mesmo. 
  * 
@@ -12,4 +14,28 @@ package Exercicios.Aula_14_15;
 
 public class Exercicio_19 {
 
+	public static void main(String[] args) {
+		Scanner ler = new Scanner(System.in);
+		int numero, centena, dezena, unidade;
+		
+		System.out.print("Informe um número inteiro menor que 1000: ");
+		numero = ler.nextInt();
+		
+		if (numero < 1000) {
+			centena = numero / 100;
+			dezena = numero / 10 % 10;
+			unidade = numero % 10;
+			
+			System.out.printf("Unidade: %d \nDezena: %d \nCentena: %d", unidade, dezena, centena);
+			
+		} else {
+			System.out.println("O número informado não é menor que 1000.");
+		}
+		
+		
+		
+		
+		ler.close();
+	}
+	
 }
